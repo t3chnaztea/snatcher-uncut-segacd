@@ -1,0 +1,358 @@
+{
+  "format": 1,
+  "version": "v0.9.0-rc1",
+  "scope": "Curated public source, player installer and selected media inventory. No private repository history or raw game inputs.",
+  "files": {
+    ".gitignore": {
+      "bytes": 210,
+      "sha256": "93ea74710ad2bf32310b689b284cbee35d5a0e63b581821c1a9a7db3dd694956"
+    },
+    "AI-DISCLOSURE.md": {
+      "bytes": 1189,
+      "sha256": "d3eb34ccba7697a6cc8b64fc8ce9b2d7233beb39dfc8e3fcbde623e763554597"
+    },
+    "CHANGELOG.md": {
+      "bytes": 1900,
+      "sha256": "dae59fcd796e6197e3562320f1373d2d74bfba8a9bd4b3cfe03330f4b69ff1b8"
+    },
+    "CREDITS.md": {
+      "bytes": 3241,
+      "sha256": "5d67e32b99956169c256f0331bb35a697c0ff457b9a4e720951b1ef4cbfec77e"
+    },
+    "INSTALL.md": {
+      "bytes": 3577,
+      "sha256": "214894b85184986f6fb19c4b8015d151c818c4a0cf2cd3f14b8c56f07516701f"
+    },
+    "KNOWN-ISSUES.md": {
+      "bytes": 2992,
+      "sha256": "5f3df41ba23b80ff69170df4c04d688e6e541a8ea107798da43f51732bf61a2a"
+    },
+    "LICENSE": {
+      "bytes": 1067,
+      "sha256": "a67b8f209ad414aae8a8da523e009aac225c57c271649e8055cac1b4f1a89322"
+    },
+    "LICENSE-SCOPE.md": {
+      "bytes": 1215,
+      "sha256": "81a84d6a48582c0f74448761220f42d3b00a6f347a847a84b5f75343eae960c1"
+    },
+    "OFFLINE-INSTALL.md": {
+      "bytes": 5226,
+      "sha256": "7bd15764f94c6a980092fe7f8387e038ff7387314dd7dc8c09bdd76b9d19c6bc"
+    },
+    "README.md": {
+      "bytes": 4522,
+      "sha256": "d992c400a6a7fd07a14a865e1c880f6b6d7611e9e999dba303abf0da2a6d94da"
+    },
+    "RELEASE-NOTES.md": {
+      "bytes": 1609,
+      "sha256": "319794eb1366c266b306a78180cb6f95fde82f9616ea5322645809b18fc60c86"
+    },
+    "VERIFICATION.md": {
+      "bytes": 3239,
+      "sha256": "5a45e0200547fc9c56bf7eeee6023e15a1159c2859c0c9c816a83e7fec46ec61"
+    },
+    "browser/app.js": {
+      "bytes": 8749,
+      "sha256": "2253b1346b0e4807ebef6eb01015cdcde07c72a497083bea64f5e9e7bc84b34b"
+    },
+    "browser/browser-build.json": {
+      "bytes": 2139,
+      "sha256": "6c9f6e8155f74263a177ff1a1afede0d0ee81a017c621ba77d100947dbace022"
+    },
+    "browser/index.html": {
+      "bytes": 3345,
+      "sha256": "7d9df1107a54dc3064392c1b898d642f78246f57cfc5a520f68c563abbd07264"
+    },
+    "browser/patch-data.js": {
+      "bytes": 54210,
+      "sha256": "bc060d9becec5472f95566975fe13b2e8d1c4a1487bb64f1c1bb79a2821a449b"
+    },
+    "browser/style.css": {
+      "bytes": 1268,
+      "sha256": "8579cf4484ffdd0262fd43cf6eab631eb003e5d54e23d946afac510eebea0ed8"
+    },
+    "browser/vendor/LICENSE": {
+      "bytes": 1229,
+      "sha256": "a379dd012587a2fbe434ea6fcef30f502f32077738c2bd36e9e20cce621162bb"
+    },
+    "browser/vendor/RomPatcher.js": {
+      "bytes": 14154,
+      "sha256": "2054927ef4326d045ec23e8f977b107cc00511e1bd1d05c49deac7f5dfac2821"
+    },
+    "browser/vendor/modules/BinFile.js": {
+      "bytes": 14745,
+      "sha256": "3856e2f30bb8f105796a0371231a9b2aa37266148ac496711f07fd1e80fef688"
+    },
+    "browser/vendor/modules/HashCalculator.js": {
+      "bytes": 9027,
+      "sha256": "9d3a437aa3a75706533a44745f0201f773718be276d4e60bc2d7613ec01ab95a"
+    },
+    "browser/vendor/modules/RomPatcher.format.aps_gba.js": {
+      "bytes": 3253,
+      "sha256": "0504490f2f95f9fbd1199fc969a61ff44d7cc62322df39d7dc8d57f480fd761d"
+    },
+    "browser/vendor/modules/RomPatcher.format.aps_n64.js": {
+      "bytes": 5461,
+      "sha256": "96353ba9f895eb725a12f0c4d35d702b0013d5b09aeeb6f111614f8a64530c1c"
+    },
+    "browser/vendor/modules/RomPatcher.format.bdf.js": {
+      "bytes": 8695,
+      "sha256": "b897f36013a4308fd182a6508594fbb48da0afcf310dc97293973cb67e4fc5c3"
+    },
+    "browser/vendor/modules/RomPatcher.format.bps.js": {
+      "bytes": 12396,
+      "sha256": "c9e4513de7247f2a12e7b9530fd1fa181f83b87c65cf20d6aa31db4a3d406dd0"
+    },
+    "browser/vendor/modules/RomPatcher.format.ips.js": {
+      "bytes": 8019,
+      "sha256": "aeff473533ef47b490f71dcd9796c1d6539a43e04807c14a1746a6aabfd61c36"
+    },
+    "browser/vendor/modules/RomPatcher.format.pmsr.js": {
+      "bytes": 2299,
+      "sha256": "fe75a70ca00b5b254cafb280ed5abb7d3145f3e44e6dfb94533361e04915cea9"
+    },
+    "browser/vendor/modules/RomPatcher.format.ppf.js": {
+      "bytes": 6307,
+      "sha256": "d5d98b174da29c5fd318478296806048484c8dc5d7eeed7166eb21970320ab61"
+    },
+    "browser/vendor/modules/RomPatcher.format.rup.js": {
+      "bytes": 9873,
+      "sha256": "4a95db75306151729a740785facae8771e73f01dd0e941922a134147f0efcb1b"
+    },
+    "browser/vendor/modules/RomPatcher.format.ups.js": {
+      "bytes": 5337,
+      "sha256": "06de1b1630564d5b0d38b13eca5703316669a9ca21c71c4519a0c48744547ba9"
+    },
+    "browser/vendor/modules/RomPatcher.format.vcdiff.js": {
+      "bytes": 28758,
+      "sha256": "9fa42f57c6bbb0483798a8b5914813aba1100f226464296aba8c7e3c44a76a86"
+    },
+    "config/input-manifest.json": {
+      "bytes": 5545,
+      "sha256": "a0119e5125746ae92f97ea61573211631cefe0c63efa6a20a315105d10fcd95b"
+    },
+    "docs/diff-ledger.csv": {
+      "bytes": 19162,
+      "sha256": "481466bfc94c00b78115570a5345da9cce78a67e3eab972b4514f7e99fd36e14"
+    },
+    "docs/setup.md": {
+      "bytes": 4622,
+      "sha256": "fbe290a812b84ca637b74d5bd4cb79daf08a1cd8c40c8bc5282ce3299c8cc31d"
+    },
+    "media/SHA256SUMS": {
+      "bytes": 1834,
+      "sha256": "66e73b8df2cbc417dc7350c71837019804fa22e065a20a147cadef73611ba00a"
+    },
+    "media/assets/chronology-still-loop-poster.png": {
+      "bytes": 32068,
+      "sha256": "191b964bdad1d9c5b18cadb552b781f43d447ab9244030689de93121706cf4c8"
+    },
+    "media/assets/chronology-still-loop.gif": {
+      "bytes": 46173,
+      "sha256": "958cf15a7a6c4c4111cde877a5bcced32513b89e00b9ac8037b9aba861b593af"
+    },
+    "media/assets/chronology-still-loop.mp4": {
+      "bytes": 46494,
+      "sha256": "e15d9d63881e4f93fd9e86ab19ddda24cb83c76750edae2cadee058ef36c206a"
+    },
+    "media/assets/chronology-still-loop.webm": {
+      "bytes": 77523,
+      "sha256": "5d435af56166a86e771aa5b51dba469084b70846f115d8bd389b166185702d3b"
+    },
+    "media/assets/costume-gallery.png": {
+      "bytes": 193874,
+      "sha256": "867f2184dfad708fed9624e88e1d59ffbdb8ef3085d9823e24bc7217ed78d31d"
+    },
+    "media/assets/dog-native-comparison-GORE.gif": {
+      "bytes": 2010676,
+      "sha256": "5caa8fc2810d327315943928a0f968f582fdc2421c9fef2c14bde9e6c0d7ac0f"
+    },
+    "media/assets/moscow-comparison.png": {
+      "bytes": 33949,
+      "sha256": "644e06f33c8aac092c8c786111a8a21656c1d93701c16b9d66d3d63b7743edd2"
+    },
+    "media/assets/neokobe-comparison.png": {
+      "bytes": 35793,
+      "sha256": "f19010589b6f9b97c81cbd08a18986f66484fd643f062f58032db957ee22a290"
+    },
+    "media/assets/newspaper-comparison.png": {
+      "bytes": 57748,
+      "sha256": "daea8aa1d085f97e824319818b2897aa1beb49bbc197647a095130126f532b58"
+    },
+    "media/assets/outer-heaven-hero.png": {
+      "bytes": 47529,
+      "sha256": "09290bf1cf62898b63b8978b31b0751b534b9abe57caf3a467fab7cfd9670601"
+    },
+    "media/assets/outer-heaven-still-loop-poster.png": {
+      "bytes": 46043,
+      "sha256": "815dffa230cc4ee56c23b90a3c856cdd87f69a4cbfe5da4382f92e5f7faa001b"
+    },
+    "media/assets/outer-heaven-still-loop.gif": {
+      "bytes": 76987,
+      "sha256": "63a5b0bc46500dac7d26df235882c9e1d2a1e38c87bb780352f8c017ca522b51"
+    },
+    "media/assets/outer-heaven-still-loop.mp4": {
+      "bytes": 90813,
+      "sha256": "9623dbaf773f140eb85abe50ac388483ddb30a219f25cfa82c9606ddf25a5689"
+    },
+    "media/assets/outer-heaven-still-loop.webm": {
+      "bytes": 146293,
+      "sha256": "30d6f761aa929435042b4ee922844d198ee6c61f826b4ce9e77d36f9dc7bd3cd"
+    },
+    "media/assets/release-reel-poster.png": {
+      "bytes": 46728,
+      "sha256": "b728c2918a25487cb58f6dd5cfe31f512f985307437948466f05e81683a9b740"
+    },
+    "media/assets/release-reel.mp4": {
+      "bytes": 567090,
+      "sha256": "5f335af6239895399d0747854ebe132974baaccaeb2aac3032c62f1221ed0508"
+    },
+    "media/assets/release-reel.webm": {
+      "bytes": 995689,
+      "sha256": "c008bd5e2e5b793c9888756a433df09eb476b89750f9ac71e44178a966e84d1a"
+    },
+    "media/index.html": {
+      "bytes": 2705,
+      "sha256": "c245d633afc34a1fbdaa60c151fefe7b29222f311228ddc34859d934e33c52de"
+    },
+    "media/provenance.json": {
+      "bytes": 10318,
+      "sha256": "03e4f544f52abeaff881fd60d12eb57334277c95bdd2eca8f957519700664294"
+    },
+    "patches/README.md": {
+      "bytes": 229,
+      "sha256": "6adbc88a2a3ff6b9f962929064fd4bd08ea6195b41a5eec6c87f9f1b11d4339a"
+    },
+    "patches/gfx/animation.json": {
+      "bytes": 1885,
+      "sha256": "5c65c931a5ee0ca316684dbcadf9a80e072a17309c85bae740c3a21e598b5db9"
+    },
+    "patches/gfx/captions.json": {
+      "bytes": 5435,
+      "sha256": "502dbd392ce396554f7c1a3c49d27f42951c697ed9a2ee41e3f0808e1156fc51"
+    },
+    "patches/text/m3.json": {
+      "bytes": 113418,
+      "sha256": "5cb56464649ababf63f3a95ba7fa8db8306998071c649549b32d6516334a47a0"
+    },
+    "requirements-dev.txt": {
+      "bytes": 61,
+      "sha256": "5815ec14fd3087b93ff9ccb4d16957879857f24814dc14c2d703ac9e291258ff"
+    },
+    "snatcher-uncut-track01.xdelta": {
+      "bytes": 40631,
+      "sha256": "1485cc915dc0d2629049f7abcb8f724f608a8205c89456ad534acf2d26ac09a4"
+    },
+    "tests/test_build.py": {
+      "bytes": 5280,
+      "sha256": "88f1478cb3bf58a9cfdb49114758b316550994686ea5d97766080a67d0cffd5c"
+    },
+    "tests/test_gfx_animation.py": {
+      "bytes": 8167,
+      "sha256": "31640c579e8d7f53416bd571ddfcda159323983a7f03fa9d96a9fe993952bd9d"
+    },
+    "tests/test_gfx_captions.py": {
+      "bytes": 6101,
+      "sha256": "e37bfd790b35f9e9fe896d63e2ebc923f6d0a332af4263c39628dbeb03988d48"
+    },
+    "tests/test_gfx_patch.py": {
+      "bytes": 6823,
+      "sha256": "760fa74e608ab9327792aaa0c66d5c35662218f91d107d51b707a39ee184d85f"
+    },
+    "tests/test_gfx_roundtrip.py": {
+      "bytes": 8566,
+      "sha256": "8221566b3c581816b88f66aef767e24f7c76576e5a9f9927d3ec36bd2b46b709"
+    },
+    "tests/test_player_browser.js": {
+      "bytes": 3655,
+      "sha256": "6c2de13351bc40bf4e967efadd07c23c419c9de8f7d6e16890942991771bfa7d"
+    },
+    "tests/test_player_install.py": {
+      "bytes": 9737,
+      "sha256": "dec9a6eb79095e956fe7a77ec8d33169c92da02e749b2b29bcb81b170d43c104"
+    },
+    "tests/test_roundtrip_disc.py": {
+      "bytes": 1920,
+      "sha256": "493fe56fd6885dff068badf6dd64dc7177de4d165aa26a7f96a335f0dee00843"
+    },
+    "tests/test_setup_inputs.py": {
+      "bytes": 3108,
+      "sha256": "1fbe013bec08a49199b44d18a6cf99c53935c6f01dcf7d83cabe239f75cf0cb9"
+    },
+    "tests/test_source_text_recipe.py": {
+      "bytes": 2150,
+      "sha256": "0ae5a074fce9d09e696c26d7d948f62871e9ec0ca5cef51f14056831604971d9"
+    },
+    "tests/test_text_patch.py": {
+      "bytes": 2734,
+      "sha256": "1bbda9ce684d3f39f5a06ab7f3dca8dc366aeac1189d778efd387eb9a0e094a2"
+    },
+    "tests/test_text_pce_vm.py": {
+      "bytes": 3036,
+      "sha256": "45b9610e9f95b39cde07fdd795607fbb509e4ceae517aa3996edfd13ab5f90f9"
+    },
+    "tests/test_text_roundtrip.py": {
+      "bytes": 5902,
+      "sha256": "c72aa909e90779c44abf53ba0dd8b88cc961eef141aefb2fba8f84e2d94ba0c9"
+    },
+    "tools/build.py": {
+      "bytes": 6577,
+      "sha256": "53bd0dcbc180e356fcd63bcc82d94801a1d3e400474cb065ba409032629285cc"
+    },
+    "tools/m4_animation.py": {
+      "bytes": 25257,
+      "sha256": "3ab2bd43e4d5052d1c3840328f383166c85474efbc82cb934ea36c6dc5df7c1e"
+    },
+    "tools/m4_captions.py": {
+      "bytes": 18278,
+      "sha256": "a6b2c7c3f4b04f2d0778c18cc99e7769dfcb659c083403b632a2ec09e86c555f"
+    },
+    "tools/pce_gfx.py": {
+      "bytes": 19528,
+      "sha256": "d809a407e840444db3f2501efb6f1913235d748ed11089ca305645a91ca1e236"
+    },
+    "tools/player_install.py": {
+      "bytes": 16002,
+      "sha256": "79c4831565569af298e75d9ab255e17dc788664616f714ad7141c23c2e1bc85c"
+    },
+    "tools/scd_art.py": {
+      "bytes": 8128,
+      "sha256": "eae7c83ad774f0e187671095bc53d73cff99b540dcc8337c200e3f0c36107c2a"
+    },
+    "tools/scd_disc.py": {
+      "bytes": 13798,
+      "sha256": "6a1eabff923f52e632c0bca9f2398c199023c669d8217c9af35eccdf679e8ef4"
+    },
+    "tools/scd_gfx.py": {
+      "bytes": 38087,
+      "sha256": "105e3d263dedd6c5ec7f52336b478c20ba17cc868750c1f4a90fd8bca3454b87"
+    },
+    "tools/scd_script.py": {
+      "bytes": 4565,
+      "sha256": "83914ac38867d2a88a240261c575d389db123287702b708ed3c9c62466b822dc"
+    },
+    "tools/scd_text.py": {
+      "bytes": 32319,
+      "sha256": "f958298800ccab99baee85ecca0e82c1c9a3d9d9169e2fadea07d82820aee19e"
+    },
+    "tools/setup_inputs.py": {
+      "bytes": 3212,
+      "sha256": "5a8f4fc703e261b0244207bfd848d611b3b99912a347de2eff5bba4d44c0ad2a"
+    },
+    "tools/source_text_recipe.py": {
+      "bytes": 5835,
+      "sha256": "ef034f396fa061a15728b8b122cffe88338603a65b768892f47efa578ffc47f9"
+    },
+    "tools/verify_build.py": {
+      "bytes": 21310,
+      "sha256": "691e0911786e542fc9c3bb66d0e7fa49bc3ce47ffe7cc7ea65f01270480f3cb7"
+    },
+    "tools/verify_inputs.py": {
+      "bytes": 2979,
+      "sha256": "d743a860e675c5a75039e73de0a91d74f53f9ca92bfc4cf936a5fe8289b6bfa2"
+    }
+  },
+  "third_party_engine_commit": "4f17297cd1dc0835a0b0747497fa15f5f63f1623",
+  "gameplay_acceptance": "See VERIFICATION.md. Historical emulator captures and controller journals are not included.",
+  "hardware_acceptance": "Not run."
+}

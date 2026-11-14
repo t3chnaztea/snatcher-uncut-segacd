@@ -1,0 +1,199 @@
+{
+  "version": 1,
+  "rows": [
+    {
+      "id": "GFX-005",
+      "file": "DATA_F0.BIN",
+      "source_sha1": "3fc135ea71b8c27bcbcf8a4300b78348d43cbbf1",
+      "program": 11,
+      "plane": 49152,
+      "plane_rows": 32,
+      "resources": [
+        {
+          "offset": 94786,
+          "end": 98492,
+          "decoded_sha1": "b34bd9272962172f3e83287b0fe7bf78b92f1da6",
+          "encoded_sha1": "41708d84d37070ab6e777f93828403007ce38836",
+          "references": [
+            {
+              "sequence": 11,
+              "record": 7560,
+              "vram": 8192
+            }
+          ]
+        },
+        {
+          "offset": 94178,
+          "end": 94786,
+          "decoded_sha1": "e4f9cf66706ff1393f680d35c9de1a63fcff2205",
+          "encoded_sha1": "3095eb970862f4f7c15d88ff24e1661f433d9332",
+          "references": [
+            {
+              "sequence": 11,
+              "record": 7576,
+              "vram": 49152
+            }
+          ]
+        }
+      ],
+      "pce": {
+        "block": 65,
+        "record": 4594,
+        "block_sha1": "1555d47b08c18990593df005ec190c3ecd058125",
+        "list_offset": 18,
+        "palette_records": [
+          7
+        ],
+        "image_rgb_sha1": "d2a4883a61ac04a9f773197ab6b82d81e1cfd4a5"
+      },
+      "recipe": "Convert matched PCE corpse region x32..224/y32..136 into unchanged per-cell Sega palette; leave outside region exact"
+    },
+    {
+      "id": "TEXT-034",
+      "file": "DATA_D1.BIN",
+      "source_sha1": "05612789905ffa433d31db0abbbd5b550ac733aa",
+      "program": 3,
+      "plane": 57344,
+      "plane_rows": 32,
+      "resources": [
+        {
+          "offset": 48062,
+          "end": 49190,
+          "decoded_sha1": "ae376850149ee01a2f5b386bb1ee6e4737848235",
+          "encoded_sha1": "8d8a35dfef61b250dd5c10f4a3aefab94a61b996",
+          "references": [
+            {
+              "sequence": 3,
+              "record": 3354,
+              "vram": 0
+            }
+          ]
+        }
+      ],
+      "recipe": "Copy existing serif1 atx144..152 tofinaldigit slot182..190; clear old6 slot181..191 only"
+    },
+    {
+      "id": "TEXT-035",
+      "file": "DATA_D1.BIN",
+      "source_sha1": "05612789905ffa433d31db0abbbd5b550ac733aa",
+      "program": 7,
+      "plane": 57344,
+      "plane_rows": 32,
+      "resources": [
+        {
+          "offset": 12554,
+          "end": 16661,
+          "decoded_sha1": "d05d123eb88956478a39c7f68cc97a5bc86dba17",
+          "encoded_sha1": "cc89b4454af01eef21b16163ff877ff13898df1c",
+          "references": [
+            {
+              "sequence": 7,
+              "record": 3664,
+              "vram": 16384
+            }
+          ]
+        },
+        {
+          "offset": 52536,
+          "end": 56022,
+          "decoded_sha1": "196521ce7b9c412c9097b627eb6f19f703b91784",
+          "encoded_sha1": "e00a760c692743b5c9613461aafac66c8c2252b9",
+          "references": [
+            {
+              "sequence": 7,
+              "record": 3648,
+              "vram": 0
+            }
+          ]
+        },
+        {
+          "offset": 56022,
+          "end": 57370,
+          "decoded_sha1": "a4b6507e1d8f34b3ce751ed50eaa63bf918d5e8e",
+          "encoded_sha1": "9d1a36ec021052e8ecface573c6b3a81b7b2251b",
+          "references": [
+            {
+              "sequence": 7,
+              "record": 3656,
+              "vram": 8192
+            }
+          ]
+        }
+      ],
+      "pce": {
+        "block": 3,
+        "record": 858,
+        "block_sha1": "ee34c289a09f839cf1ddba468b349094a043c8d2",
+        "list_offset": 733,
+        "palette_records": [
+          775,
+          803,
+          901,
+          917,
+          521,
+          437,
+          290,
+          1259
+        ],
+        "image_rgb_sha1": "ec6f11d664621241e72b585e261b501c90dae1c3"
+      },
+      "recipe": "Restore back-paper year and English foreground-paper dateline to2039 using PCE3/9 masks; retainallotherglyphs, Thursday, palettes, spriteframe andanimation",
+      "foreground_source_local_glyphs": [
+        119,
+        123
+      ],
+      "foreground_source_local_box": [
+        119,
+        29,
+        126,
+        34
+      ],
+      "native_matched_snapshot_origin": [
+        50,
+        64
+      ]
+    },
+    {
+      "id": "TEXT-036",
+      "file": "DATA_D0.BIN",
+      "source_sha1": "2a691e6d5dcefb9256ac3d707f56068eefdbc2ef",
+      "program": 1,
+      "plane": 57344,
+      "plane_rows": 64,
+      "resources": [
+        {
+          "offset": 133258,
+          "end": 134849,
+          "decoded_sha1": "dfdeda923f638497ec90256151fba69401e7a740",
+          "encoded_sha1": "a87a6f89ae8fbf45cd6c03d99ee2f0c1f4f6129d",
+          "references": [
+            {
+              "sequence": 1,
+              "record": 174,
+              "vram": 16384
+            },
+            {
+              "draw_root": 3128,
+              "record": 3130,
+              "vram": 16384
+            }
+          ]
+        },
+        {
+          "offset": 240856,
+          "end": 241438,
+          "decoded_sha1": "4f7343b492e805afb8583df75b1c11326d4ca60a",
+          "encoded_sha1": "f1d7338e478808648a560359cdea2f1f8b34627a",
+          "references": [
+            {
+              "sequence": 1,
+              "record": 190,
+              "vram": 57344
+            }
+          ]
+        }
+      ],
+      "recipe": "Copy existing2 atx128..136 tofinal7 slot160..168 onnativecard; clone sharedblank tiles withinexistingbudget"
+    }
+  ]
+}

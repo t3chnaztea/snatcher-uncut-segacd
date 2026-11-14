@@ -1,0 +1,4 @@
+capstone==5.0.9
+Pillow==13.0.0
+pycdlib==1.22.0
+pytest==9.2.0

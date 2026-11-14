@@ -1,0 +1,3440 @@
+{
+  "version": 2,
+  "rows": [
+    {
+      "id": "TEXT-001",
+      "edits": [
+        {
+          "file": "SP04.BIN",
+          "string_id": 130,
+          "kind": "pool",
+          "old_hash": "3ac861492cec174739b83d618665cc6f01ab7db1",
+          "source_sha1": "680ffeaea3d0e9f650c62a648788c76b85790951",
+          "encoded_length": 497,
+          "new_hash": "5c4cd56c224d1e9e02ee77e8bb5dbd4fda7e3ff3",
+          "spans": [
+            {
+              "offset": 35,
+              "old_length": 1,
+              "old_hash": "c1dfd96eea8cc2b62785275bca38ac261256e278",
+              "xor_hex": "07"
+            }
+          ]
+        }
+      ],
+      "pce_evidence": {
+        "record": 222,
+        "module_sha1": "ae6020f9a32f81f21c811f6a5d3cbb9e4535ea53",
+        "strings": [
+          {
+            "offset": 5102,
+            "jp_sha1": "c6a39c030782e85fc35015383a25e1f67dc77309",
+            "key": "c6a39c030782"
+          }
+        ]
+      },
+      "date_mapping": {
+        "1996": "1991"
+      },
+      "notes": "Date-only substitutions; unchanged controls and localized ages. Contextual centuries for Japanese shorthand."
+    },
+    {
+      "id": "TEXT-002",
+      "edits": [
+        {
+          "file": "SP04.BIN",
+          "string_id": 132,
+          "kind": "pool",
+          "old_hash": "a01f48b0289002ba3ef88c34a3f7218e51d432f1",
+          "source_sha1": "680ffeaea3d0e9f650c62a648788c76b85790951",
+          "encoded_length": 539,
+          "new_hash": "621e31dec41b74dfcffdde2305e8db16d0b8b3d0",
+          "spans": [
+            {
+              "offset": 21,
+              "old_length": 2,
+              "old_hash": "b1d5781111d84f7b3fe45a0852e59758cd7a87e5",
+              "xor_hex": "0105"
+            },
+            {
+              "offset": 28,
+              "old_length": 2,
+              "old_hash": "17ba0791499db908433b80f37c5fbc89b870084b",
+              "xor_hex": "0107"
+            },
+            {
+              "offset": 39,
+              "old_length": 6,
+              "old_hash": "bfc0095540854de9b30c104a50137f117bdaf5d0",
+              "xor_hex": "5b534614140c"
+            },
+            {
+              "offset": 48,
+              "old_length": 2,
+              "old_hash": "b1d5781111d84f7b3fe45a0852e59758cd7a87e5",
+              "xor_hex": "0105"
+            }
+          ]
+        }
+      ],
+      "pce_evidence": {
+        "record": 222,
+        "module_sha1": "ae6020f9a32f81f21c811f6a5d3cbb9e4535ea53",
+        "strings": [
+          {
+            "offset": 5499,
+            "jp_sha1": "ed9427ebf830860aa399051199552faab0cc5998",
+            "key": "ed9427ebf830"
+          }
+        ]
+      },
+      "date_mapping": {
+        "2010": "2005",
+        "2011": "2006"
+      },
+      "notes": "Source outbreak August24,2005. Retain elapsed14 years since catastrophe1991. Japanese10 is a separate neutral-territory buffer duration, not the catastrophe interval."
+    },
+    {
+      "id": "TEXT-003",
+      "edits": [
+        {
+          "file": "SP04.BIN",
+          "string_id": 138,
+          "kind": "pool",
+          "old_hash": "33cd1a0778328318dce306b2e2eea826bf685d99",
+          "source_sha1": "680ffeaea3d0e9f650c62a648788c76b85790951",
+          "encoded_length": 450,
+          "new_hash": "d3316ef13d542fdac8bfaf3c8bd990d0e10ed60a",
+          "spans": [
+            {
+              "offset": 36,
+              "old_length": 1,
+              "old_hash": "902ba3cda1883801594b6e1b452790cc53948fda",
+              "xor_hex": "05"
+            },
+            {
+              "offset": 124,
+              "old_length": 1,
+              "old_hash": "902ba3cda1883801594b6e1b452790cc53948fda",
+              "xor_hex": "05"
+            },
+            {
+              "offset": 268,
+              "old_length": 1,
+              "old_hash": "902ba3cda1883801594b6e1b452790cc53948fda",
+              "xor_hex": "05"
+            }
+          ]
+        }
+      ],
+      "pce_evidence": {
+        "record": 222,
+        "module_sha1": "ae6020f9a32f81f21c811f6a5d3cbb9e4535ea53",
+        "strings": [
+          {
+            "offset": 6913,
+            "jp_sha1": "48b6a902d1484526658385b301e25ab5d83c7cbc",
+            "key": "48b6a902d148"
+          }
+        ]
+      },
+      "date_mapping": {
+        "2047": "2042"
+      },
+      "notes": "Date-only substitutions; unchanged controls and localized ages. Contextual centuries for Japanese shorthand."
+    },
+    {
+      "id": "TEXT-004",
+      "edits": [
+        {
+          "file": "SP04.BIN",
+          "string_id": 141,
+          "kind": "pool",
+          "old_hash": "756640f503fa738d3f8648ef75b7be68cb828655",
+          "source_sha1": "680ffeaea3d0e9f650c62a648788c76b85790951",
+          "encoded_length": 328,
+          "new_hash": "e214caa17f77f1f101cc6fab6f6fe0ad8d63b151",
+          "spans": [
+            {
+              "offset": 32,
+              "old_length": 1,
+              "old_hash": "902ba3cda1883801594b6e1b452790cc53948fda",
+              "xor_hex": "05"
+            }
+          ]
+        }
+      ],
+      "pce_evidence": {
+        "record": 222,
+        "module_sha1": "ae6020f9a32f81f21c811f6a5d3cbb9e4535ea53",
+        "strings": [
+          {
+            "offset": 7540,
+            "jp_sha1": "87cd8b99e3b94370e67b25fdab5d2e62c267c6e6",
+            "key": "87cd8b99e3b9"
+          }
+        ]
+      },
+      "date_mapping": {
+        "2047": "2042"
+      },
+      "notes": "Date-only substitutions; unchanged controls and localized ages. Contextual centuries for Japanese shorthand."
+    },
+    {
+      "id": "TEXT-005",
+      "edits": [
+        {
+          "file": "SP04.BIN",
+          "string_id": 142,
+          "kind": "pool",
+          "old_hash": "b163035e9f7b11e3adf03809fe449c8c34675de3",
+          "source_sha1": "680ffeaea3d0e9f650c62a648788c76b85790951",
+          "encoded_length": 326,
+          "new_hash": "9aee9f5e96fb04171884eb75e9bd41b4a32d5252",
+          "spans": [
+            {
+              "offset": 32,
+              "old_length": 1,
+              "old_hash": "902ba3cda1883801594b6e1b452790cc53948fda",
+              "xor_hex": "05"
+            }
+          ]
+        }
+      ],
+      "pce_evidence": {
+        "record": 222,
+        "module_sha1": "ae6020f9a32f81f21c811f6a5d3cbb9e4535ea53",
+        "strings": [
+          {
+            "offset": 7833,
+            "jp_sha1": "33c71dddd33ce2dd5107c7d1ed2073de06a19ca1",
+            "key": "33c71dddd33c"
+          }
+        ]
+      },
+      "date_mapping": {
+        "2047": "2042"
+      },
+      "notes": "Date-only substitutions; unchanged controls and localized ages. Contextual centuries for Japanese shorthand."
+    },
+    {
+      "id": "TEXT-006",
+      "edits": [
+        {
+          "file": "SP04.BIN",
+          "string_id": 161,
+          "kind": "pool",
+          "old_hash": "a65fc376599780b0256f59995b97a8f3ee3159e8",
+          "source_sha1": "680ffeaea3d0e9f650c62a648788c76b85790951",
+          "encoded_length": 475,
+          "new_hash": "f4737d8eb0a56256f164c09c523b2794725002d9",
+          "spans": [
+            {
+              "offset": 33,
+              "old_length": 2,
+              "old_hash": "98fbc42faedc02492397cb5962ea3a3ffc0a9243",
+              "xor_hex": "070d"
+            },
+            {
+              "offset": 182,
+              "old_length": 1,
+              "old_hash": "ac3478d69a3c81fa62e60f5c3696165a4e5e6ac4",
+              "xor_hex": "04"
+            }
+          ]
+        },
+        {
+          "file": "SP04.BIN",
+          "string_id": 162,
+          "kind": "pool",
+          "old_hash": "1c6c0275f6b3010f4f3977a07c3ed0c66649c4be",
+          "source_sha1": "680ffeaea3d0e9f650c62a648788c76b85790951",
+          "encoded_length": 483,
+          "new_hash": "888cb4b79acd4c079e9fd7f9638f760c5ed8a5e2",
+          "spans": [
+            {
+              "offset": 13,
+              "old_length": 1,
+              "old_hash": "902ba3cda1883801594b6e1b452790cc53948fda",
+              "xor_hex": "05"
+            },
+            {
+              "offset": 161,
+              "old_length": 1,
+              "old_hash": "902ba3cda1883801594b6e1b452790cc53948fda",
+              "xor_hex": "05"
+            },
+            {
+              "offset": 349,
+              "old_length": 1,
+              "old_hash": "902ba3cda1883801594b6e1b452790cc53948fda",
+              "xor_hex": "05"
+            }
+          ]
+        }
+      ],
+      "pce_evidence": {
+        "record": 222,
+        "module_sha1": "ae6020f9a32f81f21c811f6a5d3cbb9e4535ea53",
+        "strings": [
+          {
+            "offset": 11805,
+            "jp_sha1": "18897183c5421613cd8c0c113604d1be19c734d9",
+            "key": "18897183c542"
+          }
+        ]
+      },
+      "date_mapping": {
+        "2044": "2039",
+        "2045": "2041",
+        "2047": "2042"
+      },
+      "notes": "Date-only substitutions; unchanged controls and localized ages. Contextual centuries for Japanese shorthand."
+    },
+    {
+      "id": "TEXT-007",
+      "edits": [
+        {
+          "file": "SP04.BIN",
+          "string_id": 165,
+          "kind": "pool",
+          "old_hash": "889206ac14928eb38cd56a9a844e781525738e4d",
+          "source_sha1": "680ffeaea3d0e9f650c62a648788c76b85790951",
+          "encoded_length": 503,
+          "new_hash": "b7532b00c69161d60601f37b64a8243148794644",
+          "spans": [
+            {
+              "offset": 397,
+              "old_length": 1,
+              "old_hash": "ac3478d69a3c81fa62e60f5c3696165a4e5e6ac4",
+              "xor_hex": "05"
+            }
+          ]
+        }
+      ],
+      "pce_evidence": {
+        "record": 222,
+        "module_sha1": "ae6020f9a32f81f21c811f6a5d3cbb9e4535ea53",
+        "strings": [
+          {
+            "offset": 12813,
+            "jp_sha1": "ef4bd41b191f9a5566d8da1dc46b863a8812b39f",
+            "key": "ef4bd41b191f"
+          }
+        ]
+      },
+      "date_mapping": {
+        "2045": "2040"
+      },
+      "notes": "Date-only substitutions; unchanged controls and localized ages. Contextual centuries for Japanese shorthand."
+    },
+    {
+      "id": "TEXT-008",
+      "edits": [
+        {
+          "file": "SP04.BIN",
+          "string_id": 166,
+          "kind": "pool",
+          "old_hash": "7ac1514c17fe5a898b40366ed9cfbfb87168c626",
+          "source_sha1": "680ffeaea3d0e9f650c62a648788c76b85790951",
+          "encoded_length": 334,
+          "new_hash": "026c5b4ca50aace07eb7debfc6468b276497eb76",
+          "spans": [
+            {
+              "offset": 77,
+              "old_length": 1,
+              "old_hash": "902ba3cda1883801594b6e1b452790cc53948fda",
+              "xor_hex": "05"
+            }
+          ]
+        }
+      ],
+      "pce_evidence": {
+        "record": 222,
+        "module_sha1": "ae6020f9a32f81f21c811f6a5d3cbb9e4535ea53",
+        "strings": [
+          {
+            "offset": 13096,
+            "jp_sha1": "6026541e2c82f71c8d48dd9e164dc72f10fac82c",
+            "key": "6026541e2c82"
+          }
+        ]
+      },
+      "date_mapping": {
+        "2047": "2042"
+      },
+      "notes": "Date-only substitutions; unchanged controls and localized ages. Contextual centuries for Japanese shorthand."
+    },
+    {
+      "id": "TEXT-009",
+      "edits": [
+        {
+          "file": "SP04.BIN",
+          "string_id": 172,
+          "kind": "pool",
+          "old_hash": "270b2c7e6aead7a54e3a86b02da1fda86e006281",
+          "source_sha1": "680ffeaea3d0e9f650c62a648788c76b85790951",
+          "encoded_length": 570,
+          "new_hash": "d5efded7e6dba7d88b5ab1dd738ac14f61901da8",
+          "spans": [
+            {
+              "offset": 59,
+              "old_length": 1,
+              "old_hash": "ac3478d69a3c81fa62e60f5c3696165a4e5e6ac4",
+              "xor_hex": "05"
+            },
+            {
+              "offset": 125,
+              "old_length": 2,
+              "old_hash": "af3e133428b9e25c55bc59fe534248e6a0c0f17b",
+              "xor_hex": "0705"
+            }
+          ]
+        }
+      ],
+      "pce_evidence": {
+        "record": 222,
+        "module_sha1": "ae6020f9a32f81f21c811f6a5d3cbb9e4535ea53",
+        "strings": [
+          {
+            "offset": 14038,
+            "jp_sha1": "bfbcc69dc2554a1d8474122694a6ee9175d4b8be",
+            "key": "bfbcc69dc255"
+          }
+        ]
+      },
+      "date_mapping": {
+        "2035": "2030",
+        "2040": "2035"
+      },
+      "notes": "Date-only substitutions; unchanged controls and localized ages. Contextual centuries for Japanese shorthand."
+    },
+    {
+      "id": "TEXT-010",
+      "edits": [
+        {
+          "file": "SP04.BIN",
+          "string_id": 181,
+          "kind": "pool",
+          "old_hash": "fded65a7644a76915ea8b6ae114cc212b193f5d2",
+          "source_sha1": "680ffeaea3d0e9f650c62a648788c76b85790951",
+          "encoded_length": 342,
+          "new_hash": "c7318e58758569948521101e8a48edd8c7f34d5a",
+          "spans": [
+            {
+              "offset": 263,
+              "old_length": 1,
+              "old_hash": "902ba3cda1883801594b6e1b452790cc53948fda",
+              "xor_hex": "05"
+            }
+          ]
+        }
+      ],
+      "pce_evidence": {
+        "record": 222,
+        "module_sha1": "ae6020f9a32f81f21c811f6a5d3cbb9e4535ea53",
+        "strings": [
+          {
+            "offset": 16348,
+            "jp_sha1": "f8162d7cce5107956d8f450eefea875021250920",
+            "key": "f8162d7cce51"
+          }
+        ]
+      },
+      "date_mapping": {
+        "1997": "1992"
+      },
+      "notes": "Date-only substitutions; unchanged controls and localized ages. Contextual centuries for Japanese shorthand."
+    },
+    {
+      "id": "TEXT-011",
+      "edits": [
+        {
+          "file": "SP04.BIN",
+          "string_id": 184,
+          "kind": "pool",
+          "old_hash": "57f3d8d496de6a24b866dee91aad7dbaa0bd9bc4",
+          "source_sha1": "680ffeaea3d0e9f650c62a648788c76b85790951",
+          "encoded_length": 240,
+          "new_hash": "b172768f71ee29e75eb6b98b934cffc019dacfeb",
+          "spans": [
+            {
+              "offset": 115,
+              "old_length": 1,
+              "old_hash": "0ade7c2cf97f75d009975f4d720d1fa6c19f4897",
+              "xor_hex": "0c"
+            }
+          ]
+        }
+      ],
+      "pce_evidence": {
+        "record": 222,
+        "module_sha1": "ae6020f9a32f81f21c811f6a5d3cbb9e4535ea53",
+        "strings": [
+          {
+            "offset": 16852,
+            "jp_sha1": "400fdfc5a83d893071c61550f4752a20fc7f7ae4",
+            "key": "400fdfc5a83d"
+          }
+        ]
+      },
+      "date_mapping": {
+        "2049": "2045"
+      },
+      "notes": "Date-only substitutions; unchanged controls and localized ages. Contextual centuries for Japanese shorthand."
+    },
+    {
+      "id": "TEXT-013",
+      "edits": [
+        {
+          "file": "SP04.BIN",
+          "string_id": 195,
+          "kind": "pool",
+          "old_hash": "a2dc52413d350d03723476b11369e14fb86a12ff",
+          "source_sha1": "680ffeaea3d0e9f650c62a648788c76b85790951",
+          "encoded_length": 481,
+          "new_hash": "0e1b8169ed25fc267fb15e83d6d24d73c84cf7e1",
+          "spans": [
+            {
+              "offset": 357,
+              "old_length": 1,
+              "old_hash": "ac3478d69a3c81fa62e60f5c3696165a4e5e6ac4",
+              "xor_hex": "05"
+            }
+          ]
+        }
+      ],
+      "pce_evidence": {
+        "record": 222,
+        "module_sha1": "ae6020f9a32f81f21c811f6a5d3cbb9e4535ea53",
+        "strings": [
+          {
+            "offset": 19166,
+            "jp_sha1": "228aa5c7e952ecf9d17db7d2e16e0f23f38663a2",
+            "key": "228aa5c7e952"
+          }
+        ]
+      },
+      "date_mapping": {
+        "2045": "2040"
+      },
+      "notes": "Date-only substitutions; unchanged controls and localized ages. Contextual centuries for Japanese shorthand."
+    },
+    {
+      "id": "TEXT-014",
+      "edits": [
+        {
+          "file": "SP04.BIN",
+          "string_id": 196,
+          "kind": "pool",
+          "old_hash": "81b9808feaa99d0bfcfa9133713aade4cbf79850",
+          "source_sha1": "680ffeaea3d0e9f650c62a648788c76b85790951",
+          "encoded_length": 480,
+          "new_hash": "cd035692fa1a6f6686a1a841425859bbfa73fa2a",
+          "spans": [
+            {
+              "offset": 257,
+              "old_length": 1,
+              "old_hash": "902ba3cda1883801594b6e1b452790cc53948fda",
+              "xor_hex": "05"
+            }
+          ]
+        }
+      ],
+      "pce_evidence": {
+        "record": 222,
+        "module_sha1": "ae6020f9a32f81f21c811f6a5d3cbb9e4535ea53",
+        "strings": [
+          {
+            "offset": 19449,
+            "jp_sha1": "5fb96fad1bd29576b5a0b33e559e297cb09ce345",
+            "key": "5fb96fad1bd2"
+          }
+        ]
+      },
+      "date_mapping": {
+        "2047": "2042"
+      },
+      "notes": "Date-only substitutions; unchanged controls and localized ages. Contextual centuries for Japanese shorthand."
+    },
+    {
+      "id": "TEXT-015",
+      "edits": [
+        {
+          "file": "SP04.BIN",
+          "string_id": 197,
+          "kind": "pool",
+          "old_hash": "7234f518ed47920cd1cdbd4ba4d0a9926f47b176",
+          "source_sha1": "680ffeaea3d0e9f650c62a648788c76b85790951",
+          "encoded_length": 786,
+          "new_hash": "75e24667bc9da2010b7e4a874adfeab4691f6ab0",
+          "spans": [
+            {
+              "offset": 14,
+              "old_length": 1,
+              "old_hash": "ac3478d69a3c81fa62e60f5c3696165a4e5e6ac4",
+              "xor_hex": "05"
+            }
+          ]
+        }
+      ],
+      "pce_evidence": {
+        "record": 222,
+        "module_sha1": "ae6020f9a32f81f21c811f6a5d3cbb9e4535ea53",
+        "strings": [
+          {
+            "offset": 19701,
+            "jp_sha1": "e3bf02fbf5665e48b1e728f398d3f56b8762a7d8",
+            "key": "e3bf02fbf566"
+          }
+        ]
+      },
+      "date_mapping": {
+        "2025": "2020"
+      },
+      "notes": "Date-only substitutions; unchanged controls and localized ages. Contextual centuries for Japanese shorthand."
+    },
+    {
+      "id": "TEXT-016",
+      "edits": [
+        {
+          "file": "SP04.BIN",
+          "string_id": 201,
+          "kind": "pool",
+          "old_hash": "6a8246bcaa23213cbd231927adf0ad6f155e8936",
+          "source_sha1": "680ffeaea3d0e9f650c62a648788c76b85790951",
+          "encoded_length": 473,
+          "new_hash": "9c907165ffdb183717e92460f14dbea4c6941627",
+          "spans": [
+            {
+              "offset": 56,
+              "old_length": 1,
+              "old_hash": "902ba3cda1883801594b6e1b452790cc53948fda",
+              "xor_hex": "05"
+            }
+          ]
+        }
+      ],
+      "pce_evidence": {
+        "record": 222,
+        "module_sha1": "ae6020f9a32f81f21c811f6a5d3cbb9e4535ea53",
+        "strings": [
+          {
+            "offset": 20689,
+            "jp_sha1": "ff75b6a443a563b0d789918969f829111d66a339",
+            "key": "ff75b6a443a5"
+          }
+        ]
+      },
+      "date_mapping": {
+        "2047": "2042"
+      },
+      "notes": "Date-only substitutions; unchanged controls and localized ages. Contextual centuries for Japanese shorthand."
+    },
+    {
+      "id": "TEXT-017",
+      "edits": [
+        {
+          "file": "SP05.BIN",
+          "string_id": 223,
+          "kind": "pool",
+          "old_hash": "3d5cfda80ca0c2f5ad42a00c9986b9ac0f28346e",
+          "source_sha1": "6c1bd5eedb44e29116c88f0ad99fedb659a02b3a",
+          "encoded_length": 607,
+          "new_hash": "942985e7188ca659315c5183cda319767e12ccf3",
+          "spans": [
+            {
+              "offset": 286,
+              "old_length": 1,
+              "old_hash": "ac3478d69a3c81fa62e60f5c3696165a4e5e6ac4",
+              "xor_hex": "05"
+            },
+            {
+              "offset": 327,
+              "old_length": 1,
+              "old_hash": "c1dfd96eea8cc2b62785275bca38ac261256e278",
+              "xor_hex": "07"
+            },
+            {
+              "offset": 378,
+              "old_length": 1,
+              "old_hash": "c1dfd96eea8cc2b62785275bca38ac261256e278",
+              "xor_hex": "07"
+            },
+            {
+              "offset": 386,
+              "old_length": 1,
+              "old_hash": "902ba3cda1883801594b6e1b452790cc53948fda",
+              "xor_hex": "05"
+            },
+            {
+              "offset": 438,
+              "old_length": 2,
+              "old_hash": "98fbc42faedc02492397cb5962ea3a3ffc0a9243",
+              "xor_hex": "070d"
+            },
+            {
+              "offset": 469,
+              "old_length": 1,
+              "old_hash": "ac3478d69a3c81fa62e60f5c3696165a4e5e6ac4",
+              "xor_hex": "04"
+            },
+            {
+              "offset": 503,
+              "old_length": 1,
+              "old_hash": "c1dfd96eea8cc2b62785275bca38ac261256e278",
+              "xor_hex": "07"
+            },
+            {
+              "offset": 562,
+              "old_length": 1,
+              "old_hash": "ac3478d69a3c81fa62e60f5c3696165a4e5e6ac4",
+              "xor_hex": "05"
+            },
+            {
+              "offset": 582,
+              "old_length": 1,
+              "old_hash": "c1dfd96eea8cc2b62785275bca38ac261256e278",
+              "xor_hex": "07"
+            },
+            {
+              "offset": 603,
+              "old_length": 1,
+              "old_hash": "c1dfd96eea8cc2b62785275bca38ac261256e278",
+              "xor_hex": "07"
+            }
+          ]
+        }
+      ],
+      "pce_evidence": {
+        "record": 254,
+        "module_sha1": "68485aaf563e8420bd257048ed8d08599f0decb5",
+        "strings": [
+          {
+            "offset": 8045,
+            "jp_sha1": "a4bc3d67d63e0191f45532bb84737711b55766ce",
+            "key": "a4bc3d67d63e"
+          }
+        ]
+      },
+      "date_mapping": {
+        "2045": "2040",
+        "2046": "2041",
+        "2044": "2039",
+        "'47": "'42"
+      },
+      "notes": "Date-only substitutions; unchanged controls and localized ages. Contextual centuries for Japanese shorthand."
+    },
+    {
+      "id": "TEXT-018",
+      "edits": [
+        {
+          "file": "SP05.BIN",
+          "string_id": 235,
+          "kind": "pool",
+          "old_hash": "645081c87b904ea90d03144d20c19cd831663a4a",
+          "source_sha1": "6c1bd5eedb44e29116c88f0ad99fedb659a02b3a",
+          "encoded_length": 488,
+          "new_hash": "da250c9d284a64b7767a07ffae929589cd72113a",
+          "spans": [
+            {
+              "offset": 73,
+              "old_length": 2,
+              "old_hash": "0286dd552c9bea9a69ecb3759e7b94777635514b",
+              "xor_hex": "070b"
+            },
+            {
+              "offset": 190,
+              "old_length": 1,
+              "old_hash": "ac3478d69a3c81fa62e60f5c3696165a4e5e6ac4",
+              "xor_hex": "05"
+            },
+            {
+              "offset": 301,
+              "old_length": 1,
+              "old_hash": "c1dfd96eea8cc2b62785275bca38ac261256e278",
+              "xor_hex": "07"
+            },
+            {
+              "offset": 485,
+              "old_length": 1,
+              "old_hash": "902ba3cda1883801594b6e1b452790cc53948fda",
+              "xor_hex": "05"
+            }
+          ]
+        }
+      ],
+      "pce_evidence": {
+        "record": 254,
+        "module_sha1": "68485aaf563e8420bd257048ed8d08599f0decb5",
+        "strings": [
+          {
+            "offset": 8875,
+            "jp_sha1": "6b0684afcfc797f3f91556171593e26e1dff280b",
+            "key": "6b0684afcfc7"
+          }
+        ]
+      },
+      "date_mapping": {
+        "2043": "2038",
+        "2045": "2040",
+        "2046": "2041",
+        "2047": "2042"
+      },
+      "notes": "Date-only substitutions; unchanged controls and localized ages. Contextual centuries for Japanese shorthand."
+    },
+    {
+      "id": "TEXT-019",
+      "edits": [
+        {
+          "file": "SP05.BIN",
+          "string_id": 242,
+          "kind": "pool",
+          "old_hash": "59229036453bffd6efd66a54dd21d81d3e2c4638",
+          "source_sha1": "6c1bd5eedb44e29116c88f0ad99fedb659a02b3a",
+          "encoded_length": 298,
+          "new_hash": "b4d002968bd6a30b015785793f9068bc8626b9ba",
+          "spans": [
+            {
+              "offset": 266,
+              "old_length": 2,
+              "old_hash": "b6692ea5df920cad691c20319a6fffd7a4a766b8",
+              "xor_hex": "010b"
+            }
+          ]
+        }
+      ],
+      "pce_evidence": {
+        "record": 254,
+        "module_sha1": "68485aaf563e8420bd257048ed8d08599f0decb5",
+        "strings": [
+          {
+            "offset": 9640,
+            "jp_sha1": "71390a78f0dbdce9058f472b077bf8e745dedbe5",
+            "key": "71390a78f0db"
+          }
+        ]
+      },
+      "date_mapping": {
+        "2033": "2028"
+      },
+      "notes": "Date-only substitutions; unchanged controls and localized ages. Contextual centuries for Japanese shorthand."
+    },
+    {
+      "id": "TEXT-020",
+      "edits": [
+        {
+          "file": "SP05.BIN",
+          "string_id": 244,
+          "kind": "pool",
+          "old_hash": "c1035a91e813e154b725ee2bf8260bf512759043",
+          "source_sha1": "6c1bd5eedb44e29116c88f0ad99fedb659a02b3a",
+          "encoded_length": 264,
+          "new_hash": "da6330d95a8d697981393aa98b2c9ea9e3528afd",
+          "spans": [
+            {
+              "offset": 83,
+              "old_length": 1,
+              "old_hash": "902ba3cda1883801594b6e1b452790cc53948fda",
+              "xor_hex": "05"
+            }
+          ]
+        }
+      ],
+      "pce_evidence": {
+        "record": 254,
+        "module_sha1": "68485aaf563e8420bd257048ed8d08599f0decb5",
+        "strings": [
+          {
+            "offset": 10177,
+            "jp_sha1": "7581e55b7135464b8f91caa453d8c3e9a0711b71",
+            "key": "7581e55b7135"
+          }
+        ]
+      },
+      "date_mapping": {
+        "2047": "2042"
+      },
+      "notes": "Date-only substitutions; unchanged controls and localized ages. Contextual centuries for Japanese shorthand."
+    },
+    {
+      "id": "TEXT-021",
+      "edits": [
+        {
+          "file": "SP05.BIN",
+          "string_id": 245,
+          "kind": "pool",
+          "old_hash": "9d94097e95b5da1215fc4bce9e7c08fea0af956b",
+          "source_sha1": "6c1bd5eedb44e29116c88f0ad99fedb659a02b3a",
+          "encoded_length": 231,
+          "new_hash": "53f9483333400c708e32a6dda87a71bf71acdd5f",
+          "spans": [
+            {
+              "offset": 80,
+              "old_length": 2,
+              "old_hash": "0286dd552c9bea9a69ecb3759e7b94777635514b",
+              "xor_hex": "070b"
+            }
+          ]
+        }
+      ],
+      "pce_evidence": {
+        "record": 254,
+        "module_sha1": "68485aaf563e8420bd257048ed8d08599f0decb5",
+        "strings": [
+          {
+            "offset": 10359,
+            "jp_sha1": "24e47d484f83d2582127fae5004fa9ec4d169703",
+            "key": "24e47d484f83"
+          }
+        ]
+      },
+      "date_mapping": {
+        "2043": "2038"
+      },
+      "notes": "Date-only substitutions; unchanged controls and localized ages. Contextual centuries for Japanese shorthand."
+    },
+    {
+      "id": "TEXT-022",
+      "edits": [
+        {
+          "file": "SP05.BIN",
+          "string_id": 246,
+          "kind": "pool",
+          "old_hash": "0eca09450a2ccbd37c8a647bfa1753e9d43c4fb7",
+          "source_sha1": "6c1bd5eedb44e29116c88f0ad99fedb659a02b3a",
+          "encoded_length": 82,
+          "new_hash": "c683eb54783f1f409b15f0e32563d531fafbbdec",
+          "spans": [
+            {
+              "offset": 14,
+              "old_length": 1,
+              "old_hash": "902ba3cda1883801594b6e1b452790cc53948fda",
+              "xor_hex": "05"
+            }
+          ]
+        }
+      ],
+      "pce_evidence": {
+        "record": 254,
+        "module_sha1": "68485aaf563e8420bd257048ed8d08599f0decb5",
+        "strings": [
+          {
+            "offset": 10524,
+            "jp_sha1": "caeb35b43ce4f7b69e73b8e3709a953f12eb4694",
+            "key": "caeb35b43ce4"
+          }
+        ]
+      },
+      "date_mapping": {
+        "2047": "2042"
+      },
+      "notes": "Date-only substitutions; unchanged controls and localized ages. Contextual centuries for Japanese shorthand."
+    },
+    {
+      "id": "TEXT-023",
+      "edits": [
+        {
+          "file": "SP05.BIN",
+          "string_id": 253,
+          "kind": "pool",
+          "old_hash": "3e75b05113d71a65940b6ce801b20490a0d23dc8",
+          "source_sha1": "6c1bd5eedb44e29116c88f0ad99fedb659a02b3a",
+          "encoded_length": 277,
+          "new_hash": "d6678130188d12a51b96c72877e0c21e4bf14821",
+          "spans": [
+            {
+              "offset": 148,
+              "old_length": 1,
+              "old_hash": "c1dfd96eea8cc2b62785275bca38ac261256e278",
+              "xor_hex": "07"
+            }
+          ]
+        }
+      ],
+      "pce_evidence": {
+        "record": 254,
+        "module_sha1": "68485aaf563e8420bd257048ed8d08599f0decb5",
+        "strings": [
+          {
+            "offset": 10852,
+            "jp_sha1": "930086dfefe262a506186bb9394f089be3685a2e",
+            "key": "930086dfefe2"
+          }
+        ]
+      },
+      "date_mapping": {
+        "2046": "2041"
+      },
+      "notes": "Date-only substitutions; unchanged controls and localized ages. Contextual centuries for Japanese shorthand."
+    },
+    {
+      "id": "TEXT-024",
+      "edits": [
+        {
+          "file": "SP05.BIN",
+          "string_id": 254,
+          "kind": "pool",
+          "old_hash": "db3463ffc64f849e66e2f64be824014252180047",
+          "source_sha1": "6c1bd5eedb44e29116c88f0ad99fedb659a02b3a",
+          "encoded_length": 321,
+          "new_hash": "30a63996350ff541b993b7ab3dbe61c6a8ec2a3b",
+          "spans": [
+            {
+              "offset": 212,
+              "old_length": 1,
+              "old_hash": "ac3478d69a3c81fa62e60f5c3696165a4e5e6ac4",
+              "xor_hex": "05"
+            },
+            {
+              "offset": 265,
+              "old_length": 1,
+              "old_hash": "c1dfd96eea8cc2b62785275bca38ac261256e278",
+              "xor_hex": "07"
+            }
+          ]
+        }
+      ],
+      "pce_evidence": {
+        "record": 254,
+        "module_sha1": "68485aaf563e8420bd257048ed8d08599f0decb5",
+        "strings": [
+          {
+            "offset": 11014,
+            "jp_sha1": "ed61fd8b4ae03e4f5a0f490f52a7d3392b196be7",
+            "key": "ed61fd8b4ae0"
+          }
+        ]
+      },
+      "date_mapping": {
+        "2015": "2010",
+        "2046": "2041"
+      },
+      "notes": "Date-only substitutions; unchanged controls and localized ages. Contextual centuries for Japanese shorthand."
+    },
+    {
+      "id": "TEXT-025",
+      "edits": [
+        {
+          "file": "SP05.BIN",
+          "string_id": 255,
+          "kind": "pool",
+          "old_hash": "ffa238f2d384af19d0d03bf94c07716406a79ed9",
+          "source_sha1": "6c1bd5eedb44e29116c88f0ad99fedb659a02b3a",
+          "encoded_length": 77,
+          "new_hash": "1ca03b605a89d0f9c698e956879fb08ce93094ba",
+          "spans": [
+            {
+              "offset": 10,
+              "old_length": 1,
+              "old_hash": "902ba3cda1883801594b6e1b452790cc53948fda",
+              "xor_hex": "05"
+            }
+          ]
+        }
+      ],
+      "pce_evidence": {
+        "record": 254,
+        "module_sha1": "68485aaf563e8420bd257048ed8d08599f0decb5",
+        "strings": [
+          {
+            "offset": 11206,
+            "jp_sha1": "409c4e17781c56435291e93ac60564895756494b",
+            "key": "409c4e17781c"
+          }
+        ]
+      },
+      "date_mapping": {
+        "2047": "2042"
+      },
+      "notes": "Date-only substitutions; unchanged controls and localized ages. Contextual centuries for Japanese shorthand."
+    },
+    {
+      "id": "TEXT-026",
+      "edits": [
+        {
+          "file": "SP05.BIN",
+          "string_id": 256,
+          "kind": "pool",
+          "old_hash": "ddd6cc695d3df71a78d3a2fad6eb1afa21fdbbe9",
+          "source_sha1": "6c1bd5eedb44e29116c88f0ad99fedb659a02b3a",
+          "encoded_length": 266,
+          "new_hash": "da84b07a668367d2d5bff7ea9ba6fe05d06d10bb",
+          "spans": [
+            {
+              "offset": 204,
+              "old_length": 1,
+              "old_hash": "c1dfd96eea8cc2b62785275bca38ac261256e278",
+              "xor_hex": "07"
+            }
+          ]
+        }
+      ],
+      "pce_evidence": {
+        "record": 254,
+        "module_sha1": "68485aaf563e8420bd257048ed8d08599f0decb5",
+        "strings": [
+          {
+            "offset": 11240,
+            "jp_sha1": "ebc089fe576755b789980abccd239580f9473984",
+            "key": "ebc089fe5767"
+          }
+        ]
+      },
+      "date_mapping": {
+        "2046": "2041"
+      },
+      "notes": "Date-only substitutions; unchanged controls and localized ages. Contextual centuries for Japanese shorthand."
+    },
+    {
+      "id": "TEXT-033",
+      "edits": [
+        {
+          "file": "SP04.BIN",
+          "string_id": 174,
+          "kind": "pool",
+          "old_hash": "09a9effa97cb443ad3f61153a3850658ef0dcdcd",
+          "source_sha1": "680ffeaea3d0e9f650c62a648788c76b85790951",
+          "encoded_length": 565,
+          "new_hash": "deed1471aebf25ede88fbf303c1f0c8695a25441",
+          "spans": [
+            {
+              "offset": 440,
+              "old_length": 1,
+              "old_hash": "1b6453892473a467d07372d45eb05abc2031647a",
+              "xor_hex": "07"
+            }
+          ]
+        }
+      ],
+      "pce_evidence": {
+        "record": 222,
+        "module_sha1": "ae6020f9a32f81f21c811f6a5d3cbb9e4535ea53",
+        "strings": [
+          {
+            "offset": 14521,
+            "jp_sha1": "df0dd8ea8ec0b54e7c721b9914ad3f067a6617fc",
+            "key": "df0dd8ea8ec0"
+          }
+        ]
+      },
+      "date_mapping": {
+        "2040": "2030"
+      },
+      "notes": "Date-only substitutions; unchanged controls and localized ages. Contextual centuries for Japanese shorthand."
+    },
+    {
+      "id": "TERM-002",
+      "edits": [
+        {
+          "file": "SP13.BIN",
+          "string_id": 54,
+          "kind": "pool",
+          "old_hash": "dccf24f0a5af440732ac46fbec6db8fcc8a8258b",
+          "source_sha1": "d585425a70d860cdd2fdd69eb6db4a1da944f973",
+          "encoded_length": 9,
+          "new_hash": "10bdda2012bd4ee20c51401a768d85592a63e37c",
+          "spans": [
+            {
+              "offset": 0,
+              "old_length": 7,
+              "old_hash": "0d4679d4d4d08d8539a9218e96ba452156a4ad04",
+              "xor_hex": "1e111219391a10"
+            }
+          ]
+        },
+        {
+          "file": "SP13.BIN",
+          "string_id": 96,
+          "kind": "pool",
+          "old_hash": "0f8eb837441d4ecc5a9deb8db8737d38387a3d24",
+          "source_sha1": "d585425a70d860cdd2fdd69eb6db4a1da944f973",
+          "encoded_length": 87,
+          "new_hash": "7c7a335e8c03d5db49a00450f533d00e1cd22eed",
+          "spans": [
+            {
+              "offset": 0,
+              "old_length": 4,
+              "old_hash": "c812b3785c2ccbc7cdf7bd50b4f4b33e490c27d9",
+              "xor_hex": "1c0d1855"
+            },
+            {
+              "offset": 5,
+              "old_length": 1,
+              "old_hash": "ca73ab65568cd125c2d27a22bbd9e863c10b675d",
+              "xor_hex": "20"
+            },
+            {
+              "offset": 7,
+              "old_length": 11,
+              "old_hash": "ece4924bf4da4848b86e06b4b5e4adafa38356d4",
+              "xor_hex": "4e531c45541b1506411a0f"
+            },
+            {
+              "offset": 20,
+              "old_length": 5,
+              "old_hash": "f8c737bc7bec8113484e9b8d2e891d8fa520315a",
+              "xor_hex": "0a1a174b57"
+            },
+            {
+              "offset": 26,
+              "old_length": 15,
+              "old_hash": "34306885b48c0e44959347c52a40606039643c7b",
+              "xor_hex": "0a80099d020f0754460e1206011a53"
+            },
+            {
+              "offset": 42,
+              "old_length": 9,
+              "old_hash": "2f6bbf1dff7415af7e1cf84b89bf2390d3f9487d",
+              "xor_hex": "481148164526040c18"
+            },
+            {
+              "offset": 52,
+              "old_length": 12,
+              "old_hash": "3f7b5f836ba51465db64ef421633c0331d58d7c5",
+              "xor_hex": "2306041a97120b9d0e411804"
+            },
+            {
+              "offset": 65,
+              "old_length": 11,
+              "old_hash": "24a48addad65ff8069606a899ac6ea8cb4dc68eb",
+              "xor_hex": "4464361e0e1f021b16065d"
+            },
+            {
+              "offset": 77,
+              "old_length": 10,
+              "old_hash": "88ee9dffd7d6ccfd8f34b03d3894f8f08d5d9704",
+              "xor_hex": "654d50495245010e0e0e"
+            }
+          ]
+        },
+        {
+          "file": "SP13.BIN",
+          "string_id": 97,
+          "kind": "pool",
+          "old_hash": "277da658b50411a9aa418d592e4dcb65f0dc4e82",
+          "source_sha1": "d585425a70d860cdd2fdd69eb6db4a1da944f973",
+          "encoded_length": 72,
+          "new_hash": "0225edb5c55ceb5d72c3442abcada44684857dcd",
+          "spans": [
+            {
+              "offset": 0,
+              "old_length": 54,
+              "old_hash": "353f73f0a7c48d3eb629bb2305e47d57f49ddf89",
+              "xor_hex": "020953124533014a4552742a09413104424b24544d081b1201573f079307571c990d491c551a410c025e493d031d4e0115061b5e4ca1"
+            },
+            {
+              "offset": 55,
+              "old_length": 17,
+              "old_hash": "4f3e14442787f1480ae9a24493ef363912097d3b",
+              "xor_hex": "070b1901011b5c97700e1c4b27224b521f"
+            }
+          ]
+        },
+        {
+          "file": "SP13.BIN",
+          "string_id": 98,
+          "kind": "pool",
+          "old_hash": "524bd886de2d267287b69ea39c5927de38bc5827",
+          "source_sha1": "d585425a70d860cdd2fdd69eb6db4a1da944f973",
+          "encoded_length": 65,
+          "new_hash": "9f724d69e437b9e67da84c055e39b4d476a80a27",
+          "spans": [
+            {
+              "offset": 27,
+              "old_length": 1,
+              "old_hash": "b858cb282617fb0956d960215c8e84d1ccf909c6",
+              "xor_hex": "d2"
+            },
+            {
+              "offset": 31,
+              "old_length": 5,
+              "old_hash": "5dc3baffa07e95b42335652735cbaf1c2d96f493",
+              "xor_hex": "d2050a1c04"
+            },
+            {
+              "offset": 37,
+              "old_length": 28,
+              "old_hash": "6180e850eefc2391eb440209d2b076f3911132ba",
+              "xor_hex": "3b15131d4b1015091e4510482841210443390c10973940494748540e"
+            }
+          ]
+        },
+        {
+          "file": "SP13.BIN",
+          "string_id": 140,
+          "kind": "pool",
+          "old_hash": "84c22dab9758c0fd05bc44c1dfae242a9909fdc1",
+          "source_sha1": "d585425a70d860cdd2fdd69eb6db4a1da944f973",
+          "encoded_length": 20,
+          "new_hash": "f8a76096db1252d738292b97f4c8b11c80667e10",
+          "spans": [
+            {
+              "offset": 10,
+              "old_length": 7,
+              "old_hash": "0d4679d4d4d08d8539a9218e96ba452156a4ad04",
+              "xor_hex": "1e111219391a10"
+            }
+          ]
+        },
+        {
+          "file": "SUBCODE.BIN",
+          "string_id": 35,
+          "kind": "speaker",
+          "old_hash": "dccf24f0a5af440732ac46fbec6db8fcc8a8258b",
+          "source_sha1": "ce50e31315fcb743514218a276cf6a3e905b8276",
+          "encoded_length": 9,
+          "new_hash": "10bdda2012bd4ee20c51401a768d85592a63e37c",
+          "spans": [
+            {
+              "offset": 0,
+              "old_length": 7,
+              "old_hash": "0d4679d4d4d08d8539a9218e96ba452156a4ad04",
+              "xor_hex": "1e111219391a10"
+            }
+          ]
+        }
+      ],
+      "pce_evidence": {
+        "record": 430,
+        "module_sha1": "54fe608f0f0988a5ce3e4bb8fa8b78518b6e460b",
+        "strings": [
+          {
+            "offset": 10992,
+            "jp_sha1": "5904cae8fc582159b823f6115a02defc43ce6880",
+            "key": "5904cae8fc58"
+          },
+          {
+            "offset": 11042,
+            "jp_sha1": "a79c2ee4680c430c6667a83afb8f06b1841fb951",
+            "key": "a79c2ee4680c"
+          },
+          {
+            "offset": 11116,
+            "jp_sha1": "ab5c637794efbd0b7d16c2624699a6a0aed0f3b7",
+            "key": "ab5c637794ef"
+          }
+        ]
+      },
+      "notes": "Original concise English adaptation, padded within original slots. Corn. abbreviates Cornelius; Money abbreviates Miss Money; MaskRider omits the space. Full identities appear in prose. Combined final branch, attributes, pointers and speaker slots unchanged."
+    },
+    {
+      "id": "TERM-003",
+      "edits": [
+        {
+          "file": "SP13.BIN",
+          "string_id": 27,
+          "kind": "pool",
+          "old_hash": "dfc2c85730c03125a9e26a2b0bdaf8131c6fed4a",
+          "source_sha1": "d585425a70d860cdd2fdd69eb6db4a1da944f973",
+          "encoded_length": 6,
+          "new_hash": "fd423a812fbedc98188f77ca14b27f885c06ba99",
+          "spans": [
+            {
+              "offset": 0,
+              "old_length": 1,
+              "old_hash": "a36a6718f54524d846894fb04b5b885b4e43e63b",
+              "xor_hex": "04"
+            },
+            {
+              "offset": 2,
+              "old_length": 4,
+              "old_hash": "2812a66114b27814e7d8d999e56100993fccdd94",
+              "xor_hex": "1703414e"
+            }
+          ]
+        },
+        {
+          "file": "SP13.BIN",
+          "string_id": 99,
+          "kind": "pool",
+          "old_hash": "8b3d52e66912a1e4c2bf800f105634497f0651cc",
+          "source_sha1": "d585425a70d860cdd2fdd69eb6db4a1da944f973",
+          "encoded_length": 78,
+          "new_hash": "36b0ccf0e3493c5881088abab11504d4a45ec311",
+          "spans": [
+            {
+              "offset": 5,
+              "old_length": 4,
+              "old_hash": "4e72d9caec529c5cadf0a9dd5d3799831ce631f6",
+              "xor_hex": "0a065337"
+            },
+            {
+              "offset": 10,
+              "old_length": 9,
+              "old_hash": "afa979355cc345792005083ab70b7a30b52f0ce8",
+              "xor_hex": "1f0b174c1e1c0744d2"
+            },
+            {
+              "offset": 23,
+              "old_length": 1,
+              "old_hash": "a0f1490a20d0211c997b44bc357e1972deab8ae3",
+              "xor_hex": "12"
+            },
+            {
+              "offset": 25,
+              "old_length": 12,
+              "old_hash": "076d26ad00a5bea61f33c0c0dc74d8ff4f44a135",
+              "xor_hex": "0c4b1f80070c49060b105446"
+            },
+            {
+              "offset": 38,
+              "old_length": 7,
+              "old_hash": "91ce7e35ceae7925672d887d848085b17a3560e5",
+              "xor_hex": "1f4d9611041f1f"
+            },
+            {
+              "offset": 48,
+              "old_length": 23,
+              "old_hash": "9bd1f70d6886209feb13ba413f213a7bcb841752",
+              "xor_hex": "351b45673c11180908499654291545635953544943414c"
+            },
+            {
+              "offset": 72,
+              "old_length": 6,
+              "old_hash": "39d33cf721395ed1ff723db50c9879720734d04a",
+              "xor_hex": "6e494e4a410e"
+            }
+          ]
+        },
+        {
+          "file": "SP13.BIN",
+          "string_id": 100,
+          "kind": "pool",
+          "old_hash": "7c0f9ddfb751bf7779a2586e14feea12f46cfda8",
+          "source_sha1": "d585425a70d860cdd2fdd69eb6db4a1da944f973",
+          "encoded_length": 86,
+          "new_hash": "4215a72ed5a48fd630ebe3950c66a94cca2e9099",
+          "spans": [
+            {
+              "offset": 0,
+              "old_length": 6,
+              "old_hash": "b213ee35310089c46d019cdd389c846e36bbae76",
+              "xor_hex": "104f0642174b"
+            },
+            {
+              "offset": 7,
+              "old_length": 6,
+              "old_hash": "57ae0a27cf5b4b5ce9b43a50f700ea4973bf1a73",
+              "xor_hex": "250814481c44"
+            },
+            {
+              "offset": 14,
+              "old_length": 3,
+              "old_hash": "b9dc9d8cb52edb821b0da78df2b6682eb917d791",
+              "xor_hex": "2d011c"
+            },
+            {
+              "offset": 18,
+              "old_length": 3,
+              "old_hash": "ac7f0390156a0330a8a29750a7256910868b3956",
+              "xor_hex": "1b0e41"
+            },
+            {
+              "offset": 22,
+              "old_length": 4,
+              "old_hash": "a2f22d3913ceaa7a94d1902ce0d7befda6b92974",
+              "xor_hex": "48181216"
+            },
+            {
+              "offset": 27,
+              "old_length": 33,
+              "old_hash": "42a98fd713be9c6ae128880271623855ffe8a219",
+              "xor_hex": "060d13090959411145144845121145470f024544563d0443530d9705178107084e"
+            },
+            {
+              "offset": 61,
+              "old_length": 7,
+              "old_hash": "40e1f2c5d2ec12cf685e291fe7e847e30fcde358",
+              "xor_hex": "041a4c57041c01"
+            },
+            {
+              "offset": 69,
+              "old_length": 17,
+              "old_hash": "4781b28adbc7a2ae58afe7c9fd63375f12c045eb",
+              "xor_hex": "0115040d07594e0d520c1a05055e4e5401"
+            }
+          ]
+        },
+        {
+          "file": "SP13.BIN",
+          "string_id": 101,
+          "kind": "pool",
+          "old_hash": "8434948a8186f0406a91e05ba4091a8db46d5759",
+          "source_sha1": "d585425a70d860cdd2fdd69eb6db4a1da944f973",
+          "encoded_length": 120,
+          "new_hash": "0e00b7c0138423f14fae3a640fadb23094baadaf",
+          "spans": [
+            {
+              "offset": 0,
+              "old_length": 3,
+              "old_hash": "93ef0dd827103681fcee453b78be2ff14e1a261d",
+              "xor_hex": "100101"
+            },
+            {
+              "offset": 4,
+              "old_length": 6,
+              "old_hash": "2de81c27896ad5f63603f75c6947f44bfa4b8141",
+              "xor_hex": "8e2f0a1c4d06"
+            },
+            {
+              "offset": 11,
+              "old_length": 9,
+              "old_hash": "f484f848c3aeed3831f7df6a4ff850f528e077de",
+              "xor_hex": "562d0f1d52171d158d"
+            },
+            {
+              "offset": 21,
+              "old_length": 55,
+              "old_hash": "b88e9a17fa5f6ba4947d27ce228f11adbc6af014",
+              "xor_hex": "11041a080302d2038b5216151946051c021355130f4c4119064f1a4641546a021f1402018111930104584f18160a174c114f4712061207"
+            },
+            {
+              "offset": 77,
+              "old_length": 1,
+              "old_hash": "a0f1490a20d0211c997b44bc357e1972deab8ae3",
+              "xor_hex": "1a"
+            },
+            {
+              "offset": 79,
+              "old_length": 8,
+              "old_hash": "18fe2f4c1a5606dd557cbc387ab4d1da125f5066",
+              "xor_hex": "1252190a11541c50"
+            },
+            {
+              "offset": 88,
+              "old_length": 8,
+              "old_hash": "419b4898e90d687c55c3b4f71b7f312664e2b6e2",
+              "xor_hex": "414c4cd257454152"
+            },
+            {
+              "offset": 97,
+              "old_length": 5,
+              "old_hash": "df055c669423fda108ed197fb55c5ed489d433e1",
+              "xor_hex": "5448454952"
+            },
+            {
+              "offset": 103,
+              "old_length": 4,
+              "old_hash": "bc70b0511b268629ba9522bfbab90c0cec91c2c1",
+              "xor_hex": "48414952"
+            },
+            {
+              "offset": 108,
+              "old_length": 4,
+              "old_hash": "c4eb7d7fea3c62a8db7078eb05a68993b456c503",
+              "xor_hex": "4c494b45"
+            },
+            {
+              "offset": 113,
+              "old_length": 5,
+              "old_hash": "6cd4c20c2d0d521aec12a658a0350b40cb82e06a",
+              "xor_hex": "544841540e"
+            }
+          ]
+        },
+        {
+          "file": "SP13.BIN",
+          "string_id": 102,
+          "kind": "pool",
+          "old_hash": "421d1c0f0f463834737e6ba2b7b90c3c8d658a45",
+          "source_sha1": "d585425a70d860cdd2fdd69eb6db4a1da944f973",
+          "encoded_length": 64,
+          "new_hash": "4e4a19ed834c7db023ea53966ca4287cfa504eef",
+          "spans": [
+            {
+              "offset": 0,
+              "old_length": 11,
+              "old_hash": "2653ed574c4be8f07aa567d16a5548b8520e13e0",
+              "xor_hex": "1c0d411d53431101111c1e"
+            },
+            {
+              "offset": 12,
+              "old_length": 1,
+              "old_hash": "3c363836cf4e16666669a25da280a1865c2d2874",
+              "xor_hex": "16"
+            },
+            {
+              "offset": 14,
+              "old_length": 1,
+              "old_hash": "86f7e437faa5a7fce15d1ddcb9eaeaea377667b8",
+              "xor_hex": "08"
+            },
+            {
+              "offset": 17,
+              "old_length": 2,
+              "old_hash": "fa6af6e97d010a98b5bfb9dc17862112afda402e",
+              "xor_hex": "101a"
+            },
+            {
+              "offset": 20,
+              "old_length": 3,
+              "old_hash": "94ff89b44b15a12d9e495fc9fce8ce2633c3d4f1",
+              "xor_hex": "53050c"
+            },
+            {
+              "offset": 24,
+              "old_length": 23,
+              "old_hash": "994dc8a4c929a99fc48a0953b32f375c3044a9c2",
+              "xor_hex": "450e53952202179c0d091b1a5f0c671b0d084f1d50150b"
+            },
+            {
+              "offset": 49,
+              "old_length": 8,
+              "old_hash": "13883a3cfaf5b1f4c456add2300792b52513f2d9",
+              "xor_hex": "2c09165a4943414c"
+            },
+            {
+              "offset": 58,
+              "old_length": 6,
+              "old_hash": "39d33cf721395ed1ff723db50c9879720734d04a",
+              "xor_hex": "6e494e4a410e"
+            }
+          ]
+        },
+        {
+          "file": "SP13.BIN",
+          "string_id": 142,
+          "kind": "pool",
+          "old_hash": "9e53c1c4aad36c7ce70e3a3d864e24ff23871d19",
+          "source_sha1": "d585425a70d860cdd2fdd69eb6db4a1da944f973",
+          "encoded_length": 17,
+          "new_hash": "92c2a6189049ee453d328f71a9d4f9da25be5372",
+          "spans": [
+            {
+              "offset": 10,
+              "old_length": 1,
+              "old_hash": "a36a6718f54524d846894fb04b5b885b4e43e63b",
+              "xor_hex": "04"
+            },
+            {
+              "offset": 12,
+              "old_length": 5,
+              "old_hash": "569b699fe397a68da525590834742693be096777",
+              "xor_hex": "1703414e0e"
+            }
+          ]
+        },
+        {
+          "file": "SUBCODE.BIN",
+          "string_id": 36,
+          "kind": "speaker",
+          "old_hash": "dfc2c85730c03125a9e26a2b0bdaf8131c6fed4a",
+          "source_sha1": "ce50e31315fcb743514218a276cf6a3e905b8276",
+          "encoded_length": 6,
+          "new_hash": "fd423a812fbedc98188f77ca14b27f885c06ba99",
+          "spans": [
+            {
+              "offset": 0,
+              "old_length": 1,
+              "old_hash": "a36a6718f54524d846894fb04b5b885b4e43e63b",
+              "xor_hex": "04"
+            },
+            {
+              "offset": 2,
+              "old_length": 4,
+              "old_hash": "2812a66114b27814e7d8d999e56100993fccdd94",
+              "xor_hex": "1703414e"
+            }
+          ]
+        }
+      ],
+      "pce_evidence": {
+        "record": 430,
+        "module_sha1": "54fe608f0f0988a5ce3e4bb8fa8b78518b6e460b",
+        "strings": [
+          {
+            "offset": 11147,
+            "jp_sha1": "9d7b23ad6e903d166bccad3c7012a094d813c008",
+            "key": "9d7b23ad6e90"
+          },
+          {
+            "offset": 11203,
+            "jp_sha1": "45c69b31e1349cd9e54aa68eb54467e4e1880683",
+            "key": "45c69b31e134"
+          },
+          {
+            "offset": 11256,
+            "jp_sha1": "b4743a8b5f66b4c73e77e344be8b49a233238684",
+            "key": "b4743a8b5f66"
+          },
+          {
+            "offset": 11305,
+            "jp_sha1": "ac33bd74354d3ca2e60de1155e44eb3b992a4998",
+            "key": "ac33bd74354d"
+          }
+        ]
+      },
+      "notes": "Original concise English adaptation, padded within original slots. Corn. abbreviates Cornelius; Money abbreviates Miss Money; MaskRider omits the space. Full identities appear in prose. Combined final branch, attributes, pointers and speaker slots unchanged."
+    },
+    {
+      "id": "TERM-004",
+      "edits": [
+        {
+          "file": "SP13.BIN",
+          "string_id": 41,
+          "kind": "pool",
+          "old_hash": "0ca6b22f305e234fd31ada61f5ef594b007cc357",
+          "source_sha1": "d585425a70d860cdd2fdd69eb6db4a1da944f973",
+          "encoded_length": 8,
+          "new_hash": "27ac5872f43ba1fce8d7dbea1d9aea97eee715d4",
+          "spans": [
+            {
+              "offset": 0,
+              "old_length": 8,
+              "old_hash": "0ca6b22f305e234fd31ada61f5ef594b007cc357",
+              "xor_hex": "0c1e57453b454441"
+            }
+          ]
+        },
+        {
+          "file": "SP13.BIN",
+          "string_id": 103,
+          "kind": "pool",
+          "old_hash": "ade2b871f84cf58fc75c8741f9e08466c1cd4c3a",
+          "source_sha1": "d585425a70d860cdd2fdd69eb6db4a1da944f973",
+          "encoded_length": 93,
+          "new_hash": "a922283f9ac90e5bf0c2cdfc21efd4585fe771d3",
+          "spans": [
+            {
+              "offset": 5,
+              "old_length": 17,
+              "old_hash": "03cfc235e2058f1399440b410f77d9e6db5f57ec",
+              "xor_hex": "050a1f181a1a45491a534433090a160b48"
+            },
+            {
+              "offset": 24,
+              "old_length": 26,
+              "old_hash": "52cd0f0f0ff6ad389248999afdfcd0d6b0a6c659",
+              "xor_hex": "534c0e9c0604188002111104065514174f1a481b480447061c4e"
+            },
+            {
+              "offset": 51,
+              "old_length": 1,
+              "old_hash": "4dc7c9ec434ed06502767136789763ec11d2c4b7",
+              "xor_hex": "1d"
+            },
+            {
+              "offset": 53,
+              "old_length": 6,
+              "old_hash": "47fa04ee156d21a31373f22a7daf8dfef29f372d",
+              "xor_hex": "5614071a0a0a"
+            },
+            {
+              "offset": 60,
+              "old_length": 33,
+              "old_hash": "ab698031a490470b4eb05cf2a99bfa5d2a84baac",
+              "xor_hex": "8b84080a014f4702151e45469d506c111b07410a522c0b080b1e1a4b525302d90e"
+            }
+          ]
+        },
+        {
+          "file": "SP13.BIN",
+          "string_id": 104,
+          "kind": "pool",
+          "old_hash": "8a89c1f5cd10cc51f5477f2cf6e634899cfd0e4f",
+          "source_sha1": "d585425a70d860cdd2fdd69eb6db4a1da944f973",
+          "encoded_length": 337,
+          "new_hash": "3f10c385b3f9ad05da96695e72bc0cf51780746e",
+          "spans": [
+            {
+              "offset": 0,
+              "old_length": 2,
+              "old_hash": "d7acc4a63bfa4b603392fb8adfd2d4ca89c11f46",
+              "xor_hex": "0111"
+            },
+            {
+              "offset": 3,
+              "old_length": 4,
+              "old_hash": "8583bce5ecef6362e1457c534c22ba63fccb95e5",
+              "xor_hex": "13131007"
+            },
+            {
+              "offset": 8,
+              "old_length": 5,
+              "old_hash": "9191dd9ea9bed5c9267af85009c5443145a20fef",
+              "xor_hex": "0a44141149"
+            },
+            {
+              "offset": 14,
+              "old_length": 1,
+              "old_hash": "58e6b3a414a1e090dfc6029add0f3555ccba127f",
+              "xor_hex": "0a"
+            },
+            {
+              "offset": 16,
+              "old_length": 25,
+              "old_hash": "d1bf7e5929f723e0d758de74265f6e9368552034",
+              "xor_hex": "09410511491c4f4908411901098b1dcb4d584806471f480d0b"
+            },
+            {
+              "offset": 42,
+              "old_length": 5,
+              "old_hash": "c947e6bbfae2a1b0807d8ac4e5b1d5411bf9e08b",
+              "xor_hex": "5a4137451e"
+            },
+            {
+              "offset": 48,
+              "old_length": 9,
+              "old_hash": "868ca42d4511b3c8882318ba1133816d5e0264f1",
+              "xor_hex": "060a1c075346130109"
+            },
+            {
+              "offset": 58,
+              "old_length": 43,
+              "old_hash": "d86788e12bf19e5bfb24e709b65606bd34e65935",
+              "xor_hex": "161a0a543d0b1b074507413f18041045324c0a110f015a972c45419f15130a0d0c410249151b1b1441061c"
+            },
+            {
+              "offset": 102,
+              "old_length": 17,
+              "old_hash": "5a6660520a9d2a61c08fdf3b0c9ccb1e727ef3e9",
+              "xor_hex": "0502020c07051d4e119b110b0293151304"
+            },
+            {
+              "offset": 120,
+              "old_length": 3,
+              "old_hash": "94ff89b44b15a12d9e495fc9fce8ce2633c3d4f1",
+              "xor_hex": "44561e"
+            },
+            {
+              "offset": 124,
+              "old_length": 1,
+              "old_hash": "07c342be6e560e7f43842e2e21b774e61d85f047",
+              "xor_hex": "01"
+            },
+            {
+              "offset": 127,
+              "old_length": 26,
+              "old_hash": "fdf9c1a5550eba7c949c7818b954318a869a4b63",
+              "xor_hex": "430c40544f741c071a0b4b1a0f0a97481157189d26090a41190e"
+            },
+            {
+              "offset": 154,
+              "old_length": 5,
+              "old_hash": "0fb2d31eadae8d4e84e36a0eca18806d1a9472fe",
+              "xor_hex": "015957111a"
+            },
+            {
+              "offset": 160,
+              "old_length": 6,
+              "old_hash": "d8ceb7f30a2f2f8aeef0f2c084fa8b47c083ff7b",
+              "xor_hex": "4d42933c0c01"
+            },
+            {
+              "offset": 167,
+              "old_length": 5,
+              "old_hash": "b00729c352e2c8037d4cce2b6a699d86efb2c4cc",
+              "xor_hex": "051b1b171d"
+            },
+            {
+              "offset": 173,
+              "old_length": 9,
+              "old_hash": "2db2789f69fbc2c89dad7c9777a52dcff8d0da63",
+              "xor_hex": "0d1017410203d20e46"
+            },
+            {
+              "offset": 184,
+              "old_length": 2,
+              "old_hash": "b452d6b23b3c28f85872fffd99bdaf90ce0ad44a",
+              "xor_hex": "0f08"
+            },
+            {
+              "offset": 187,
+              "old_length": 16,
+              "old_hash": "93ab75935b098e6b5d19a6b8c7d5aaaff66ab1b7",
+              "xor_hex": "080c4f14549a144d040d1b131d080902"
+            },
+            {
+              "offset": 204,
+              "old_length": 5,
+              "old_hash": "9c283224352159eb45b3df473f0cea07de9722ca",
+              "xor_hex": "1f16070a17"
+            },
+            {
+              "offset": 210,
+              "old_length": 14,
+              "old_hash": "45a52de4d6497875f11f2868d9c617336b080892",
+              "xor_hex": "0c1645940507084e530409060c5c"
+            },
+            {
+              "offset": 225,
+              "old_length": 12,
+              "old_hash": "b890819e756161ea86f9213a2e7d6fa0bc68f9cc",
+              "xor_hex": "434f4e5354495455454e5453"
+            },
+            {
+              "offset": 238,
+              "old_length": 12,
+              "old_hash": "7da7901ddd58f945d0da5d58df55cac1fb7c2fa0",
+              "xor_hex": "44454349444544d254484154"
+            },
+            {
+              "offset": 251,
+              "old_length": 4,
+              "old_hash": "f1fdd46d8d229558fa889e1610ec4ca9adc25328",
+              "xor_hex": "54484559"
+            },
+            {
+              "offset": 256,
+              "old_length": 6,
+              "old_hash": "aa8bf4d6ee955407ef7b2efb65240a2391810fb1",
+              "xor_hex": "57414e544544"
+            },
+            {
+              "offset": 263,
+              "old_length": 19,
+              "old_hash": "a2edfcc69dd6be10c9066f28eba68cf0d632cbe4",
+              "xor_hex": "524550524553454e54415449564553d257484f"
+            },
+            {
+              "offset": 283,
+              "old_length": 5,
+              "old_hash": "0955dd818206a40e89101bb215630d0623e506fc",
+              "xor_hex": "574f554c44"
+            },
+            {
+              "offset": 289,
+              "old_length": 2,
+              "old_hash": "eadcd9bd2a09c75aef04954e6799e50278ee124a",
+              "xor_hex": "444f"
+            },
+            {
+              "offset": 292,
+              "old_length": 9,
+              "old_hash": "1af17e73721dbe0c40011b82ed4bb1a7dbe3ce29",
+              "xor_hex": "534f4d455448494e47"
+            },
+            {
+              "offset": 302,
+              "old_length": 10,
+              "old_hash": "42805246ca196408d1e010e2e75d5a68f30ccd8a",
+              "xor_hex": "41424f5554d25245414c"
+            },
+            {
+              "offset": 313,
+              "old_length": 8,
+              "old_hash": "c8ceaa59d3031a316e2e212b2b1b80213368b10b",
+              "xor_hex": "56494f4c454e4345"
+            },
+            {
+              "offset": 322,
+              "old_length": 2,
+              "old_hash": "db3d405b10675998c030223177d42e71b4e7a312",
+              "xor_hex": "4f4e"
+            },
+            {
+              "offset": 325,
+              "old_length": 3,
+              "old_hash": "bbccdf2efb33b52e6c9d0a14dd70b2d415fbea6e",
+              "xor_hex": "544845"
+            },
+            {
+              "offset": 329,
+              "old_length": 8,
+              "old_hash": "887b756fc729d5db623cdfb93e32aaaa998451bf",
+              "xor_hex": "535452454554530e"
+            }
+          ]
+        },
+        {
+          "file": "SP13.BIN",
+          "string_id": 105,
+          "kind": "pool",
+          "old_hash": "11902310d66978a52768e80720a53f842e056613",
+          "source_sha1": "d585425a70d860cdd2fdd69eb6db4a1da944f973",
+          "encoded_length": 87,
+          "new_hash": "8775d95229e9e6b2a4101623e1aa97bc059faddf",
+          "spans": [
+            {
+              "offset": 0,
+              "old_length": 1,
+              "old_hash": "08a914cde05039694ef0194d9ee79ff9a79dde33",
+              "xor_hex": "1b"
+            },
+            {
+              "offset": 2,
+              "old_length": 2,
+              "old_hash": "858dddfff48f3b31105d4c66a134c8639b8b0bba",
+              "xor_hex": "450b"
+            },
+            {
+              "offset": 5,
+              "old_length": 7,
+              "old_hash": "79ec6934788e6ef8bb9395116a9dbf86f863ef0d",
+              "xor_hex": "411f4053694514"
+            },
+            {
+              "offset": 13,
+              "old_length": 28,
+              "old_hash": "1bfe0fa4d10f292b8d1e85be16d384c40ac87c0e",
+              "xor_hex": "02490456164f1a0f41154208141997610d151601d2121e0557060c17"
+            },
+            {
+              "offset": 42,
+              "old_length": 18,
+              "old_hash": "3d13fe2ece545f42745e89b5c3c50920fa347f58",
+              "xor_hex": "0c41051a060d0245471502041c125a9b2b01"
+            },
+            {
+              "offset": 61,
+              "old_length": 21,
+              "old_hash": "5e15449a505af74bb89ac556187c1795cf129dfe",
+              "xor_hex": "160987491f0c1904190b0a1c5345545b49444e0754"
+            },
+            {
+              "offset": 83,
+              "old_length": 3,
+              "old_hash": "e7927c915b855b9e88821bf6e59fefbc941cabfa",
+              "xor_hex": "49541f"
+            }
+          ]
+        },
+        {
+          "file": "SP13.BIN",
+          "string_id": 106,
+          "kind": "pool",
+          "old_hash": "a6735f094fdeecb92d1cfbb30597046d1b4a2fce",
+          "source_sha1": "d585425a70d860cdd2fdd69eb6db4a1da944f973",
+          "encoded_length": 109,
+          "new_hash": "9ad1f03300e624d7a8f30fadeafc7d802300118e",
+          "spans": [
+            {
+              "offset": 0,
+              "old_length": 54,
+              "old_hash": "bfdc66fe9be8a80ae0543f48805326c96469a1a7",
+              "xor_hex": "181b140c541c0d41074b1c47151c55124f524e24444c161b555594860b0a1f1541071a451d4f501f0e16070a040345491e071706070a"
+            },
+            {
+              "offset": 56,
+              "old_length": 7,
+              "old_hash": "93991b95f3687a605a44d0d62b784685c415881c",
+              "xor_hex": "140e191d0c1d4b"
+            },
+            {
+              "offset": 64,
+              "old_length": 3,
+              "old_hash": "786e97b3ee9fc4b292d5852c2c5943153c4ce91a",
+              "xor_hex": "041a06"
+            },
+            {
+              "offset": 68,
+              "old_length": 1,
+              "old_hash": "d1854cae891ec7b29161ccaf79a24b00c274bdaa",
+              "xor_hex": "17"
+            },
+            {
+              "offset": 70,
+              "old_length": 22,
+              "old_hash": "192eb19e5e263ad3f5f14146df612fb48a8eba41",
+              "xor_hex": "1b4549034107130906010e544845d253554343455353"
+            },
+            {
+              "offset": 93,
+              "old_length": 2,
+              "old_hash": "de04fa0e29f9b35e24905d2e512bedc9bb6e09e4",
+              "xor_hex": "4f46"
+            },
+            {
+              "offset": 96,
+              "old_length": 3,
+              "old_hash": "bbccdf2efb33b52e6c9d0a14dd70b2d415fbea6e",
+              "xor_hex": "544845"
+            },
+            {
+              "offset": 100,
+              "old_length": 9,
+              "old_hash": "694238e882eb3f07228361caa5e8b45e3e808151",
+              "xor_hex": "4f524947494e414c0e"
+            }
+          ]
+        },
+        {
+          "file": "SP13.BIN",
+          "string_id": 107,
+          "kind": "pool",
+          "old_hash": "aa8e133f9dfbf783515f1ecadce20334e7b0f4c7",
+          "source_sha1": "d585425a70d860cdd2fdd69eb6db4a1da944f973",
+          "encoded_length": 77,
+          "new_hash": "37f5087e3b5f4557f93cce1e743b29226dd8be94",
+          "spans": [
+            {
+              "offset": 0,
+              "old_length": 2,
+              "old_hash": "9d31985fda87b26d6554bcfbfe7dbc398b51917e",
+              "xor_hex": "0807"
+            },
+            {
+              "offset": 3,
+              "old_length": 27,
+              "old_hash": "7be9344f082f0e9de044bc4310a983ff548f47bb",
+              "xor_hex": "115208051d171117444f0e4f11410b155e44540115545708140101"
+            },
+            {
+              "offset": 31,
+              "old_length": 36,
+              "old_hash": "dc45db9f621462de9a9a3c6cd26f0b99e9af7ddb",
+              "xor_hex": "150453461a01450945074e541b4803492f074105451a1046034152d2545241494e494e47"
+            },
+            {
+              "offset": 68,
+              "old_length": 9,
+              "old_hash": "88153efad9ef3b0b843da39a3a5a36ea68ba41ab",
+              "xor_hex": "505552504f5345530e"
+            }
+          ]
+        },
+        {
+          "file": "SP13.BIN",
+          "string_id": 108,
+          "kind": "pool",
+          "old_hash": "a0657fadb19c20e57349cb6ab8c8c7c91d881a9a",
+          "source_sha1": "d585425a70d860cdd2fdd69eb6db4a1da944f973",
+          "encoded_length": 240,
+          "new_hash": "d73fa3d9d601072e08cf5bd694939b21914cf156",
+          "spans": [
+            {
+              "offset": 0,
+              "old_length": 22,
+              "old_hash": "b63dfd904d0e154c08e24e32abebc893a5e9e1e2",
+              "xor_hex": "051553164c184d091f491d0245051c57541f4507111a"
+            },
+            {
+              "offset": 25,
+              "old_length": 6,
+              "old_hash": "7b80a82225e9eccb279fd86753128d35a31162e3",
+              "xor_hex": "090f4e121601"
+            },
+            {
+              "offset": 32,
+              "old_length": 2,
+              "old_hash": "9384a39d69d104db5d1db7ccceae2ce0cb6c01c2",
+              "xor_hex": "0949"
+            },
+            {
+              "offset": 35,
+              "old_length": 17,
+              "old_hash": "7ad7ad02344f3657d2324cf966f71b6854ef554a",
+              "xor_hex": "491a1115160e562101450a56020f4d1648"
+            },
+            {
+              "offset": 53,
+              "old_length": 15,
+              "old_hash": "2c303613dd1033746c9b81b9e83f469b004fe70f",
+              "xor_hex": "0545054e480c0b911d160496461b1d"
+            },
+            {
+              "offset": 69,
+              "old_length": 7,
+              "old_hash": "8c833ed76cf05561561de9fd2c083d699e93a6a7",
+              "xor_hex": "120403574f0e49"
+            },
+            {
+              "offset": 77,
+              "old_length": 18,
+              "old_hash": "cd2acefc4215e6cdc0a1418b22f5ef44a61d0bc2",
+              "xor_hex": "4f110c081b0b54160e50524f424c454d530e"
+            },
+            {
+              "offset": 97,
+              "old_length": 10,
+              "old_hash": "869d7b6f48f8304200658db9424120c280de4b49",
+              "xor_hex": "695453d2414c57415953"
+            },
+            {
+              "offset": 108,
+              "old_length": 6,
+              "old_hash": "61bd7e6e3a0b6728f6c676b789160ebd9195381a",
+              "xor_hex": "454153494552"
+            },
+            {
+              "offset": 115,
+              "old_length": 2,
+              "old_hash": "4374aaee247fb237ce6c97d5c8d64bbe474d16de",
+              "xor_hex": "544f"
+            },
+            {
+              "offset": 118,
+              "old_length": 5,
+              "old_hash": "71a7ca855f38bc559d0fce6727c7e2d8ada99ff8",
+              "xor_hex": "504f494e54"
+            },
+            {
+              "offset": 124,
+              "old_length": 3,
+              "old_hash": "bbccdf2efb33b52e6c9d0a14dd70b2d415fbea6e",
+              "xor_hex": "544845"
+            },
+            {
+              "offset": 128,
+              "old_length": 9,
+              "old_hash": "8caf06d68c45a8eb2248c7a360b7050339966ad5",
+              "xor_hex": "464947555245d24154"
+            },
+            {
+              "offset": 138,
+              "old_length": 3,
+              "old_hash": "bbccdf2efb33b52e6c9d0a14dd70b2d415fbea6e",
+              "xor_hex": "544845"
+            },
+            {
+              "offset": 142,
+              "old_length": 5,
+              "old_hash": "d0941e68da8f38151ff86a61fc59f7c5cf9fcaa2",
+              "xor_hex": "4f54484552"
+            },
+            {
+              "offset": 148,
+              "old_length": 3,
+              "old_hash": "b5cd271b521acc9a180d5ff625e8f9a71c235729",
+              "xor_hex": "475559"
+            },
+            {
+              "offset": 152,
+              "old_length": 4,
+              "old_hash": "d820aa5f8750fdde33200083b0702a32578a6c95",
+              "xor_hex": "5448414e"
+            },
+            {
+              "offset": 157,
+              "old_length": 2,
+              "old_hash": "6c5522ca8af86fc5069b737bb8892b3ea61002c2",
+              "xor_hex": "4954"
+            },
+            {
+              "offset": 160,
+              "old_length": 2,
+              "old_hash": "b47f363e2b430c0647f14deea3eced9b0ef300ce",
+              "xor_hex": "4953"
+            },
+            {
+              "offset": 163,
+              "old_length": 8,
+              "old_hash": "c08c274e807c79c34bd80ea6e3c18e4d70e4ee42",
+              "xor_hex": "544fd2504f494e54"
+            },
+            {
+              "offset": 172,
+              "old_length": 2,
+              "old_hash": "6c5522ca8af86fc5069b737bb8892b3ea61002c2",
+              "xor_hex": "4954"
+            },
+            {
+              "offset": 175,
+              "old_length": 2,
+              "old_hash": "27e90dfa57c358acfaf470860f6f72c9282ce995",
+              "xor_hex": "4154"
+            },
+            {
+              "offset": 178,
+              "old_length": 9,
+              "old_hash": "17ddec5322f6ed39ba7950d6ba2bd67e67db5b6a",
+              "xor_hex": "594f555253454c460e"
+            },
+            {
+              "offset": 189,
+              "old_length": 12,
+              "old_hash": "5aaf7fc2c56b126ea97fba07d728b7af8f14569e",
+              "xor_hex": "68554d414ed24e4154555245"
+            },
+            {
+              "offset": 202,
+              "old_length": 6,
+              "old_hash": "a5a6f7f7abd1981ebc7f4d750eb30037bec30514",
+              "xor_hex": "4841534e0754"
+            },
+            {
+              "offset": 209,
+              "old_length": 7,
+              "old_hash": "37c6c57bedf4305ef41249c1794760b5cb8fad17",
+              "xor_hex": "4348414e474544"
+            },
+            {
+              "offset": 217,
+              "old_length": 2,
+              "old_hash": "27e90dfa57c358acfaf470860f6f72c9282ce995",
+              "xor_hex": "4154"
+            },
+            {
+              "offset": 220,
+              "old_length": 9,
+              "old_hash": "1e43d4e7fc21b766fa1ebd3aac6e940c20b89431",
+              "xor_hex": "414c4cd253494e4345"
+            },
+            {
+              "offset": 230,
+              "old_length": 5,
+              "old_hash": "b804662fb4789f2726c6b0cdc6bffed73b78c7ab",
+              "xor_hex": "5448454e0c"
+            },
+            {
+              "offset": 236,
+              "old_length": 4,
+              "old_hash": "da689a0f9fc2c16c5a69afee4885edfa21993303",
+              "xor_hex": "4855481f"
+            }
+          ]
+        },
+        {
+          "file": "SP13.BIN",
+          "string_id": 109,
+          "kind": "pool",
+          "old_hash": "fd64ea6020496fd753be7f498989c38db01fb227",
+          "source_sha1": "d585425a70d860cdd2fdd69eb6db4a1da944f973",
+          "encoded_length": 69,
+          "new_hash": "13669779820255b12d57c2a4c389285c68e3e850",
+          "spans": [
+            {
+              "offset": 17,
+              "old_length": 8,
+              "old_hash": "6d98f9df913c41a71c83cf94c742d2d416664ca4",
+              "xor_hex": "131704011a0b03d2"
+            },
+            {
+              "offset": 26,
+              "old_length": 1,
+              "old_hash": "a0f1490a20d0211c997b44bc357e1972deab8ae3",
+              "xor_hex": "1d"
+            },
+            {
+              "offset": 28,
+              "old_length": 16,
+              "old_hash": "216d4ab5b969da352a20627be1536c0b41653524",
+              "xor_hex": "35041c972d480a011607104d07415353"
+            },
+            {
+              "offset": 45,
+              "old_length": 4,
+              "old_hash": "0b1e95cfd9775191a7224d0a218ae79187e80c1d",
+              "xor_hex": "46524f4d"
+            },
+            {
+              "offset": 50,
+              "old_length": 19,
+              "old_hash": "a5e7c154e95b71059894dfa56a9b1d56d5b27df2",
+              "xor_hex": "da6c455448414cd2654e464f5243455253d90e"
+            }
+          ]
+        },
+        {
+          "file": "SP13.BIN",
+          "string_id": 144,
+          "kind": "pool",
+          "old_hash": "6d61a4c8bc694cd111f9ba70b2f10e4477f6de99",
+          "source_sha1": "d585425a70d860cdd2fdd69eb6db4a1da944f973",
+          "encoded_length": 53,
+          "new_hash": "0270648fe099a2e8a1b5b81d47fc52666f7c0dcc",
+          "spans": [
+            {
+              "offset": 14,
+              "old_length": 10,
+              "old_hash": "12938618b9122c6d16b101cdc044812c6e60ab98",
+              "xor_hex": "412016100e4f45119a05"
+            },
+            {
+              "offset": 25,
+              "old_length": 3,
+              "old_hash": "76f3b5a7170a92212a5f574d56031269c1f38638",
+              "xor_hex": "041007"
+            },
+            {
+              "offset": 29,
+              "old_length": 8,
+              "old_hash": "8c9d2ab6f4f152f51aa46e502b4ca54933825f01",
+              "xor_hex": "16d207014f2c4c35"
+            },
+            {
+              "offset": 38,
+              "old_length": 4,
+              "old_hash": "fa216e0fc54f99959154f1d749e2e57d52cd6c92",
+              "xor_hex": "1a46414c"
+            },
+            {
+              "offset": 43,
+              "old_length": 10,
+              "old_hash": "1b146f63b6eda2ec1a7c93b11392ce36b4049bc7",
+              "xor_hex": "654e464f52434552530e"
+            }
+          ]
+        },
+        {
+          "file": "SP13.BIN",
+          "string_id": 244,
+          "kind": "pool",
+          "old_hash": "74f80c9d35425cba8b8fe5d915b883e2b4ed7ab9",
+          "source_sha1": "d585425a70d860cdd2fdd69eb6db4a1da944f973",
+          "encoded_length": 63,
+          "new_hash": "00b56bf76d0ca3f6fa873d941bf81cbac9df5e04",
+          "spans": [
+            {
+              "offset": 16,
+              "old_length": 6,
+              "old_hash": "6080e771cb8519d19141d49d8039e853fce9fe4c",
+              "xor_hex": "0c1e57453b45"
+            },
+            {
+              "offset": 23,
+              "old_length": 12,
+              "old_hash": "4db97a5aceba37acda4e95cdac443f5879c56b39",
+              "xor_hex": "084444070b1ad51f9c04194f"
+            },
+            {
+              "offset": 36,
+              "old_length": 27,
+              "old_hash": "2aa313d5a693c2dbe64b1e74bf6516ed001c886b",
+              "xor_hex": "48161c411c4548124104410741180a05050e4e06420e171b5b540e"
+            }
+          ]
+        },
+        {
+          "file": "SUBCODE.BIN",
+          "string_id": 37,
+          "kind": "speaker",
+          "old_hash": "0ca6b22f305e234fd31ada61f5ef594b007cc357",
+          "source_sha1": "ce50e31315fcb743514218a276cf6a3e905b8276",
+          "encoded_length": 8,
+          "new_hash": "27ac5872f43ba1fce8d7dbea1d9aea97eee715d4",
+          "spans": [
+            {
+              "offset": 0,
+              "old_length": 8,
+              "old_hash": "0ca6b22f305e234fd31ada61f5ef594b007cc357",
+              "xor_hex": "0c1e57453b454441"
+            }
+          ]
+        }
+      ],
+      "pce_evidence": {
+        "record": 430,
+        "module_sha1": "54fe608f0f0988a5ce3e4bb8fa8b78518b6e460b",
+        "strings": [
+          {
+            "offset": 11337,
+            "jp_sha1": "c10d08ef499f79f58a75c1211adc38b452707e38",
+            "key": "c10d08ef499f"
+          },
+          {
+            "offset": 11434,
+            "jp_sha1": "1546a3ac34ffe76a306b53cb77c8d6ab49446c9e",
+            "key": "1546a3ac34ff"
+          },
+          {
+            "offset": 11552,
+            "jp_sha1": "953f74d75affbdb6d9d833a7885905b56fec6c75",
+            "key": "953f74d75aff"
+          },
+          {
+            "offset": 11613,
+            "jp_sha1": "edc53ad9b33609a1e0a4b750a3cd4cb501669dc8",
+            "key": "edc53ad9b336"
+          },
+          {
+            "offset": 11662,
+            "jp_sha1": "a50ee2bd08225a333a34d51c2eb701d8a64af1fd",
+            "key": "a50ee2bd0822"
+          },
+          {
+            "offset": 11696,
+            "jp_sha1": "2b2fdef7695224baf4ecec40dfe76a0dcbb208cf",
+            "key": "2b2fdef76952"
+          },
+          {
+            "offset": 11724,
+            "jp_sha1": "402d81c93968c1e740a3beb46b515b59fc8ade93",
+            "key": "402d81c93968"
+          }
+        ]
+      },
+      "notes": "Original concise English adaptation, padded within original slots. Corn. abbreviates Cornelius; Money abbreviates Miss Money; MaskRider omits the space. Full identities appear in prose. Combined final branch, attributes, pointers and speaker slots unchanged."
+    },
+    {
+      "id": "TERM-005",
+      "edits": [
+        {
+          "file": "SP13.BIN",
+          "string_id": 15,
+          "kind": "pool",
+          "old_hash": "96b04c22aff3abc7d1b4c40eff6070bb9c4917d3",
+          "source_sha1": "d585425a70d860cdd2fdd69eb6db4a1da944f973",
+          "encoded_length": 6,
+          "new_hash": "ccbbb34e228b4ab8382aa07779db5ce5204095f2",
+          "spans": [
+            {
+              "offset": 0,
+              "old_length": 1,
+              "old_hash": "32096c2e0eff33d844ee6d675407ace18289357d",
+              "xor_hex": "0e"
+            },
+            {
+              "offset": 3,
+              "old_length": 3,
+              "old_hash": "3be48e13e9b30a63e9f424c820cc2e041758d7dd",
+              "xor_hex": "110b41"
+            }
+          ]
+        },
+        {
+          "file": "SP13.BIN",
+          "string_id": 110,
+          "kind": "pool",
+          "old_hash": "a03716c0d54d0d7ca0b5a8db5b0b831aec6b2c34",
+          "source_sha1": "d585425a70d860cdd2fdd69eb6db4a1da944f973",
+          "encoded_length": 111,
+          "new_hash": "2e33500d65dd5e227bdc135989b4c0b546dc7ac7",
+          "spans": [
+            {
+              "offset": 6,
+              "old_length": 1,
+              "old_hash": "51e69892ab49df85c6230ccc57f8e1d1606caccc",
+              "xor_hex": "1a"
+            },
+            {
+              "offset": 9,
+              "old_length": 1,
+              "old_hash": "7a81af3e591ac713f81ea1efe93dcf36157d8376",
+              "xor_hex": "1a"
+            },
+            {
+              "offset": 12,
+              "old_length": 56,
+              "old_hash": "e997709a0e607a4af0e32e2a9b4bdd329e15df70",
+              "xor_hex": "52491a536d0d0116533e0a0a45185fd2121a0a9f02224f081d1e0c024101071406410254071d57d25721484d9e1c02041654081c0441100a"
+            },
+            {
+              "offset": 69,
+              "old_length": 7,
+              "old_hash": "b06b9da28561798a139937918a2123f053062bf7",
+              "xor_hex": "14040316160e41"
+            },
+            {
+              "offset": 77,
+              "old_length": 5,
+              "old_hash": "dc151a5a2b81059b41f6ee78dbae34c114ce1528",
+              "xor_hex": "5448454d45"
+            },
+            {
+              "offset": 83,
+              "old_length": 9,
+              "old_hash": "4215fe8695101611f506155300fb4d0787f1dd93",
+              "xor_hex": "484552450cd2484f57"
+            },
+            {
+              "offset": 93,
+              "old_length": 5,
+              "old_hash": "5780daf6db0b013dbf82807c9f85abba683b0820",
+              "xor_hex": "41424f5554"
+            },
+            {
+              "offset": 99,
+              "old_length": 3,
+              "old_hash": "8af56de68279cb6f5ed022f31af18b9fcdcc2e92",
+              "xor_hex": "594f55"
+            },
+            {
+              "offset": 103,
+              "old_length": 8,
+              "old_hash": "585737fdefb8e376d1c134893feee65275858080",
+              "xor_hex": "67494c4c49414e1f"
+            }
+          ]
+        },
+        {
+          "file": "SP13.BIN",
+          "string_id": 111,
+          "kind": "pool",
+          "old_hash": "14ddbea56c6ff6855c4bd54bce686b362430a717",
+          "source_sha1": "d585425a70d860cdd2fdd69eb6db4a1da944f973",
+          "encoded_length": 108,
+          "new_hash": "14345e1a9f7a4a28ff70f31fe7126149336c8b96",
+          "spans": [
+            {
+              "offset": 0,
+              "old_length": 6,
+              "old_hash": "6cb10b19414e5aab8567be9bc3e5280556f34111",
+              "xor_hex": "10450a064157"
+            },
+            {
+              "offset": 7,
+              "old_length": 3,
+              "old_hash": "61baf2a7b13346c7e803d7e085d5bf3dad4a9125",
+              "xor_hex": "390d41"
+            },
+            {
+              "offset": 11,
+              "old_length": 1,
+              "old_hash": "7a81af3e591ac713f81ea1efe93dcf36157d8376",
+              "xor_hex": "4f"
+            },
+            {
+              "offset": 13,
+              "old_length": 18,
+              "old_hash": "1368f249ea10794bb245fcc38aeb05ad08d47d34",
+              "xor_hex": "40450e696802551603164e0d9d1056041c1d"
+            },
+            {
+              "offset": 32,
+              "old_length": 8,
+              "old_hash": "fff5ca460bcc244befc18c3bb0605118ed6a00f6",
+              "xor_hex": "2d931852064f1c1e"
+            },
+            {
+              "offset": 41,
+              "old_length": 1,
+              "old_hash": "8efd86fb78a56a5145ed7739dcb00c78581c5375",
+              "xor_hex": "17"
+            },
+            {
+              "offset": 43,
+              "old_length": 17,
+              "old_hash": "fded69308ef8747023a40656de887f8835e745aa",
+              "xor_hex": "104e0855174f060853821f0e430d45410e"
+            },
+            {
+              "offset": 61,
+              "old_length": 5,
+              "old_hash": "1714a877571d278d77388760be5d895f2539bf35",
+              "xor_hex": "1b0b44411c"
+            },
+            {
+              "offset": 67,
+              "old_length": 10,
+              "old_hash": "1cb661593a6e220075d95c81918774aba7e2777a",
+              "xor_hex": "930d48131a0145244f09"
+            },
+            {
+              "offset": 79,
+              "old_length": 13,
+              "old_hash": "b9963d988201469233c455647204f93c40112220",
+              "xor_hex": "0c534d4841524143544552530c"
+            },
+            {
+              "offset": 93,
+              "old_length": 9,
+              "old_hash": "a4d05eafeeb1a9ff7cca9c88402dc023e5533701",
+              "xor_hex": "485548d26d4554414c"
+            },
+            {
+              "offset": 103,
+              "old_length": 5,
+              "old_hash": "a477278a129143a5dbcc667e835391e889d969da",
+              "xor_hex": "674541521f"
+            }
+          ]
+        },
+        {
+          "file": "SP13.BIN",
+          "string_id": 112,
+          "kind": "pool",
+          "old_hash": "e6127d203fd28a007d276d74a5a244d8ea7bff7c",
+          "source_sha1": "d585425a70d860cdd2fdd69eb6db4a1da944f973",
+          "encoded_length": 104,
+          "new_hash": "b3fc3e09613797b1baba87739915a1a18512ddd0",
+          "spans": [
+            {
+              "offset": 0,
+              "old_length": 6,
+              "old_hash": "3b783d03529778d0d8a53dda81dfc619dcd0301d",
+              "xor_hex": "0a18194d4645"
+            },
+            {
+              "offset": 7,
+              "old_length": 74,
+              "old_hash": "9c45b8b50358caf3636fe8b9d5acd2759b7046c6",
+              "xor_hex": "2a4f1b03100f100b4354531c4114411a11411741494e328186094119411c1145174e0b0344461413544f48284e141c1d17970e1b4e1111411586571148034915520a0f4408550a065316"
+            },
+            {
+              "offset": 82,
+              "old_length": 4,
+              "old_hash": "46383b7f8d64f0d248383fb718b1fc1b78933641",
+              "xor_hex": "15104b52"
+            },
+            {
+              "offset": 87,
+              "old_length": 4,
+              "old_hash": "d820aa5f8750fdde33200083b0702a32578a6c95",
+              "xor_hex": "5448414e"
+            },
+            {
+              "offset": 92,
+              "old_length": 12,
+              "old_hash": "9b26fe709095f7f563fddf9a0492c423606794e5",
+              "xor_hex": "594f55d25245414c495a450e"
+            }
+          ]
+        },
+        {
+          "file": "SP13.BIN",
+          "string_id": 113,
+          "kind": "pool",
+          "old_hash": "dbff1ec097c69256965c46560df552f12e0d93c6",
+          "source_sha1": "d585425a70d860cdd2fdd69eb6db4a1da944f973",
+          "encoded_length": 124,
+          "new_hash": "4778e77f1cad8b351d08af7ba69c6fbd853ebf76",
+          "spans": [
+            {
+              "offset": 0,
+              "old_length": 1,
+              "old_hash": "e2415cb7f63df0c9de23362326ad3c37a9adfc96",
+              "xor_hex": "03"
+            },
+            {
+              "offset": 2,
+              "old_length": 6,
+              "old_hash": "ba457edab6fc69da42c5a97752252a979834c098",
+              "xor_hex": "0454461d0408"
+            },
+            {
+              "offset": 9,
+              "old_length": 8,
+              "old_hash": "c9641f6604784a78ec0c1b9ecf52dd9969a6957e",
+              "xor_hex": "18170c1b4f121701"
+            },
+            {
+              "offset": 18,
+              "old_length": 29,
+              "old_hash": "12fd1d562597bf89ab4ff7c7055313b425b24d3a",
+              "xor_hex": "184f1b4503411b0a109c139d41101a1b544d4e6d0406020d5b456e4810"
+            },
+            {
+              "offset": 50,
+              "old_length": 7,
+              "old_hash": "272e4cf4225386dcd527ca21c7bd062b3e54dd47",
+              "xor_hex": "151d0e450f1f40"
+            },
+            {
+              "offset": 58,
+              "old_length": 3,
+              "old_hash": "ea1462c1fe6251c885dce5002ad73edb0f613628",
+              "xor_hex": "0c1c10"
+            },
+            {
+              "offset": 62,
+              "old_length": 5,
+              "old_hash": "16a5ba2ed059a2820ab2c5a88a856d946e4d25d0",
+              "xor_hex": "4903070a09"
+            },
+            {
+              "offset": 68,
+              "old_length": 4,
+              "old_hash": "32ff28e3fabd4d632aa4b382d5a1bc153d022b1e",
+              "xor_hex": "02010145"
+            },
+            {
+              "offset": 73,
+              "old_length": 23,
+              "old_hash": "22c0c70854a15d663c2be4862b89f8f5c260e25c",
+              "xor_hex": "4e02124d0c4e43290c17130a17045c530ed27745075245"
+            },
+            {
+              "offset": 97,
+              "old_length": 3,
+              "old_hash": "bbccdf2efb33b52e6c9d0a14dd70b2d415fbea6e",
+              "xor_hex": "544845"
+            },
+            {
+              "offset": 101,
+              "old_length": 4,
+              "old_hash": "f8969a18a0daab6f59b42990613def0b8b6d48eb",
+              "xor_hex": "4f4e4c59"
+            },
+            {
+              "offset": 106,
+              "old_length": 4,
+              "old_hash": "c9c64e071d2853bc7906c017a231ad1cc46ab630",
+              "xor_hex": "5245414c"
+            },
+            {
+              "offset": 111,
+              "old_length": 4,
+              "old_hash": "c7d08f6c9857f5fd5b0f2e3d55954466f32fc1d3",
+              "xor_hex": "4f4e4553"
+            },
+            {
+              "offset": 116,
+              "old_length": 2,
+              "old_hash": "af10ef20dd9060bbeead0afbc55381a66af442ef",
+              "xor_hex": "494e"
+            },
+            {
+              "offset": 119,
+              "old_length": 5,
+              "old_hash": "f4cbbcf79fb3cf5228b59ac99c5be2c7eece9083",
+              "xor_hex": "484552450e"
+            }
+          ]
+        },
+        {
+          "file": "SP13.BIN",
+          "string_id": 114,
+          "kind": "pool",
+          "old_hash": "e2b3d0d91687fd562035c01f20b9f6d5dae61dd7",
+          "source_sha1": "d585425a70d860cdd2fdd69eb6db4a1da944f973",
+          "encoded_length": 64,
+          "new_hash": "1ae04f7250a846e94f4016111c3114b2d18e7ced",
+          "spans": [
+            {
+              "offset": 4,
+              "old_length": 27,
+              "old_hash": "d86f9f66a0ea86739459f4f4fc8c15325c4af6e6",
+              "xor_hex": "071055071c0a4d9f5063061d541613478a530211594f53d21a0c81"
+            },
+            {
+              "offset": 32,
+              "old_length": 8,
+              "old_hash": "34c69cdffa6846e4252736e5830cf1cedf8a0f91",
+              "xor_hex": "48221a0201170954"
+            },
+            {
+              "offset": 41,
+              "old_length": 4,
+              "old_hash": "ad367612541b54a08c67626acc4897e3dc0d3990",
+              "xor_hex": "4d455353"
+            },
+            {
+              "offset": 46,
+              "old_length": 4,
+              "old_hash": "8fcd25a39d2037183044a8897e9a5333d727fded",
+              "xor_hex": "57495448"
+            },
+            {
+              "offset": 51,
+              "old_length": 3,
+              "old_hash": "330317bbc57fe33d9b3505994863adb733da347d",
+              "xor_hex": "48494d"
+            },
+            {
+              "offset": 55,
+              "old_length": 3,
+              "old_hash": "164a5c24f5df5918f285228443ab87209785293f",
+              "xor_hex": "544f4f"
+            },
+            {
+              "offset": 59,
+              "old_length": 5,
+              "old_hash": "5870f27dcdfc8f7ee2d4e272d489db1fa32b592a",
+              "xor_hex": "4d55434801"
+            }
+          ]
+        },
+        {
+          "file": "SP13.BIN",
+          "string_id": 146,
+          "kind": "pool",
+          "old_hash": "8518bc44199b329a5ac14c218e1d4b995a413cf9",
+          "source_sha1": "d585425a70d860cdd2fdd69eb6db4a1da944f973",
+          "encoded_length": 27,
+          "new_hash": "ea3bc8e898d9e195d9c98e7fce206a484ff5d39e",
+          "spans": [
+            {
+              "offset": 10,
+              "old_length": 6,
+              "old_hash": "99b1c76bce27a1963b114cb6f9d3740072d559a6",
+              "xor_hex": "39011653020e"
+            },
+            {
+              "offset": 18,
+              "old_length": 4,
+              "old_hash": "3886bf0c7f0766824d63d4f5ffea9ede5d8d4d76",
+              "xor_hex": "110b4f02"
+            },
+            {
+              "offset": 23,
+              "old_length": 4,
+              "old_hash": "5abc59c64b9a9f974c49662adbd97e29b5ef6289",
+              "xor_hex": "4755590e"
+            }
+          ]
+        },
+        {
+          "file": "SUBCODE.BIN",
+          "string_id": 38,
+          "kind": "speaker",
+          "old_hash": "96b04c22aff3abc7d1b4c40eff6070bb9c4917d3",
+          "source_sha1": "ce50e31315fcb743514218a276cf6a3e905b8276",
+          "encoded_length": 6,
+          "new_hash": "ccbbb34e228b4ab8382aa07779db5ce5204095f2",
+          "spans": [
+            {
+              "offset": 0,
+              "old_length": 1,
+              "old_hash": "32096c2e0eff33d844ee6d675407ace18289357d",
+              "xor_hex": "0e"
+            },
+            {
+              "offset": 3,
+              "old_length": 3,
+              "old_hash": "3be48e13e9b30a63e9f424c820cc2e041758d7dd",
+              "xor_hex": "110b41"
+            }
+          ]
+        }
+      ],
+      "pce_evidence": {
+        "record": 430,
+        "module_sha1": "54fe608f0f0988a5ce3e4bb8fa8b78518b6e460b",
+        "strings": [
+          {
+            "offset": 11746,
+            "jp_sha1": "e28637acd732eb60ff3e0f3956a0166aefa2c2cf",
+            "key": "e28637acd732"
+          },
+          {
+            "offset": 11791,
+            "jp_sha1": "4995dfc3659b151e412bd47bf9a8933992bc9336",
+            "key": "4995dfc3659b"
+          },
+          {
+            "offset": 11843,
+            "jp_sha1": "249a310928d420cfa118b5afc056b95d515006db",
+            "key": "249a310928d4"
+          },
+          {
+            "offset": 11900,
+            "jp_sha1": "63d6e26ec14b999c6af792da9989ab61e92192c1",
+            "key": "63d6e26ec14b"
+          },
+          {
+            "offset": 11978,
+            "jp_sha1": "7d55c77fd77ec0798e3dc3105a771b95c6252349",
+            "key": "7d55c77fd77e"
+          }
+        ]
+      },
+      "notes": "Original concise English adaptation, padded within original slots. Corn. abbreviates Cornelius; Money abbreviates Miss Money; MaskRider omits the space. Full identities appear in prose. Combined final branch, attributes, pointers and speaker slots unchanged."
+    },
+    {
+      "id": "TERM-006",
+      "edits": [
+        {
+          "file": "SP13.BIN",
+          "string_id": 14,
+          "kind": "pool",
+          "old_hash": "b04d78099bd5b9b94382c9d36e235c9a781be4d2",
+          "source_sha1": "d585425a70d860cdd2fdd69eb6db4a1da944f973",
+          "encoded_length": 16,
+          "new_hash": "629c9354a337e85687e6d10a5086631d1e0f8e34",
+          "spans": [
+            {
+              "offset": 0,
+              "old_length": 15,
+              "old_hash": "d84c88d06300b6c700c1290c9ce96e8e6951003a",
+              "xor_hex": "0b533c540d0b1241291c0d4c19170c"
+            }
+          ]
+        },
+        {
+          "file": "SP13.BIN",
+          "string_id": 115,
+          "kind": "pool",
+          "old_hash": "e6f8715faf2bd4222b7747084c21d072398b0382",
+          "source_sha1": "d585425a70d860cdd2fdd69eb6db4a1da944f973",
+          "encoded_length": 161,
+          "new_hash": "337c0e5ae44681d0ce52877c0e0a92ffbe0cc0c1",
+          "spans": [
+            {
+              "offset": 6,
+              "old_length": 3,
+              "old_hash": "ad782ecdac770fc6eb9a62e44f90873fb97fb26b",
+              "xor_hex": "15050a"
+            },
+            {
+              "offset": 10,
+              "old_length": 3,
+              "old_hash": "5f9e5802bbabc71f9275fccf122f5a52b8599f12",
+              "xor_hex": "29402a"
+            },
+            {
+              "offset": 14,
+              "old_length": 39,
+              "old_hash": "6a0c00449a91f416718ec7c5246727d354b7621b",
+              "xor_hex": "111c0154330c4c1f1c05151b4d9b27473cd2051c4f0a491a154f4e53380911165241021f070e06"
+            },
+            {
+              "offset": 54,
+              "old_length": 19,
+              "old_hash": "3ff3387ff50455052fcf88a0e6930b00132ba2be",
+              "xor_hex": "121d4f0f97860c1745321f094973151252433f"
+            },
+            {
+              "offset": 75,
+              "old_length": 30,
+              "old_hash": "bc23a4cbd677577c68c237c98c80b1193b874a4a",
+              "xor_hex": "1243120c1e1e53488028184c180113971441041c551552942e411254010a"
+            },
+            {
+              "offset": 106,
+              "old_length": 3,
+              "old_hash": "3f79ccd1432f8960aa9062d90665feabb5fd19d8",
+              "xor_hex": "080b49"
+            },
+            {
+              "offset": 110,
+              "old_length": 28,
+              "old_hash": "492698b2008b145f107584a4ac65924382916e8b",
+              "xor_hex": "9b4f061180084511450e13860f441704034f09410f0407540a17414d"
+            },
+            {
+              "offset": 139,
+              "old_length": 3,
+              "old_hash": "bbccdf2efb33b52e6c9d0a14dd70b2d415fbea6e",
+              "xor_hex": "544845"
+            },
+            {
+              "offset": 143,
+              "old_length": 4,
+              "old_hash": "5d6200f8cf98af475edcac2c97f966ad156ed51f",
+              "xor_hex": "4c415445"
+            },
+            {
+              "offset": 148,
+              "old_length": 13,
+              "old_hash": "11de10c7f20a5b9a8e4882e028439aea5304b532",
+              "xor_hex": "12105448d243454e545552590e"
+            }
+          ]
+        },
+        {
+          "file": "SP13.BIN",
+          "string_id": 116,
+          "kind": "pool",
+          "old_hash": "a5f0dbcd62d3fc198769c9e59b9a92c07aba5307",
+          "source_sha1": "d585425a70d860cdd2fdd69eb6db4a1da944f973",
+          "encoded_length": 115,
+          "new_hash": "9b28bd8e1f00c48ef9679c5cc858ff8fb4c09419",
+          "spans": [
+            {
+              "offset": 0,
+              "old_length": 37,
+              "old_hash": "d61f475ae112e31996d13cbc0d3e5069b25fc12f",
+              "xor_hex": "11572e484552320e1a494454070754530604130803140c54031e1181480416d211150a0d48"
+            },
+            {
+              "offset": 38,
+              "old_length": 11,
+              "old_hash": "6542df79f33041023e952cf9bb899e2507ac97a9",
+              "xor_hex": "4a26491c111e4506071506"
+            },
+            {
+              "offset": 50,
+              "old_length": 29,
+              "old_hash": "a00cb360528442a6627a63fd99132fdb254d44ee",
+              "xor_hex": "1b19084e021b010ad20c0e1b111a9c174c0817490f474d1c0747434125"
+            },
+            {
+              "offset": 80,
+              "old_length": 2,
+              "old_hash": "f502e82c25bba5a06cf68ffa87ecd02371c1a975",
+              "xor_hex": "051c"
+            },
+            {
+              "offset": 83,
+              "old_length": 8,
+              "old_hash": "97b603b1371a868e594b3038d44d880f12abf2bd",
+              "xor_hex": "07531d4f0b58454e"
+            },
+            {
+              "offset": 92,
+              "old_length": 9,
+              "old_hash": "9cf141228dacbdb7a60a2707b45de19673a8304f",
+              "xor_hex": "54414b45d254494d45"
+            },
+            {
+              "offset": 102,
+              "old_length": 3,
+              "old_hash": "da7a68734367828e30b94927f4c2b43ed2c0f652",
+              "xor_hex": "4f4646"
+            },
+            {
+              "offset": 106,
+              "old_length": 2,
+              "old_hash": "4374aaee247fb237ce6c97d5c8d64bbe474d16de",
+              "xor_hex": "544f"
+            },
+            {
+              "offset": 109,
+              "old_length": 6,
+              "old_hash": "ec8e981ab3b2168d342802f41d767acc88b1c4e0",
+              "xor_hex": "534c45455001"
+            }
+          ]
+        },
+        {
+          "file": "SP13.BIN",
+          "string_id": 117,
+          "kind": "pool",
+          "old_hash": "6f163ffa9d6dd220e57f3b778d3e89fd78a68203",
+          "source_sha1": "d585425a70d860cdd2fdd69eb6db4a1da944f973",
+          "encoded_length": 107,
+          "new_hash": "7af5c10efd962cc58ccdd05712473a1f054568c7",
+          "spans": [
+            {
+              "offset": 0,
+              "old_length": 4,
+              "old_hash": "34dbd5c4c8a64801891d960b57133767c3104fe7",
+              "xor_hex": "03090c1a"
+            },
+            {
+              "offset": 5,
+              "old_length": 20,
+              "old_hash": "f46026422359cd7feaa51630d33abf689a312ed8",
+              "xor_hex": "09454d1d1c1c1101015438481407454105493ad2"
+            },
+            {
+              "offset": 26,
+              "old_length": 57,
+              "old_hash": "586c913c581057d84853361823f8ebe2e3cf6839",
+              "xor_hex": "130d051a020686080d0155075449254c0441070107034f171d97014e420e521a45180d1307529b264e4d180607490145531c071e404b494e47"
+            },
+            {
+              "offset": 84,
+              "old_length": 15,
+              "old_hash": "49ef8eb669cfbe4c7ae7b23d87d1839d551054c0",
+              "xor_hex": "41424f5554d2534f4d455448494e47"
+            },
+            {
+              "offset": 100,
+              "old_length": 5,
+              "old_hash": "3b9064594f62de640886250dff0762e249970728",
+              "xor_hex": "454c53450e"
+            }
+          ]
+        },
+        {
+          "file": "SP13.BIN",
+          "string_id": 118,
+          "kind": "pool",
+          "old_hash": "ae605a777570027b6c765478ac04acc66183b010",
+          "source_sha1": "d585425a70d860cdd2fdd69eb6db4a1da944f973",
+          "encoded_length": 102,
+          "new_hash": "bad47f9d24c075a13c11652c371c85d6671bf0b3",
+          "spans": [
+            {
+              "offset": 4,
+              "old_length": 7,
+              "old_hash": "05e5c37db7116f0177f4ff2b735dd47d26edceb8",
+              "xor_hex": "21424d46121c1e"
+            },
+            {
+              "offset": 12,
+              "old_length": 7,
+              "old_hash": "7c046f1f598875ca12a60124828ed0a0d03a38e5",
+              "xor_hex": "44694f1c060845"
+            },
+            {
+              "offset": 20,
+              "old_length": 17,
+              "old_hash": "5aa48f4e2590f7b62972075d32e9226ab19f7c97",
+              "xor_hex": "0d17170e822404590a01129e0d544f4f3d"
+            },
+            {
+              "offset": 38,
+              "old_length": 34,
+              "old_hash": "1c857571d7dfb7e5019686ed4c3716bed3d24386",
+              "xor_hex": "02041e164d0a0c01d20c4e100d1a531b4f500206151a060d970c061a41100b044d67"
+            },
+            {
+              "offset": 73,
+              "old_length": 8,
+              "old_hash": "33e8c029c1c73d8a32e5756bbcfb50fa6a988773",
+              "xor_hex": "434f554c444e0754"
+            },
+            {
+              "offset": 82,
+              "old_length": 4,
+              "old_hash": "271e9a568c0e9e562431ccb1f5da3422162de7b8",
+              "xor_hex": "4a554d50"
+            },
+            {
+              "offset": 87,
+              "old_length": 3,
+              "old_hash": "da7a68734367828e30b94927f4c2b43ed2c0f652",
+              "xor_hex": "4f4646"
+            },
+            {
+              "offset": 91,
+              "old_length": 11,
+              "old_hash": "721e60d306fe6d1e78450b779c6191e12b0fc0e7",
+              "xor_hex": "544845d253544149525301"
+            }
+          ]
+        },
+        {
+          "file": "SP13.BIN",
+          "string_id": 119,
+          "kind": "pool",
+          "old_hash": "ea7a21c2256b6b5b006fb64a81bc6606f5f052c5",
+          "source_sha1": "d585425a70d860cdd2fdd69eb6db4a1da944f973",
+          "encoded_length": 153,
+          "new_hash": "4860c994326e713b0498172308b64ef269fa5206",
+          "spans": [
+            {
+              "offset": 0,
+              "old_length": 8,
+              "old_hash": "c756f6af1f03c9ce381cb85934ffb274e2f54af3",
+              "xor_hex": "0203091e10190b17"
+            },
+            {
+              "offset": 9,
+              "old_length": 18,
+              "old_hash": "9ef063fb48f7ffd4f99f87a28366c6c0dee6fa0a",
+              "xor_hex": "11041f544154200e184c0e16164344670f05"
+            },
+            {
+              "offset": 28,
+              "old_length": 9,
+              "old_hash": "ccdd0f65dd5f84bb44c4454c802a0069980d0c99",
+              "xor_hex": "044f9c67863a544212"
+            },
+            {
+              "offset": 38,
+              "old_length": 32,
+              "old_hash": "441bc9de9291a6f3b4c0bb8ff87ae48bdf2b8eb6",
+              "xor_hex": "06540f4801184c091c5511150615180c4e104081b3050c1a150c1d4e0856111d"
+            },
+            {
+              "offset": 71,
+              "old_length": 58,
+              "old_hash": "288111f5d0d7f1589e4a3c55087fd24c8f51638b",
+              "xor_hex": "125412040c101d080f411f551b11911b1a05070c911b1d0944540804050447044e0a1a0706491709491f4f86319a081a431b164102100d540152"
+            },
+            {
+              "offset": 130,
+              "old_length": 9,
+              "old_hash": "662e84779d310c4f33e4f6629edbcf6296fa0ba4",
+              "xor_hex": "4d11060c0e081f0957"
+            },
+            {
+              "offset": 140,
+              "old_length": 2,
+              "old_hash": "af10ef20dd9060bbeead0afbc55381a66af442ef",
+              "xor_hex": "494e"
+            },
+            {
+              "offset": 143,
+              "old_length": 10,
+              "old_hash": "ed8e4c110e6255e616b75d978fa94c6cd8997297",
+              "xor_hex": "54484154d2594541520e"
+            }
+          ]
+        },
+        {
+          "file": "SP13.BIN",
+          "string_id": 120,
+          "kind": "pool",
+          "old_hash": "e48cd3dae2b6cf87860e7f42109040c36a3ddab2",
+          "source_sha1": "d585425a70d860cdd2fdd69eb6db4a1da944f973",
+          "encoded_length": 54,
+          "new_hash": "67b6b23f606f4b46681c70c2b1ab0d15c087dfa4",
+          "spans": [
+            {
+              "offset": 2,
+              "old_length": 20,
+              "old_hash": "f04af5406c9f902dcb6ef5b5a3c7db9b1f0c66a9",
+              "xor_hex": "0e0745491055201d02020b5231450d1f0a4e0345"
+            },
+            {
+              "offset": 23,
+              "old_length": 18,
+              "old_hash": "217e9100d552247674c952b9809bfe6aae83d785",
+              "xor_hex": "1c0d4e139a2dc02241121a0152671a0a4c2c"
+            },
+            {
+              "offset": 42,
+              "old_length": 11,
+              "old_hash": "e9fc211919672f5a55a5bcb6b565e79d8dad1df1",
+              "xor_hex": "0c1e0c432b011516180912"
+            }
+          ]
+        },
+        {
+          "file": "SP13.BIN",
+          "string_id": 148,
+          "kind": "pool",
+          "old_hash": "7654cba582fca77fa1706b9347819b63aa3dcfd0",
+          "source_sha1": "d585425a70d860cdd2fdd69eb6db4a1da944f973",
+          "encoded_length": 31,
+          "new_hash": "6d03f339e55c166c72119ea68bb6aadded67f0f5",
+          "spans": [
+            {
+              "offset": 10,
+              "old_length": 3,
+              "old_hash": "bbccdf2efb33b52e6c9d0a14dd70b2d415fbea6e",
+              "xor_hex": "3c5a2a"
+            },
+            {
+              "offset": 14,
+              "old_length": 17,
+              "old_hash": "649575bf50b04ef67cf8de614b87720dfc51c949",
+              "xor_hex": "220f17542b101a0d071f04525e4149520e"
+            }
+          ]
+        },
+        {
+          "file": "SP13.BIN",
+          "string_id": 121,
+          "kind": "pool",
+          "old_hash": "25e8020db1d1704618916bb3f60d0a99508e3232",
+          "source_sha1": "d585425a70d860cdd2fdd69eb6db4a1da944f973",
+          "encoded_length": 79,
+          "new_hash": "670401370b4f15798e6cd847a2a95ca7dc641e47",
+          "spans": [
+            {
+              "offset": 0,
+              "old_length": 2,
+              "old_hash": "17709ed54cf394744f344961c5708719be4d3016",
+              "xor_hex": "111e"
+            },
+            {
+              "offset": 3,
+              "old_length": 38,
+              "old_hash": "81bb6e40bf86f7536d471152da48578e619762ae",
+              "xor_hex": "011c4f0f1745491549081f45121d0144743753430e81171d0c17124d86311a451f52020c4b04"
+            },
+            {
+              "offset": 42,
+              "old_length": 37,
+              "old_hash": "f018eca40fd4db62de3bb4e405928deefaf070da",
+              "xor_hex": "17040453030502430941180a9d591018014b06970f54060218431349070401540e0f0c4b0e"
+            }
+          ]
+        },
+        {
+          "file": "SP13.BIN",
+          "string_id": 122,
+          "kind": "pool",
+          "old_hash": "7eaa1f974de2f44279b37e4a18d95e435be840f4",
+          "source_sha1": "d585425a70d860cdd2fdd69eb6db4a1da944f973",
+          "encoded_length": 69,
+          "new_hash": "69e670d4eba4e48c9a86c8dc0ad0ac5810bd3503",
+          "spans": [
+            {
+              "offset": 4,
+              "old_length": 65,
+              "old_hash": "583aa28e1a5f60705496f4c685755486ee0ca273",
+              "xor_hex": "1f1201151e454f11481b481b064e5018090a16d21d191217459a0c0316544f1e014c0a0d0a480b0a4e0c0a541b411c18015e5a494d45d24e4f5354414c4749410e"
+            }
+          ]
+        },
+        {
+          "file": "SUBCODE.BIN",
+          "string_id": 39,
+          "kind": "speaker",
+          "old_hash": "b04d78099bd5b9b94382c9d36e235c9a781be4d2",
+          "source_sha1": "ce50e31315fcb743514218a276cf6a3e905b8276",
+          "encoded_length": 16,
+          "new_hash": "629c9354a337e85687e6d10a5086631d1e0f8e34",
+          "spans": [
+            {
+              "offset": 0,
+              "old_length": 15,
+              "old_hash": "d84c88d06300b6c700c1290c9ce96e8e6951003a",
+              "xor_hex": "0b533c540d0b1241291c0d4c19170c"
+            }
+          ]
+        },
+        {
+          "file": "SUBCODE.BIN",
+          "string_id": 41,
+          "kind": "speaker",
+          "old_hash": "80e16ac71eabc8c8e34a31013964b974a4a44501",
+          "source_sha1": "ce50e31315fcb743514218a276cf6a3e905b8276",
+          "encoded_length": 7,
+          "new_hash": "cd678936d621bd7a9f65617408c2250a9ba7bcda",
+          "spans": [
+            {
+              "offset": 0,
+              "old_length": 7,
+              "old_hash": "80e16ac71eabc8c8e34a31013964b974a4a44501",
+              "xor_hex": "0c402e43554c41"
+            }
+          ]
+        },
+        {
+          "file": "SUBCODE.BIN",
+          "string_id": 42,
+          "kind": "speaker",
+          "old_hash": "8c66a7a684fe800f5f1a1a37f60411ed368c1e28",
+          "source_sha1": "ce50e31315fcb743514218a276cf6a3e905b8276",
+          "encoded_length": 13,
+          "new_hash": "a2d04062f83ffdbee28bfd57660a918fd380d05e",
+          "spans": [
+            {
+              "offset": 0,
+              "old_length": 13,
+              "old_hash": "8c66a7a684fe800f5f1a1a37f60411ed368c1e28",
+              "xor_hex": "141c0103075627174c4d4f4e54"
+            }
+          ]
+        }
+      ],
+      "pce_evidence": {
+        "record": 430,
+        "module_sha1": "54fe608f0f0988a5ce3e4bb8fa8b78518b6e460b",
+        "strings": [
+          {
+            "offset": 12000,
+            "jp_sha1": "f60b3fc8fddfb9f38c746de4c2121601414ebcf0",
+            "key": "f60b3fc8fddf"
+          },
+          {
+            "offset": 12054,
+            "jp_sha1": "54a50dbc7a8e5c6b81d152df6da7583bd336226c",
+            "key": "54a50dbc7a8e"
+          },
+          {
+            "offset": 12102,
+            "jp_sha1": "07df65158e3f816b30dc4aba321b0b0ccf2e85c3",
+            "key": "07df65158e3f"
+          },
+          {
+            "offset": 12155,
+            "jp_sha1": "aae1d27c99b4b7b16a7d9e3155b5b5a5a2b0b09f",
+            "key": "aae1d27c99b4"
+          },
+          {
+            "offset": 12208,
+            "jp_sha1": "07f6dca657271dd711c43cfd6ce2b860375cb42d",
+            "key": "07f6dca65727"
+          },
+          {
+            "offset": 12260,
+            "jp_sha1": "69a4c5a07de69589990e52dba2bf97cfe3abe763",
+            "key": "69a4c5a07de6"
+          },
+          {
+            "offset": 12281,
+            "jp_sha1": "0c85d3d45d90c33ceaa21285e46f42daff647683",
+            "key": "0c85d3d45d90"
+          },
+          {
+            "offset": 12311,
+            "jp_sha1": "0ed6bac2b58f85130e7f349162f8804539e69b0d",
+            "key": "0ed6bac2b58f"
+          },
+          {
+            "offset": 12358,
+            "jp_sha1": "be02379ddbd5a94fc176a466c742133cd501c385",
+            "key": "be02379ddbd5"
+          },
+          {
+            "offset": 12425,
+            "jp_sha1": "e751cc65f9d7bf4dd8c508293f2c0af801d40a7a",
+            "key": "e751cc65f9d7"
+          },
+          {
+            "offset": 12446,
+            "jp_sha1": "a6ec9cf6e499cb7af51f205c8581f557fa8cf921",
+            "key": "a6ec9cf6e499"
+          },
+          {
+            "offset": 12527,
+            "jp_sha1": "633d9c6093fa6503b45cd765878d792f95cd4ab5",
+            "key": "633d9c6093fa"
+          }
+        ]
+      },
+      "notes": "Original concise English adaptation, padded within original slots. Corn. abbreviates Cornelius; Money abbreviates Miss Money; MaskRider omits the space. Full identities appear in prose. Combined final branch, attributes, pointers and speaker slots unchanged."
+    }
+  ],
+  "encoding": "source-relative-encoded-xor-spans"
+}

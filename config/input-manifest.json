@@ -1,0 +1,170 @@
+{
+  "version": 1,
+  "inputs": [
+    {
+      "path": "bios/bios_CD_E.bin",
+      "bytes": 131072,
+      "sha1": "f891e0ea651e2232af0c5c4cb46a0cae2ee8f356"
+    },
+    {
+      "path": "bios/bios_CD_J.bin",
+      "bytes": 131072,
+      "sha1": "4846f448160059a7da0215a5df12ca160f26dd69"
+    },
+    {
+      "path": "bios/bios_CD_U.bin",
+      "bytes": 131072,
+      "sha1": "5adb6c3af218c60868e6b723ec47e36bbdf5e6f0"
+    },
+    {
+      "path": "bios/syscard3.pce",
+      "bytes": 262144,
+      "sha1": "79f5ff55dd10187c7fd7b8daab0b3ffbd1f56a2c"
+    },
+    {
+      "path": "discs/pcenginecd-jp/Snatcher CD-ROMantic (Japan) (Track 01).bin",
+      "bytes": 9288048,
+      "sha1": "d41edbe4f5c2137e57f016d3c408b063d1d2d889"
+    },
+    {
+      "path": "discs/pcenginecd-jp/Snatcher CD-ROMantic (Japan) (Track 02).bin",
+      "bytes": 80779440,
+      "sha1": "a6bb5d90391b3e7181a6ff5d37563f2b08cf705c"
+    },
+    {
+      "path": "discs/pcenginecd-jp/Snatcher CD-ROMantic (Japan) (Track 03).bin",
+      "bytes": 11809392,
+      "sha1": "9d7ffdf7bec4a7dcba51f65d489344ec79a24904"
+    },
+    {
+      "path": "discs/pcenginecd-jp/Snatcher CD-ROMantic (Japan) (Track 04).bin",
+      "bytes": 26370624,
+      "sha1": "bef053b6a76f17dfe9f766ec2bab0dcd276fdc1d"
+    },
+    {
+      "path": "discs/pcenginecd-jp/Snatcher CD-ROMantic (Japan) (Track 05).bin",
+      "bytes": 27713616,
+      "sha1": "f4c3fc979cca97e8c8ef66c88dcf9a1f9f24d0ae"
+    },
+    {
+      "path": "discs/pcenginecd-jp/Snatcher CD-ROMantic (Japan) (Track 06).bin",
+      "bytes": 29583456,
+      "sha1": "eecc64ebfe76d8c72387d8d0f89fea15df5e8dbc"
+    },
+    {
+      "path": "discs/pcenginecd-jp/Snatcher CD-ROMantic (Japan) (Track 07).bin",
+      "bytes": 23407104,
+      "sha1": "20f55ef87d2ead2ec1bfcdf9f032195eaaefdd61"
+    },
+    {
+      "path": "discs/pcenginecd-jp/Snatcher CD-ROMantic (Japan) (Track 08).bin",
+      "bytes": 11877600,
+      "sha1": "d24d68de2cb962a5a8fb9ed29c87920c76f18aa5"
+    },
+    {
+      "path": "discs/pcenginecd-jp/Snatcher CD-ROMantic (Japan) (Track 09).bin",
+      "bytes": 5887056,
+      "sha1": "bb7030060a594292a182706fe2ebc8073a95316c"
+    },
+    {
+      "path": "discs/pcenginecd-jp/Snatcher CD-ROMantic (Japan) (Track 10).bin",
+      "bytes": 74476080,
+      "sha1": "8f8ede8d2f8e6a6097ea2c38ccd9f8a2682e1beb"
+    },
+    {
+      "path": "discs/pcenginecd-jp/Snatcher CD-ROMantic (Japan) (Track 11).bin",
+      "bytes": 50045856,
+      "sha1": "0fdeab1b3fdd7f3d66324122ecbd1f3c7859039e"
+    },
+    {
+      "path": "discs/pcenginecd-jp/Snatcher CD-ROMantic (Japan) (Track 12).bin",
+      "bytes": 22306368,
+      "sha1": "c17427094d9010b6a0d22c345165a7be11518470"
+    },
+    {
+      "path": "discs/pcenginecd-jp/Snatcher CD-ROMantic (Japan) (Track 13).bin",
+      "bytes": 13573392,
+      "sha1": "90d912f7dadf12f7af6d24aa6ebe930ec603ea7f"
+    },
+    {
+      "path": "discs/pcenginecd-jp/Snatcher CD-ROMantic (Japan) (Track 14).bin",
+      "bytes": 15415008,
+      "sha1": "7547e95acc53256f7a075c09243287f2282f2001"
+    },
+    {
+      "path": "discs/pcenginecd-jp/Snatcher CD-ROMantic (Japan) (Track 15).bin",
+      "bytes": 2596608,
+      "sha1": "8e1f0a03ee46269f6af20abbcc732b8f86011d00"
+    },
+    {
+      "path": "discs/pcenginecd-jp/Snatcher CD-ROMantic (Japan) (Track 16).bin",
+      "bytes": 27675984,
+      "sha1": "bec31a1f045cd0a37d370a2a1d7b190ce059278a"
+    },
+    {
+      "path": "discs/pcenginecd-jp/Snatcher CD-ROMantic (Japan) (Track 17).bin",
+      "bytes": 23411808,
+      "sha1": "85fa34422b3a7347e866644b0b7a9eecc0f01a1c"
+    },
+    {
+      "path": "discs/pcenginecd-jp/Snatcher CD-ROMantic (Japan) (Track 18).bin",
+      "bytes": 3132864,
+      "sha1": "fdeb68dbdf8a898f6457aa330a3decce2bdeb824"
+    },
+    {
+      "path": "discs/pcenginecd-jp/Snatcher CD-ROMantic (Japan) (Track 19).bin",
+      "bytes": 33687696,
+      "sha1": "ff9e21004ddae213137ebbff635aa3396219345d"
+    },
+    {
+      "path": "discs/pcenginecd-jp/Snatcher CD-ROMantic (Japan) (Track 20).bin",
+      "bytes": 5240256,
+      "sha1": "d8db676801ad6dfc55ba5a0876546caf1d032344"
+    },
+    {
+      "path": "discs/pcenginecd-jp/Snatcher CD-ROMantic (Japan) (Track 21).bin",
+      "bytes": 705600,
+      "sha1": "b90672f964386e817a8721eda9e1a8cb81d74b94"
+    },
+    {
+      "path": "discs/pcenginecd-jp/Snatcher CD-ROMantic (Japan) (Track 22).bin",
+      "bytes": 707952,
+      "sha1": "3cfd68fdb6f570bc323d14b0feaf0c682c261ca6"
+    },
+    {
+      "path": "discs/pcenginecd-jp/Snatcher CD-ROMantic (Japan) (Track 23).bin",
+      "bytes": 52849440,
+      "sha1": "ff92df66753e09a8331230d2c269c7a09d8b9791"
+    },
+    {
+      "path": "discs/pcenginecd-jp/Snatcher CD-ROMantic (Japan) (Track 24).bin",
+      "bytes": 80433696,
+      "sha1": "d6627a3c3c752d0e65c1c8daa848aafda720feb8"
+    },
+    {
+      "path": "discs/pcenginecd-jp/Snatcher CD-ROMantic (Japan).cue",
+      "bytes": 2502,
+      "sha1": "40c91a0873ba05e4caf2fe2917b0a5f7fa9d1175"
+    },
+    {
+      "path": "discs/segacd-usa/Snatcher (USA).chd",
+      "bytes": 335408655,
+      "sha1": "d60e4e3e011b3a53511b0fd3edd80fb86824a9a4"
+    },
+    {
+      "path": "discs/segacd-usa/Snatcher.bin",
+      "bytes": 625192176,
+      "sha1": "9ff422fcbdb3cbd5a585d1c822f28930713ba4a8"
+    },
+    {
+      "path": "discs/segacd-usa/Snatcher.cue",
+      "bytes": 1291,
+      "sha1": "8bfcd9b3bde7bc4c92fd8233208c2071cac1935f"
+    }
+  ],
+  "reference": {
+    "path": ".deps/snatcher-translated",
+    "url": "https://github.com/pepasjc/snatcher-translated.git",
+    "revision": "f181542e188a4c5bcd18080bb282518c53761acd"
+  }
+}

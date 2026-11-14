@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "rows": [
+    {
+      "id": "GFX-001",
+      "file": "DATA_G0.BIN",
+      "source_sha1": "8a4eabc0ffff3ccc10246fa31e54977b7d47a1ef",
+      "recipe": "Retain source background; convert14 PCEframes and5 independent scripts; preserve palette/PCM controls; exactopaque-black palette entries; guarded map relocation and61-sector extent",
+      "pce_block": 35,
+      "pce_record": 2674,
+      "pce_block_sha1": "82ac96be11c79920824eb44ae559e8adea3379e4",
+      "pce_table_record_sha1": "6bfcec655109154cd98a6c5b11f076c1fd317dc3",
+      "control_edit": {
+        "file": "SP25.BIN",
+        "source_sha1": "a9dab6ed539e0b891a2346945524eaade690f78a",
+        "call_offset": 1159,
+        "old_call_sha1": "fb3de9d7a3376ac519990a67fb576984816a849d",
+        "helper_offset": 3211,
+        "old_fill_sha1": "86c47789edd22585353c2fe85634afffc795732f",
+        "method": "Call one expression: original FM music100 then wait for convertedobject20completion; preservevoice391 andalllaterpositions",
+        "pce_record": 526,
+        "pce_wait_offset": 1147,
+        "pce_wait_opcode": "6A",
+        "object": 20,
+        "pce_script_module_sha1": "adda4c5d7c6898fd5f145eee959f9b73260391d3",
+        "pce_script_table_sha1": "2b2388693b7e8b8bc60bacc052c8030b116934a4",
+        "pce_wait_sha1": "efc278a647325cf39db58a4707cf7be3fcdd7976"
+      }
+    },
+    {
+      "id": "GFX-002",
+      "file": "DATA_O0.BIN",
+      "source_sha1": "946b60d71918482203fe6b9c1f1929f7eab443a2",
+      "recipe": "Convert sixPCEcostumes and callback front/rear frames; keep original dancer/light tiles and frames; preserve source architecture outsidecostumemask and existing five callbackgroups",
+      "pce_block": 41,
+      "pce_record": 3058,
+      "pce_block_sha1": "5af9638654a72b9f7ae127674698901083ff1a37",
+      "pce_table_record_sha1": "c3efd5f43e622d183dc6f295e39c2036f5146162"
+    }
+  ]
+}

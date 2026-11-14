@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' blob:; connect-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>Patch Snatcher for Sega CD</title>
+<link rel="stylesheet" href="style.css">
+<main>
+<p class="brand">TECH NASTY / SNATCHER UNCUT</p>
+<h1>Patch your Sega CD copy.</h1>
+<p>This installer restores selected artwork and dates. It keeps your English voices, music and Sega CD story additions.</p>
+<p>Your files stay on this computer. Open this page from the downloaded release folder. No Python or BIOS is needed.</p>
+<form id="installer">
+<label for="bin">1. Choose your original BIN file</label>
+<input id="bin" type="file" accept=".bin,.BIN" required>
+<p class="hint">Use a single BIN containing all 21 tracks, or the raw Track 1 BIN. Split-track CUE sets use the offline installer.</p>
+<label for="cue">2. Choose its CUE file</label>
+<input id="cue" type="file" accept=".cue,.CUE">
+<p class="hint">Required for a full-disc BIN. A raw Track 1 alone cannot play the game.</p>
+<button id="apply" type="submit">3. Verify and patch</button>
+</form>
+<p id="status" role="status" aria-live="polite">Choose the untouched files from your own dump.</p>
+<section id="results" hidden aria-label="Patched files">
+<h2>Download the patched files</h2>
+<p>Save these files together in a new folder. Keep your original dump.</p>
+<div id="downloads"></div>
+</section>
+<details><summary>Supported input and known limits</summary>
+<p>USA raw Mode1/2352 Track 1: 131,744,928 bytes. SHA1: <code>1f4164205ed736a0d9a03eb7972868e9aa737d35</code>.</p>
+<p>Wrong-region, wrong-revision, ISO/2048 and already-patched data do not pass validation. CHD files need extraction first. Full-disc BIN files require a single-file CUE with 21 tracks. Split-track CUE sets use the offline installer.</p>
+<p>This release has emulator verification through the ending and credits. Original hardware has not been tested. The opening and database show 1991 while the retained speech says 1996.</p>
+<p>AI tools assisted engineering, research, testing and writing. The comparisons use actual emulator captures.</p>
+</details>
+<p class="hint">Patch engine: Marc Robledo's Rom Patcher JS. Read <a href="vendor/LICENSE">its license</a> and the release credits.</p>
+</main>
+<script src="vendor/RomPatcher.js"></script>
+<script src="vendor/modules/BinFile.js"></script>
+<script src="vendor/modules/HashCalculator.js"></script>
+<script src="vendor/modules/RomPatcher.format.ips.js"></script>
+<script src="vendor/modules/RomPatcher.format.ups.js"></script>
+<script src="vendor/modules/RomPatcher.format.aps_n64.js"></script>
+<script src="vendor/modules/RomPatcher.format.aps_gba.js"></script>
+<script src="vendor/modules/RomPatcher.format.bps.js"></script>
+<script src="vendor/modules/RomPatcher.format.rup.js"></script>
+<script src="vendor/modules/RomPatcher.format.ppf.js"></script>
+<script src="vendor/modules/RomPatcher.format.bdf.js"></script>
+<script src="vendor/modules/RomPatcher.format.pmsr.js"></script>
+<script src="vendor/modules/RomPatcher.format.vcdiff.js"></script>
+<script src="patch-data.js"></script>
+<script src="app.js"></script>
+</html>

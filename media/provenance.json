@@ -1,0 +1,348 @@
+{
+  "status": "Capture provenance and media limits",
+  "sources": {
+    "capture-001": {
+      "bytes": 10733,
+      "sha256": "cf96dc8e6caf250278b8a14367081aace3a506114745162c8981959c13dfe9ec"
+    },
+    "capture-002": {
+      "bytes": 10094,
+      "sha256": "940d0ea7c230098ccc8b0eed55618960605e5f0b4ed8541b3d29aa125594ab81"
+    },
+    "capture-003": {
+      "bytes": 2235,
+      "sha256": "343eeda64d98de3912bf0ad7a5546124f16d18c2bce9993235a637fc73649500"
+    },
+    "capture-004": {
+      "bytes": 2136,
+      "sha256": "f868d85df878c90908e2e22acee76b054289cf92bdac657285e2ee1bb0bb604a"
+    },
+    "capture-005": {
+      "bytes": 13363,
+      "sha256": "428da46ce1ca3a4f8db4329458cbd8d14978437e79a4f4f2f32a949054c1f7a1"
+    },
+    "capture-006": {
+      "bytes": 13354,
+      "sha256": "27079ea0500c6aa72bc6ce9e1395b14b8a7c70dc847b1c81308b1f8863af5d91"
+    },
+    "capture-007": {
+      "bytes": 1910,
+      "sha256": "09e8afe15f0cd1a25008fa55be3b49090a6273f7e0ad316ccb536fff5deb3895"
+    },
+    "capture-008": {
+      "bytes": 1888,
+      "sha256": "442a6cc0721ac286653662bb02be9d08e95875f94aa3e5ffdb646ddce7c40b54"
+    },
+    "capture-009": {
+      "bytes": 10673,
+      "sha256": "844537f80c6256dcba8f10e01099ca9367fa9e62345aeb03cdfb0f4c545deca2"
+    },
+    "capture-010": {
+      "bytes": 9689,
+      "sha256": "abc08c1af0cad53b8b5766c4b1602abf416e725e194a111f2ba65fb17c34ba90"
+    },
+    "capture-011": {
+      "bytes": 11294,
+      "sha256": "fa4e6cb6807fc764e79757d3b461e0b5ecf84bb214cca73f0c4becd73f8ac799"
+    },
+    "capture-012": {
+      "bytes": 9789,
+      "sha256": "42aabffe72a4c5251731476bade3586a9ee63c12b09f73b9210b5c05dee9bad6"
+    },
+    "capture-013": {
+      "bytes": 10657,
+      "sha256": "a95569815044bebc93a8bf567e09a745fcb09b673a3e0aee84583f25be6a4059"
+    },
+    "capture-014": {
+      "bytes": 9583,
+      "sha256": "1615bb07b8dabaa9ea37b2c6314c602478e4c54f690e0a460d2ee9d2f6fb0d69"
+    },
+    "capture-015": {
+      "bytes": 10756,
+      "sha256": "49f0142987958180dd1d8300861409a705f8b9c0b76e897de2e42b2d9ac045b7"
+    },
+    "capture-016": {
+      "bytes": 10030,
+      "sha256": "8f54dee2bd4a202d94d0c8a6329000ee28427d7e80a05ef9937d7092f64d9f9a"
+    },
+    "capture-017": {
+      "bytes": 10756,
+      "sha256": "49f0142987958180dd1d8300861409a705f8b9c0b76e897de2e42b2d9ac045b7"
+    },
+    "capture-018": {
+      "bytes": 10030,
+      "sha256": "8f54dee2bd4a202d94d0c8a6329000ee28427d7e80a05ef9937d7092f64d9f9a"
+    },
+    "capture-019": {
+      "bytes": 2010676,
+      "sha256": "5caa8fc2810d327315943928a0f968f582fdc2421c9fef2c14bde9e6c0d7ac0f"
+    },
+    "capture-020": {
+      "bytes": 65328,
+      "sha256": "46e8a223d44db5cfcc8fb34915425332ad23a90f04d34ab663fdff3b69f275c2"
+    }
+  },
+  "assets": [
+    {
+      "file": "assets/outer-heaven-hero.png",
+      "bytes": 47529,
+      "sha256": "09290bf1cf62898b63b8978b31b0751b534b9abe57caf3a467fab7cfd9670601",
+      "kind": "comparison PNG",
+      "sources": [
+        "capture-001",
+        "capture-002"
+      ],
+      "crop": [
+        16,
+        50,
+        128,
+        120
+      ],
+      "integer_scale": 4,
+      "note": "Patron crops from graphics QA captures. The stage performer is outside the crop."
+    },
+    {
+      "file": "assets/outer-heaven-still-loop.gif",
+      "bytes": 76987,
+      "sha256": "63a5b0bc46500dac7d26df235882c9e1d2a1e38c87bb780352f8c017ca522b51",
+      "kind": "alternating still GIF",
+      "duration_seconds": 6,
+      "native_motion": false,
+      "integer_scale": 2
+    },
+    {
+      "file": "assets/outer-heaven-still-loop.mp4",
+      "bytes": 90813,
+      "sha256": "9623dbaf773f140eb85abe50ac388483ddb30a219f25cfa82c9606ddf25a5689",
+      "kind": "lossy video copy of alternating stills",
+      "duration_seconds": 6,
+      "native_motion": false,
+      "audio": false,
+      "probe": {
+        "duration_seconds": 6.0,
+        "streams": [
+          {
+            "type": "video",
+            "codec": "h264",
+            "width": 1280,
+            "height": 720,
+            "frames": "180"
+          }
+        ]
+      }
+    },
+    {
+      "file": "assets/outer-heaven-still-loop.webm",
+      "bytes": 146293,
+      "sha256": "30d6f761aa929435042b4ee922844d198ee6c61f826b4ce9e77d36f9dc7bd3cd",
+      "kind": "lossy video copy of alternating stills",
+      "duration_seconds": 6,
+      "native_motion": false,
+      "audio": false,
+      "probe": {
+        "duration_seconds": 6.0,
+        "streams": [
+          {
+            "type": "video",
+            "codec": "vp9",
+            "width": 1280,
+            "height": 720,
+            "frames": null
+          }
+        ]
+      }
+    },
+    {
+      "file": "assets/outer-heaven-still-loop-poster.png",
+      "bytes": 46043,
+      "sha256": "815dffa230cc4ee56c23b90a3c856cdd87f69a4cbfe5da4382f92e5f7faa001b",
+      "kind": "still-loop poster",
+      "integer_scale": 2
+    },
+    {
+      "file": "assets/moscow-comparison.png",
+      "bytes": 33949,
+      "sha256": "644e06f33c8aac092c8c786111a8a21656c1d93701c16b9d66d3d63b7743edd2",
+      "kind": "comparison PNG",
+      "sources": [
+        "capture-003",
+        "capture-004"
+      ],
+      "crop": null,
+      "integer_scale": 2,
+      "note": "The original spoken line still says 1996."
+    },
+    {
+      "file": "assets/newspaper-comparison.png",
+      "bytes": 57748,
+      "sha256": "daea8aa1d085f97e824319818b2897aa1beb49bbc197647a095130126f532b58",
+      "kind": "comparison PNG",
+      "sources": [
+        "capture-005",
+        "capture-006"
+      ],
+      "crop": null,
+      "integer_scale": 2,
+      "note": "The original English audio remains unchanged."
+    },
+    {
+      "file": "assets/neokobe-comparison.png",
+      "bytes": 35793,
+      "sha256": "f19010589b6f9b97c81cbd08a18986f66484fd643f062f58032db957ee22a290",
+      "kind": "comparison PNG",
+      "sources": [
+        "capture-007",
+        "capture-008"
+      ],
+      "crop": null,
+      "integer_scale": 2,
+      "note": "Only the year changes in this opening frame."
+    },
+    {
+      "file": "assets/chronology-still-loop.gif",
+      "bytes": 46173,
+      "sha256": "958cf15a7a6c4c4111cde877a5bcced32513b89e00b9ac8037b9aba861b593af",
+      "kind": "alternating still GIF",
+      "duration_seconds": 6,
+      "native_motion": false,
+      "integer_scale": 2
+    },
+    {
+      "file": "assets/chronology-still-loop.mp4",
+      "bytes": 46494,
+      "sha256": "e15d9d63881e4f93fd9e86ab19ddda24cb83c76750edae2cadee058ef36c206a",
+      "kind": "lossy video copy of alternating stills",
+      "duration_seconds": 6,
+      "native_motion": false,
+      "audio": false,
+      "probe": {
+        "duration_seconds": 6.0,
+        "streams": [
+          {
+            "type": "video",
+            "codec": "h264",
+            "width": 1280,
+            "height": 720,
+            "frames": "180"
+          }
+        ]
+      }
+    },
+    {
+      "file": "assets/chronology-still-loop.webm",
+      "bytes": 77523,
+      "sha256": "5d435af56166a86e771aa5b51dba469084b70846f115d8bd389b166185702d3b",
+      "kind": "lossy video copy of alternating stills",
+      "duration_seconds": 6,
+      "native_motion": false,
+      "audio": false,
+      "probe": {
+        "duration_seconds": 6.0,
+        "streams": [
+          {
+            "type": "video",
+            "codec": "vp9",
+            "width": 1280,
+            "height": 720,
+            "frames": null
+          }
+        ]
+      }
+    },
+    {
+      "file": "assets/chronology-still-loop-poster.png",
+      "bytes": 32068,
+      "sha256": "191b964bdad1d9c5b18cadb552b781f43d447ab9244030689de93121706cf4c8",
+      "kind": "still-loop poster",
+      "integer_scale": 2
+    },
+    {
+      "file": "assets/costume-gallery.png",
+      "bytes": 193874,
+      "sha256": "867f2184dfad708fed9624e88e1d59ffbdb8ef3085d9823e24bc7217ed78d31d",
+      "kind": "six-view comparison gallery",
+      "integer_scale": 2,
+      "crop": [
+        0,
+        16,
+        256,
+        128
+      ],
+      "note": "Graphics QA captures. Idle-animation phases differ."
+    },
+    {
+      "file": "assets/release-reel.mp4",
+      "bytes": 567090,
+      "sha256": "5f335af6239895399d0747854ebe132974baaccaeb2aac3032c62f1221ed0508",
+      "kind": "silent still-comparison reel",
+      "duration_seconds": 42,
+      "native_motion": false,
+      "audio": false,
+      "release_url": "github.com/t3chnaztea/snatcher-uncut-segacd",
+      "probe": {
+        "duration_seconds": 41.966667,
+        "streams": [
+          {
+            "type": "video",
+            "codec": "h264",
+            "width": 1280,
+            "height": 720,
+            "frames": "1259"
+          }
+        ]
+      }
+    },
+    {
+      "file": "assets/release-reel.webm",
+      "bytes": 995689,
+      "sha256": "c008bd5e2e5b793c9888756a433df09eb476b89750f9ac71e44178a966e84d1a",
+      "kind": "silent still-comparison reel",
+      "duration_seconds": 42,
+      "native_motion": false,
+      "audio": false,
+      "release_url": "github.com/t3chnaztea/snatcher-uncut-segacd",
+      "probe": {
+        "duration_seconds": 41.966,
+        "streams": [
+          {
+            "type": "video",
+            "codec": "vp9",
+            "width": 1280,
+            "height": 720,
+            "frames": null
+          }
+        ]
+      }
+    },
+    {
+      "file": "assets/release-reel-poster.png",
+      "bytes": 46728,
+      "sha256": "b728c2918a25487cb58f6dd5cfe31f512f985307437948466f05e81683a9b740",
+      "kind": "reel poster",
+      "integer_scale": 4
+    },
+    {
+      "file": "assets/dog-native-comparison-GORE.gif",
+      "bytes": 2010676,
+      "sha256": "5caa8fc2810d327315943928a0f968f582fdc2421c9fef2c14bde9e6c0d7ac0f",
+      "kind": "optional native graphics QA animation",
+      "warning": "Graphic animal gore and story spoiler. Optional native animation comparison.",
+      "source_provenance": "capture-020",
+      "not_in_reel": true
+    }
+  ],
+  "capture_size": [
+    256,
+    224
+  ],
+  "no_new_emulator_run": true,
+  "no_generative_game_images": true,
+  "no_input_file_modified": true,
+  "reel_audio": false,
+  "limits": [
+    "Still loops and reel are comparisons, not native-motion gameplay.",
+    "QA bar captures use differing idle-animation phases.",
+    "Optional gore animation is excluded from the reel and lead assets.",
+    "Lossy video copies do not promise exact RGB values."
+  ]
+}

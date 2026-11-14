@@ -1,0 +1,20 @@
+:root { color-scheme: dark; font-family: system-ui, sans-serif; background: #0b101b; color: #f3f6fa; }
+body { margin: 0; }
+main { max-width: 760px; margin: 48px auto; padding: 0 24px 40px; }
+h1 { font-size: clamp(30px, 6vw, 48px); line-height: 1.12; }
+p { line-height: 1.6; }
+.brand, a { color: #50e4d1; }
+.brand { font-size: 14px; font-weight: 700; letter-spacing: .05em; }
+form, details, #results { background: #141f2d; border: 1px solid #304256; border-radius: 12px; padding: 24px; margin: 28px 0; }
+label { display: block; font-size: 18px; font-weight: 650; margin-bottom: 12px; }
+input { display: block; width: 100%; font: inherit; }
+input::file-selector-button, button { background: #50e4d1; color: #07161b; border: 0; border-radius: 6px; padding: 12px 16px; font: inherit; font-weight: 650; cursor: pointer; margin-right: 12px; }
+button:disabled { opacity: .6; cursor: wait; }
+.hint { font-size: 14px; color: #b0c0d2; }
+form .hint { margin: 12px 0 28px; }
+code { overflow-wrap: anywhere; font-size: 13px; }
+summary { cursor: pointer; font-weight: 650; }
+#status { padding: 0 4px; min-height: 3em; }
+#status[data-error="true"] { color: #ffb2a2; }
+#downloads a { display: block; padding: 12px 0; }
+:focus-visible { outline: 3px solid #fff; outline-offset: 5px; }
