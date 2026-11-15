@@ -12,7 +12,8 @@
 
 <p align="center">
   <a href="https://github.com/t3chnaztea/snatcher-uncut-segacd/releases/download/v0.9.0-rc1/snatcher-uncut-player-v0.9.0-rc1.zip"><strong>Download the player patch</strong></a><br>
-  Free · v0.9.0-rc1 · 691,239 bytes · Supply your own USA disc dump<br><br>
+  Free · v0.9.0-rc1 · 691,239 bytes · Supply your own USA disc dump<br>
+  Console success reported by the owner: U.S. Genesis Model 2 + Mega EverDrive Pro.<br><br>
   <a href="#see-the-changes">See the changes</a> · <a href="https://github.com/t3chnaztea/snatcher-uncut-segacd/releases/download/v0.9.0-rc1/snatcher-uncut-media-v0.9.0-rc1.zip">Download the comparison kit</a>
 </p>
 
@@ -53,7 +54,7 @@ Neo Kobe returns to 2042. The newspaper dates change to 2039. The catastrophe ca
 
 [![Watch the silent Snatcher Uncut comparison reel](media/assets/release-reel-poster.png)](media/assets/release-reel.mp4)
 
-[Play the MP4](media/assets/release-reel.mp4) · [WebM version](media/assets/release-reel.webm). The reel is a silent edit of actual comparison stills.
+[Play the MP4](media/assets/release-reel.mp4) · [WebM version](media/assets/release-reel.webm). The reel is a silent edit of actual comparison stills. It was recorded before the owner console report.
 
 <details>
 <summary>Optional animation comparison: graphic animal gore and story spoiler</summary>
@@ -80,7 +81,7 @@ Patching runs locally. Your disc files stay on your computer. The installer veri
 
 Automated Genesis Plus GX testing reached the ending and original credits. Required fights, transitions, normal saving, shutdown and a fresh game-menu load passed. All 20 reference audio tracks and pregaps stayed byte-identical. The accepted route spans several sessions, including an Act 2 emulator checkpoint; it is not one uninterrupted cold playthrough.
 
-Original-console acceptance remains pending. [Verification and installer checks](VERIFICATION.md) · [Compatibility and known issues](KNOWN-ISSUES.md).
+The owner reports this build working on a U.S. Genesis Model 2 with a Mega EverDrive Pro. Full console playthrough and console save/load coverage have not been documented. [Verification and installer checks](VERIFICATION.md) · [Compatibility and known issues](KNOWN-ISSUES.md).
 
 ## Before you download
 

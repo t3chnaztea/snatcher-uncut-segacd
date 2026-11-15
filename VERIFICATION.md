@@ -16,7 +16,7 @@ The 40,631-byte xdelta patch has SHA256
 | Fights and transitions | Required fights and act transitions passed during the accepted route |
 | Audio data | All 20 audio tracks and stored pregaps matched the reference input byte for byte |
 | Audio output | Callback accounting and selected source-audio comparisons passed |
-| Physical consoles | Not tested |
+| U.S. Genesis Model 2 + Mega EverDrive Pro | Owner reports successful operation; full hardware test scope undocumented |
 
 Genesis Plus GX supplied the test core. The accepted route spans several
 sessions. Act 2 continued from an accepted emulator checkpoint. Later save/load

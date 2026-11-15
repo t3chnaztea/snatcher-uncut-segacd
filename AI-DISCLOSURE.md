@@ -6,6 +6,6 @@ The screenshots and animation samples come from actual emulator captures. The re
 
 Automated checks compared source and patched bytes, inspected decoded graphics and text, exercised game controls, checked normal save/load, and recorded emulator output. Separate AI-agent checks are automated reviews. They are not independent human expert reviews. No human Japanese language review or full-route listening review is claimed.
 
-The accepted emulator route reached the ending and original credits. Physical-console testing has not run. The compatibility notes describe these limits.
+The accepted emulator route reached the ending and original credits. The owner reports successful operation on a U.S. Genesis Model 2 with a Mega EverDrive Pro. Full console test coverage has not been documented. The compatibility notes describe these limits.
 
 Public copy also passed the owner's writing checks for repetitive phrasing and filler. That edit does not change the project's use of AI.
