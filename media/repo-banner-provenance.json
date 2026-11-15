@@ -1,0 +1,23 @@
+{
+  "asset": "assets/repo-banner.png",
+  "kind": "Typography and integer-scaled crop of an existing patched emulator capture",
+  "source_capture_id": "capture-002",
+  "source_capture_sha256": "940d0ea7c230098ccc8b0eed55618960605e5f0b4ed8541b3d29aa125594ab81",
+  "native_crop": [
+    32,
+    24,
+    224,
+    120
+  ],
+  "integer_scale": 4,
+  "stored_capture_region": [
+    768,
+    125,
+    1536,
+    509
+  ],
+  "native_pixels_unchanged": true,
+  "no_generative_image_model": true,
+  "sha256": "0fee605f07a4f5e4a0aa861d139efdb15f000ca9f9289a8581125f6df45d969b",
+  "bytes": 57761
+}

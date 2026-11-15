@@ -40,8 +40,8 @@
       "sha256": "7bd15764f94c6a980092fe7f8387e038ff7387314dd7dc8c09bdd76b9d19c6bc"
     },
     "README.md": {
-      "bytes": 4522,
-      "sha256": "d992c400a6a7fd07a14a865e1c880f6b6d7611e9e999dba303abf0da2a6d94da"
+      "bytes": 5907,
+      "sha256": "6e694b98556bc6b7672d09769f10fdce3cc965ac8bc6c62b20755ba364ceeb5c"
     },
     "RELEASE-NOTES.md": {
       "bytes": 1609,
@@ -211,6 +211,10 @@
       "bytes": 995689,
       "sha256": "c008bd5e2e5b793c9888756a433df09eb476b89750f9ac71e44178a966e84d1a"
     },
+    "media/assets/repo-banner.png": {
+      "bytes": 57761,
+      "sha256": "0fee605f07a4f5e4a0aa861d139efdb15f000ca9f9289a8581125f6df45d969b"
+    },
     "media/index.html": {
       "bytes": 2705,
       "sha256": "c245d633afc34a1fbdaa60c151fefe7b29222f311228ddc34859d934e33c52de"
@@ -218,6 +222,10 @@
     "media/provenance.json": {
       "bytes": 10318,
       "sha256": "03e4f544f52abeaff881fd60d12eb57334277c95bdd2eca8f957519700664294"
+    },
+    "media/repo-banner-provenance.json": {
+      "bytes": 580,
+      "sha256": "5cb998c8b4864e95ce5379f72c0bcc8c071f01bcd28898dd6cf850242ad34007"
     },
     "patches/README.md": {
       "bytes": 229,
@@ -354,5 +362,7 @@
   },
   "third_party_engine_commit": "4f17297cd1dc0835a0b0747497fa15f5f63f1623",
   "gameplay_acceptance": "See VERIFICATION.md. Historical emulator captures and controller journals are not included.",
-  "hardware_acceptance": "Not run."
+  "hardware_acceptance": "Not run.",
+  "release_commit": "a2b7e846941921495627abd6036ac4300df1d3e5",
+  "presentation_revision": "Visual repository page; release artifacts remain unchanged."
 }

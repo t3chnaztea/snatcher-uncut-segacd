@@ -1,45 +1,93 @@
-# Snatcher Uncut: Sega CD Restoration Patch
+<p align="center">
+  <img src="media/assets/repo-banner.png" alt="Snatcher Uncut: Sega CD Restoration Patch" width="1200">
+</p>
 
-Selected visual and chronology restorations for Snatcher's English Sega CD release. The original English voices, music and expanded Act 3 remain.
+<h1 align="center">Restore the cameos. Keep the English dub.</h1>
 
-![Original Sega CD Outer Heaven patrons beside restored costume references](media/assets/outer-heaven-hero.png)
+<p align="center">
+  Play Snatcher's English Sega CD release with selected artwork and dates restored.<br>
+  The original voice cast, music and expanded Act 3 stay.<br>
+  Patch locally in your browser.
+</p>
 
-The comparison uses patron crops from graphics QA captures. The stage performer is outside the crop. [Watch the 42-second silent comparison reel](media/assets/release-reel.mp4).
+<p align="center">
+  <a href="https://github.com/t3chnaztea/snatcher-uncut-segacd/releases/download/v0.9.0-rc1/snatcher-uncut-player-v0.9.0-rc1.zip"><strong>Download the player patch</strong></a><br>
+  Free · v0.9.0-rc1 · 691,239 bytes · Supply your own USA disc dump<br><br>
+  <a href="#see-the-changes">See the changes</a> · <a href="https://github.com/t3chnaztea/snatcher-uncut-segacd/releases/download/v0.9.0-rc1/snatcher-uncut-media-v0.9.0-rc1.zip">Download the comparison kit</a>
+</p>
 
-This release candidate restores the Outer Heaven costume cameos, the dog animation, an adult corpse pose, and selected dates. Its scope is 37 approved change records: 31 text records and six art records. Those records are not 37 separate scenes. The patch retains most of the existing English localization.
+## See the changes
 
-## Install
+### The Outer Heaven patrons return
 
-Download `snatcher-uncut-player-v0.9.0-rc1.zip` from this repository's Releases page. Supply your own compatible USA Sega CD dump. Follow [INSTALL.md](INSTALL.md) to validate the input, apply the patch, and check the result. Keep your original files.
+![Original Sega CD patrons beside the restored source costume cameos](media/assets/outer-heaven-hero.png)
 
-Applying the patch does not require the developer build or a Japanese PC Engine disc. The patch changes the data track. It preserves your audio tracks and disc timing. The download contains no game image or BIOS.
+The costume patrons from the PC Engine version replace the Sega CD's Konami cameos. Their descriptions change with them. The original dancer and lighting remain. These are patron crops from actual emulator graphics checks.
 
-The supported raw data track has 131,744,928 bytes and SHA1 `1f4164205ed736a0d9a03eb7972868e9aa737d35`. The patched data track must have SHA256 `f543ea684608ab9c706be6f7e6ff9ba4408feb25e3a3bc4e1fa7ba4038aa5aba`. Use the installer to check these values. A whole-disc checksum can differ when a dump has different audio bytes.
+<table>
+<tr>
+<td width="50%"><img src="media/assets/outer-heaven-still-loop.gif" alt="Alternating original and restored Outer Heaven patron stills" width="560"></td>
+<td width="50%"><img src="media/assets/chronology-still-loop.gif" alt="Alternating original and restored Neo Kobe year-caption stills" width="560"></td>
+</tr>
+<tr>
+<td>Outer Heaven: original and restored stills.</td>
+<td>Neo Kobe: 2047 becomes 2042.</td>
+</tr>
+</table>
 
-## What changes
+Both six-second GIFs alternate captured stills. They are comparisons, not gameplay video. The source pixels use integer scaling.
 
-The text changes cover 26 chronology records and five cameo identity groups. The art changes cover three opening date captions, the Outer Heaven patrons, the dog animation, and the adult corpse pose. Six costume views share the existing five identity groups. H2O and Gulliver keep their combined menu branch.
+### Six restored costume views
 
-Some localized content remains by design. Adult ages remain 18. Optional menus, the port-specific additions, and excluded age or sexualized-minor content are unchanged. This is a selected restoration patch, not a new translation or a claim that every version difference has been removed.
+![Six original and restored costume views from Outer Heaven](media/assets/costume-gallery.png)
 
-The opening and database show the catastrophe year as 1991. The retained English speech says 1996. No voices or music were re-recorded. [CHANGELOG.md](CHANGELOG.md) lists the changes. [KNOWN-ISSUES.md](KNOWN-ISSUES.md) records the limits.
+These graphics-check captures use different idle-animation phases. Six costume views share the existing five identity groups; H2O and Gulliver keep their combined menu branch.
 
-## Verification and compatibility
+### The dates change on screen
 
-Automated Genesis Plus GX testing reached the ending and original credits. It covered required fights, transitions, normal in-game saving, shutdown, and loading through the game menu in a fresh process. All 37 approved records passed emulator checks. Selected scenes also received targeted graphics and text checks. Those targeted checks are separate from normal story progression.
+![Original December 2047 Neo Kobe caption beside restored December 2042 caption](media/assets/neokobe-comparison.png)
 
-[VERIFICATION.md](VERIFICATION.md) records the checks, output identity and limits.
+Neo Kobe returns to 2042. The newspaper dates change to 2039. The catastrophe caption changes to 1991. [Compare Moscow](media/assets/moscow-comparison.png) and [the newspaper](media/assets/newspaper-comparison.png).
 
-The accepted route spans several emulator sessions. It is not a claim of one uninterrupted cold run through the whole game. The original 20 audio tracks and pregaps are byte-identical to the reference input. Captured output passed callback accounting and selected source-audio comparisons. These checks do not establish a full-route listening review.
+### Watch the 42-second comparison
 
-Original-console testing has not run. Cabinet testing, FPGA compatibility, and transfer of existing saves to the patched game are not established. Back up saves before trying a patched disc. Use the tested combinations in [KNOWN-ISSUES.md](KNOWN-ISSUES.md).
+[![Watch the silent Snatcher Uncut comparison reel](media/assets/release-reel-poster.png)](media/assets/release-reel.mp4)
 
-## Credits and development
+[Play the MP4](media/assets/release-reel.mp4) · [WebM version](media/assets/release-reel.webm). The reel is a silent edit of actual comparison stills.
 
-TECH NASTY made this patch with AI assistance in research, code, test controllers, and documentation. The comparisons use actual game captures. The restored art comes from source game data through deterministic conversion. No generative image model made the game art. Read [AI-DISCLOSURE.md](AI-DISCLOSURE.md) for the process and limits.
+<details>
+<summary>Optional animation comparison: graphic animal gore and story spoiler</summary>
 
-[CREDITS.md](CREDITS.md) credits the original creators and technical references. This is an unofficial fan project. It has no affiliation with Konami.
+The dog scene animates again. This five-second clip compares native emulator samples. The source selection stays static here; the restored sequence moves.
 
-The [developer setup](https://github.com/t3chnaztea/snatcher-uncut-segacd/blob/main/docs/setup.md) describes rebuilding the patch from user-supplied inputs. That route requires additional source material and tools.
+![Graphic animal gore: original dog scene beside restored native animation](media/assets/dog-native-comparison-GORE.gif)
 
-For a bug report, include the patch version, source data-track hash, input layout, emulator or device version, affected scene, and steps to reproduce the problem. Do not upload a disc image, BIOS, or extracted game files.
+The patch also restores an adult corpse pose. Neither scene appears in the lead images or reel.
+
+</details>
+
+## Patch your copy in three steps
+
+1. [Download the player ZIP](https://github.com/t3chnaztea/snatcher-uncut-segacd/releases/download/v0.9.0-rc1/snatcher-uncut-player-v0.9.0-rc1.zip). Extract the whole folder.
+2. Open `browser/index.html`. Choose your original single BIN and CUE. Select **Verify and patch**.
+3. Save the patched BIN and CUE together in a new folder. Open that CUE in your player.
+
+Patching runs locally. Your disc files stay on your computer. The installer verifies the data track before and after patching. It preserves your audio bytes and disc timing. The download contains no game or BIOS.
+
+[Full instructions and supported inputs](INSTALL.md) · [Offline route for split-track sets](OFFLINE-INSTALL.md). Keep your originals. Back up saves before patching. Windows, Linux and mobile operation remain untested.
+
+## Tested through the ending
+
+Automated Genesis Plus GX testing reached the ending and original credits. Required fights, transitions, normal saving, shutdown and a fresh game-menu load passed. All 20 reference audio tracks and pregaps stayed byte-identical. The accepted route spans several sessions, including an Act 2 emulator checkpoint; it is not one uninterrupted cold playthrough.
+
+Original-console acceptance remains pending. [Verification and installer checks](VERIFICATION.md) · [Compatibility and known issues](KNOWN-ISSUES.md).
+
+## Before you download
+
+**How much is "Uncut"?** Selected restorations: 31 text records and six art records, not 37 separate scenes. Those cover chronology, cameo identities, three opening captions and the visual changes above. Adult ages stay at 18. Optional menus and excluded age or sexualized-minor content stay unchanged. [Exact change list](CHANGELOG.md).
+
+**Does it replace the English script or voices?** Most of the existing localization stays. Selected dates and cameo wording change. The opening and database show 1991 while the retained speech says 1996. No voices or music were re-recorded.
+
+**Was AI used?** Yes. TECH NASTY developed this patch with AI coding agents for research, code, test controllers, evidence review and documentation. The art comes from source game data through deterministic conversion. The images are emulator captures. No generative image model made the game art. Automated review is not independent human QA. [Process disclosure](AI-DISCLOSURE.md).
+
+This is an unofficial fan patch with no Konami affiliation. [Credits and references](CREDITS.md) · [Rebuild from source](docs/setup.md) · [Report a bug](https://github.com/t3chnaztea/snatcher-uncut-segacd/issues).
