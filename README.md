@@ -5,7 +5,8 @@
 <h1 align="center">Snatcher for Sega CD, with the original cameos back</h1>
 
 <p align="center">
-  I restored selected artwork and dates in the English release.<br>
+  The twitching dog guts are back. Lisa Nielsen's exposed breast is restored too.<br>
+  The original costume cameos and selected dates return.<br>
   The original voice cast, music and expanded Act 3 stay.<br>
   Patch your own copy in your browser.
 </p>
