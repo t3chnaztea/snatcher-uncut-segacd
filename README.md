@@ -40,12 +40,6 @@ The characters were captured at different points in their idle animations.
 
 Neo Kobe returns to 2042. The newspaper changes to 2039. The catastrophe caption changes to 1991. [Compare Moscow](media/assets/moscow-comparison.png) and [the newspaper](media/assets/newspaper-comparison.png).
 
-### Watch the 42-second comparison
-
-[![Watch the silent Snatcher Uncut comparison reel](media/assets/release-reel-poster.png)](media/assets/release-reel.mp4)
-
-[Play the MP4](media/assets/release-reel.mp4) · [WebM version](media/assets/release-reel.webm). This silent reel uses comparison stills.
-
 ## Patch your copy
 
 1. [Download the player ZIP](https://github.com/t3chnaztea/snatcher-uncut-segacd/releases/download/v0.9.0-rc1/snatcher-uncut-player-v0.9.0-rc1.zip). Extract the whole folder.
