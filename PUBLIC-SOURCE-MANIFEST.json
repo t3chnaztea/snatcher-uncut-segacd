@@ -40,8 +40,8 @@
       "sha256": "7bd15764f94c6a980092fe7f8387e038ff7387314dd7dc8c09bdd76b9d19c6bc"
     },
     "README.md": {
-      "bytes": 5320,
-      "sha256": "f35987839f7e4d2e6290d3f336f78abba11cafe80af7a68792a7782a0f5f5422"
+      "bytes": 4314,
+      "sha256": "d12d6fceea730e36884f571a9adb5eaa85f3c4c68456672f84547215cda87353"
     },
     "RELEASE-NOTES.md": {
       "bytes": 1609,
@@ -141,23 +141,23 @@
     },
     "media/SHA256SUMS": {
       "bytes": 2017,
-      "sha256": "b733cbc27a2ce0070e0a778957e4573efde2fc3619527f4a9fda3f5b75609c13"
+      "sha256": "b1a2687b12a65c889ed701e382ed022013f6850c350a4d388f5b9974e2d098be"
     },
     "media/assets/chronology-still-loop-poster.png": {
-      "bytes": 32068,
-      "sha256": "191b964bdad1d9c5b18cadb552b781f43d447ab9244030689de93121706cf4c8"
+      "bytes": 31497,
+      "sha256": "e704c0865291baba3aef677aea5951994687802d31de3aa62f5d933e4a7f79cd"
     },
     "media/assets/chronology-still-loop.gif": {
-      "bytes": 46173,
-      "sha256": "958cf15a7a6c4c4111cde877a5bcced32513b89e00b9ac8037b9aba861b593af"
+      "bytes": 44204,
+      "sha256": "87f6fe5667b5f2dc4539c46c058f83a69eed302cd324e789fd2d6d660217bfe8"
     },
     "media/assets/chronology-still-loop.mp4": {
-      "bytes": 46494,
-      "sha256": "e15d9d63881e4f93fd9e86ab19ddda24cb83c76750edae2cadee058ef36c206a"
+      "bytes": 44993,
+      "sha256": "7422161616bc7b4bb62e7283285e5cb00c3687c78b5e4b455d24daf15dd33649"
     },
     "media/assets/chronology-still-loop.webm": {
-      "bytes": 77523,
-      "sha256": "5d435af56166a86e771aa5b51dba469084b70846f115d8bd389b166185702d3b"
+      "bytes": 72766,
+      "sha256": "038fbd3e0560b88e7f81f3ca91923bbdc06021fbfcb0175d3418f0b5bd9a22f6"
     },
     "media/assets/costume-gallery.png": {
       "bytes": 193874,
@@ -168,64 +168,64 @@
       "sha256": "5caa8fc2810d327315943928a0f968f582fdc2421c9fef2c14bde9e6c0d7ac0f"
     },
     "media/assets/moscow-comparison.png": {
-      "bytes": 33949,
-      "sha256": "644e06f33c8aac092c8c786111a8a21656c1d93701c16b9d66d3d63b7743edd2"
+      "bytes": 33373,
+      "sha256": "d63a9885190d52feaa8418ec92d1c9a1c969422ea3374b64038db9807763c657"
     },
     "media/assets/neokobe-comparison.png": {
-      "bytes": 35793,
-      "sha256": "f19010589b6f9b97c81cbd08a18986f66484fd643f062f58032db957ee22a290"
+      "bytes": 35218,
+      "sha256": "dec454cf1649fb50bd6baa8dbab80eb57df170c23fc0c415d6f577375dd9bd77"
     },
     "media/assets/newspaper-comparison.png": {
-      "bytes": 57748,
-      "sha256": "daea8aa1d085f97e824319818b2897aa1beb49bbc197647a095130126f532b58"
+      "bytes": 57156,
+      "sha256": "a74a03347e50137a4334f817f7d97221426cd95136e78a94ebc841c772c837b0"
     },
     "media/assets/outer-heaven-hero.png": {
-      "bytes": 47529,
-      "sha256": "09290bf1cf62898b63b8978b31b0751b534b9abe57caf3a467fab7cfd9670601"
+      "bytes": 46967,
+      "sha256": "bcd08d79884d643eda557cb7c8a89cb5b984bf0ca69fc0fa6ededf66d8469768"
     },
     "media/assets/outer-heaven-still-loop-poster.png": {
-      "bytes": 46043,
-      "sha256": "815dffa230cc4ee56c23b90a3c856cdd87f69a4cbfe5da4382f92e5f7faa001b"
+      "bytes": 45485,
+      "sha256": "73b59fa5275273507c9870671dfac7715eea4b9aab6a6399fb8f9cc274305e8d"
     },
     "media/assets/outer-heaven-still-loop.gif": {
-      "bytes": 76987,
-      "sha256": "63a5b0bc46500dac7d26df235882c9e1d2a1e38c87bb780352f8c017ca522b51"
+      "bytes": 75550,
+      "sha256": "7a383e73936d328a61ac9dc6237b7a86a1aa2a3c4362aef4c33bc685271d5840"
     },
     "media/assets/outer-heaven-still-loop.mp4": {
-      "bytes": 90813,
-      "sha256": "9623dbaf773f140eb85abe50ac388483ddb30a219f25cfa82c9606ddf25a5689"
+      "bytes": 92311,
+      "sha256": "3148393b93559e2093ed0837d38c6bcc7de0d8213b63081b781a2d72b51ef1a4"
     },
     "media/assets/outer-heaven-still-loop.webm": {
-      "bytes": 146293,
-      "sha256": "30d6f761aa929435042b4ee922844d198ee6c61f826b4ce9e77d36f9dc7bd3cd"
+      "bytes": 145211,
+      "sha256": "c9ec250b566c06a0a966a9b60d1aa0143b8e19adb2b142c31211f0fb4f7b47a9"
     },
     "media/assets/release-reel-poster.png": {
-      "bytes": 46728,
-      "sha256": "b728c2918a25487cb58f6dd5cfe31f512f985307437948466f05e81683a9b740"
+      "bytes": 46165,
+      "sha256": "69f79e104a4dfaa622f49c4ce5243f26b34839ecdc9de2cbf8ae5b9bd43f26ec"
     },
     "media/assets/release-reel.mp4": {
-      "bytes": 567090,
-      "sha256": "5f335af6239895399d0747854ebe132974baaccaeb2aac3032c62f1221ed0508"
+      "bytes": 503683,
+      "sha256": "719d6d603144adba3fa8798c0a9f63fb65787dcd3d5ae78e35dae4d1ec800e2a"
     },
     "media/assets/release-reel.webm": {
-      "bytes": 995689,
-      "sha256": "c008bd5e2e5b793c9888756a433df09eb476b89750f9ac71e44178a966e84d1a"
+      "bytes": 985500,
+      "sha256": "1e2ac8a66cadaa601bcd80c99adfcf870ab984a01164e1fb7702bd32a663822b"
     },
     "media/assets/repo-banner.png": {
-      "bytes": 57761,
-      "sha256": "0fee605f07a4f5e4a0aa861d139efdb15f000ca9f9289a8581125f6df45d969b"
+      "bytes": 56765,
+      "sha256": "5a5457732a0c02d50166bdad94f674aacdb098d34e5af7a229f4c1d852c52afa"
     },
     "media/index.html": {
-      "bytes": 2817,
-      "sha256": "d1c532e0f405bd5676dd1cbff7aa5319b3160a2ccaaed8569957dbf9267b3c07"
+      "bytes": 1917,
+      "sha256": "a0ec004147b18b13ebb6ac7acab750e882fa4a622fe2871a1afd520bd0c1c877"
     },
     "media/provenance.json": {
       "bytes": 10318,
-      "sha256": "03e4f544f52abeaff881fd60d12eb57334277c95bdd2eca8f957519700664294"
+      "sha256": "67756958a613a4e6761e164df3ea003fefe54caeee9ca13654e391029b210d17"
     },
     "media/repo-banner-provenance.json": {
-      "bytes": 580,
-      "sha256": "5cb998c8b4864e95ce5379f72c0bcc8c071f01bcd28898dd6cf850242ad34007"
+      "bytes": 618,
+      "sha256": "df1e258f0f5dbec48bbc2f637883d996c3af88e53e6e57187cba031d9d0731a9"
     },
     "patches/README.md": {
       "bytes": 229,

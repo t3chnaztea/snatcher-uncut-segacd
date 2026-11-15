@@ -25,18 +25,6 @@
 
 The PC Engine costume cameos replace the Konami characters in the Sega CD bar. Their descriptions change too. The dancer and lighting stay as they were.
 
-<table>
-<tr>
-<td width="50%"><img src="media/assets/outer-heaven-still-loop.gif" alt="Original and restored Outer Heaven screenshots" width="560"></td>
-<td width="50%"><img src="media/assets/chronology-still-loop.gif" alt="Original and restored Neo Kobe date screenshots" width="560"></td>
-</tr>
-<tr>
-<td>Outer Heaven, before and after.</td>
-<td>Neo Kobe: 2047 becomes 2042.</td>
-</tr>
-</table>
-
-These GIFs flip between screenshots. They aren't gameplay clips. The costume shots caught different frames of the idle animation.
 
 ### Six restored costume views
 
@@ -54,18 +42,7 @@ Neo Kobe returns to 2042. The newspaper changes to 2039. The catastrophe caption
 
 [![Watch the silent Snatcher Uncut comparison reel](media/assets/release-reel-poster.png)](media/assets/release-reel.mp4)
 
-[Play the MP4](media/assets/release-reel.mp4) · [WebM version](media/assets/release-reel.webm). This silent reel uses comparison stills. The console result above was added after the reel.
-
-<details>
-<summary>Dog animation comparison: graphic animal gore and story spoiler</summary>
-
-The dog scene animates again. This five-second clip shows the original static image beside the restored animation.
-
-![Graphic animal gore: original dog scene beside restored animation](media/assets/dog-native-comparison-GORE.gif)
-
-The patch also restores an adult corpse pose. Neither scene is in the lead images or reel.
-
-</details>
+[Play the MP4](media/assets/release-reel.mp4) · [WebM version](media/assets/release-reel.webm). This silent reel uses comparison stills.
 
 ## Patch your copy
 

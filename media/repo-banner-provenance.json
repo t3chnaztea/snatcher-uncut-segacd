@@ -18,6 +18,7 @@
   ],
   "native_pixels_unchanged": true,
   "no_generative_image_model": true,
-  "sha256": "0fee605f07a4f5e4a0aa861d139efdb15f000ca9f9289a8581125f6df45d969b",
-  "bytes": 57761
+  "sha256": "5a5457732a0c02d50166bdad94f674aacdb098d34e5af7a229f4c1d852c52afa",
+  "bytes": 56765,
+  "publisher_branding_removed": true
 }
