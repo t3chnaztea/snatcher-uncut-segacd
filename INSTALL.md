@@ -71,4 +71,4 @@ use a backed-up save. Transfer of existing saves from the original disc has
 not been verified. Normal saving and a fresh load passed with the patched
 emulator image. [KNOWN-ISSUES.md](KNOWN-ISSUES.md) gives the remaining limits.
 
-The owner reports this build working on a U.S. Genesis Model 2 with a Mega EverDrive Pro. Full console playthrough and console save/load coverage have not been documented. A successful browser patch alone does not establish hardware compatibility.
+I tested the patch on my U.S. Genesis Model 2 with a Mega EverDrive Pro. It worked. The full playthrough and save/load results here come from the emulator tests.

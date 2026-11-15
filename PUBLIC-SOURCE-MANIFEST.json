@@ -8,8 +8,8 @@
       "sha256": "93ea74710ad2bf32310b689b284cbee35d5a0e63b581821c1a9a7db3dd694956"
     },
     "AI-DISCLOSURE.md": {
-      "bytes": 1295,
-      "sha256": "5252e04e7fea82afcf925bdd06e9eac4cfbeda153b3349e8d118d9980376f287"
+      "bytes": 1130,
+      "sha256": "f633d6c2076293609f72ba7679568e02cf9fe9f524b18dab942f5da4280c578e"
     },
     "CHANGELOG.md": {
       "bytes": 1900,
@@ -20,12 +20,12 @@
       "sha256": "5d67e32b99956169c256f0331bb35a697c0ff457b9a4e720951b1ef4cbfec77e"
     },
     "INSTALL.md": {
-      "bytes": 3694,
-      "sha256": "c1593ac03d4f882db55e051322da17db8f2825690a2b019c7eb37d665623a492"
+      "bytes": 3608,
+      "sha256": "fa7ff602a3ac715e1c2a084d59de2196309ebf4893c63b238a765ea26092372f"
     },
     "KNOWN-ISSUES.md": {
-      "bytes": 3416,
-      "sha256": "625eb3da137251731a249b640953938606113df9f3c07225b0e48c27cfd741ca"
+      "bytes": 3219,
+      "sha256": "b15206d2297886102607eea46a77244ea96c8c88bedd6f905d922e82c26f1442"
     },
     "LICENSE": {
       "bytes": 1067,
@@ -40,16 +40,16 @@
       "sha256": "7bd15764f94c6a980092fe7f8387e038ff7387314dd7dc8c09bdd76b9d19c6bc"
     },
     "README.md": {
-      "bytes": 6171,
-      "sha256": "7c44915b8d10c1e7c5e952089a4f92576c5dd290f36db4a48d86d5a98d40f0c0"
+      "bytes": 5320,
+      "sha256": "f35987839f7e4d2e6290d3f336f78abba11cafe80af7a68792a7782a0f5f5422"
     },
     "RELEASE-NOTES.md": {
       "bytes": 1609,
       "sha256": "319794eb1366c266b306a78180cb6f95fde82f9616ea5322645809b18fc60c86"
     },
     "VERIFICATION.md": {
-      "bytes": 3326,
-      "sha256": "2303977ad0fecf0fffb4588b51cb1adefdfb0b674e5e665ca07cbe5e4117838b"
+      "bytes": 3337,
+      "sha256": "ab7903c2963c16155fff8ebb356594b4f7db7c886e7db6553ad7c9d3e3a16f1d"
     },
     "browser/app.js": {
       "bytes": 8749,
@@ -57,11 +57,11 @@
     },
     "browser/browser-build.json": {
       "bytes": 2139,
-      "sha256": "c7df823b5e9df5972af3d873391b8b686001e2d5e1b64ebe0cd6694b92627aa6"
+      "sha256": "011f9ff2e6846ac81b4a97d2bb78ffcfb74d7f5b7baf3b24108aac175e8b6d70"
     },
     "browser/index.html": {
-      "bytes": 3440,
-      "sha256": "0a93908e2e0351cf5c510f378bf923e995d643900a2c7d070aa6a1836bcb84df"
+      "bytes": 3356,
+      "sha256": "7bd3d72f82371e24136ab5de9bd59555d6af1e88469ef02a4d6a38e4ab7c94b9"
     },
     "browser/patch-data.js": {
       "bytes": 54210,
@@ -141,7 +141,7 @@
     },
     "media/SHA256SUMS": {
       "bytes": 2017,
-      "sha256": "eb5821d2dd06b8573f07742f3c3c3f058104c78a2288c57e14ab985522d257b5"
+      "sha256": "b733cbc27a2ce0070e0a778957e4573efde2fc3619527f4a9fda3f5b75609c13"
     },
     "media/assets/chronology-still-loop-poster.png": {
       "bytes": 32068,
@@ -216,8 +216,8 @@
       "sha256": "0fee605f07a4f5e4a0aa861d139efdb15f000ca9f9289a8581125f6df45d969b"
     },
     "media/index.html": {
-      "bytes": 2830,
-      "sha256": "e1ca9a27f62a7a7a4bcf345c59e4f2f6d3fdf457bec7426b5eaf609fae7c7281"
+      "bytes": 2817,
+      "sha256": "d1c532e0f405bd5676dd1cbff7aa5319b3160a2ccaaed8569957dbf9267b3c07"
     },
     "media/provenance.json": {
       "bytes": 10318,
@@ -362,7 +362,7 @@
   },
   "third_party_engine_commit": "4f17297cd1dc0835a0b0747497fa15f5f63f1623",
   "gameplay_acceptance": "See VERIFICATION.md. Historical emulator captures and controller journals are not included.",
-  "hardware_acceptance": "Owner reports successful operation on U.S. Genesis Model 2 with Mega EverDrive Pro. Full console test coverage undocumented.",
+  "hardware_acceptance": "Tested on a U.S. Genesis Model 2 with Mega EverDrive Pro. Full playthrough and save/load results are from Genesis Plus GX.",
   "release_commit": "a2b7e846941921495627abd6036ac4300df1d3e5",
   "presentation_revision": "Visual repository page; release artifacts remain unchanged."
 }

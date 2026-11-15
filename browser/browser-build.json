@@ -4,7 +4,7 @@
   "patch_sha256": "1485cc915dc0d2629049f7abcb8f724f608a8205c89456ad534acf2d26ac09a4",
   "files": {
     "app.js": "2253b1346b0e4807ebef6eb01015cdcde07c72a497083bea64f5e9e7bc84b34b",
-    "index.html": "0a93908e2e0351cf5c510f378bf923e995d643900a2c7d070aa6a1836bcb84df",
+    "index.html": "7bd3d72f82371e24136ab5de9bd59555d6af1e88469ef02a4d6a38e4ab7c94b9",
     "patch-data.js": "bc060d9becec5472f95566975fe13b2e8d1c4a1487bb64f1c1bb79a2821a449b",
     "style.css": "8579cf4484ffdd0262fd43cf6eab631eb003e5d54e23d946afac510eebea0ed8",
     "vendor/LICENSE": "a379dd012587a2fbe434ea6fcef30f502f32077738c2bd36e9e20cce621162bb",

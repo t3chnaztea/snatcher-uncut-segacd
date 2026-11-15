@@ -11,18 +11,18 @@
 | Reference audio data | All 20 tracks and pregaps remained byte-identical |
 | Captured audio output | Callback accounting and selected source comparisons passed |
 | Developer reproduction | A fresh private source clone reproduced eight accepted artifacts |
-| U.S. Genesis Model 2 + Mega EverDrive Pro | Owner reports successful operation; test coverage unspecified |
+| U.S. Genesis Model 2 + Mega EverDrive Pro | Worked on my console |
 | Batocera cabinet | Not tested |
 | FPGA hardware | Not tested |
 | Existing unpatched saves used with this patch | Not established |
 
-The emulator evidence uses the pinned Genesis Plus GX test core. It does not establish compatibility with every Genesis Plus GX version or frontend. The accepted route spans several sessions. The Act 2 continuation began from an accepted emulator checkpoint. Later save/load checks used normal in-game saving and fresh boot. Targeted scene checks do not establish that every restored view was reached naturally during that route.
+The emulator evidence uses the pinned Genesis Plus GX test core. It does not establish compatibility with every Genesis Plus GX version or frontend. The emulator playthrough spans several sessions. The Act 2 continuation began from an accepted emulator checkpoint. Later save/load checks used normal in-game saving and fresh boot. Targeted scene checks do not establish that every restored view was reached naturally during that route.
 
 Installer layout and operating-system support must come from the release install instructions. Developer-build reproduction is a separate check. It does not prove that the player installer works on another operating system.
 
-## Owner console report
+## Console test
 
-The owner reports this build working on a U.S. Genesis Model 2 with a Mega EverDrive Pro. Full console playthrough and console save/load coverage have not been documented. Cartridge firmware, BIOS and the tested scene list were not supplied. This report does not replace the full emulator evidence or establish compatibility with every device.
+I tested the patch on my U.S. Genesis Model 2 with a Mega EverDrive Pro. It worked. The full playthrough and save/load results here come from the emulator tests. Other hardware is untested.
 
 ## Text and speech
 
