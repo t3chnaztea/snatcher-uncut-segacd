@@ -5,12 +5,24 @@
 <h1 align="center">Snatcher for Sega CD, with the original cameos back</h1>
 
 <p align="center">
-  Alice the dog's twitching guts are restored.<br>
-  Lisa Nielsen's android corpse has its original exposed breast restored, reversing the Sega CD dress cover-up.<br>
-  The original costume cameos and selected dates return.<br>
-  The original voice cast, music and expanded Act 3 stay.<br>
+  A partial restoration of the English Sega CD release.<br>
   Patch your own copy in your browser.
 </p>
+
+## RESTORED
+
+- Dog guts: Alice's twitching intestines return, restoring the PC Engine animation.
+- Lisa's dress: Her android corpse's exposed breast returns, reversing the Sega CD cover-up.
+- Outer Heaven cameos: The six original film/TV costume views return, with matching dialogue and headings.
+- Dates: Selected text and opening captions return to the Japanese chronology: 1991, 2039 and 2042.
+
+## UNCHANGED
+
+- English voices and music: Original recordings stay intact. Spoken 1996 still differs from restored 1991 text.
+- Expanded Act 3: Sega CD's story additions stay.
+- Shower scene and panty-sniffing: No restoration. Sexualized content involving the Japanese version's underage character is outside this patch's scope. The English ages stay 18.
+- Other dialogue and optional menus: Most of the localization stays. Rebuilding omitted interactions and translating their dialogue is outside this release's scope.
+
 
 <p align="center">
   <a href="https://github.com/t3chnaztea/snatcher-uncut-segacd/releases/download/v0.9.0-rc1/snatcher-uncut-player-v0.9.0-rc1.zip"><strong>Download the player patch</strong></a><br>
