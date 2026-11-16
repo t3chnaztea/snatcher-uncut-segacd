@@ -40,8 +40,8 @@
       "sha256": "7bd15764f94c6a980092fe7f8387e038ff7387314dd7dc8c09bdd76b9d19c6bc"
     },
     "README.md": {
-      "bytes": 4866,
-      "sha256": "df3c5648f1501ab581177a898cd09d27355b4a24d7378d1ce496e75a5b8ce90e"
+      "bytes": 6917,
+      "sha256": "d1d27ab5599dff56df598078084c3bc509703f8b957b147a72afbb4ae2392cfc"
     },
     "RELEASE-NOTES.md": {
       "bytes": 1609,
@@ -57,19 +57,19 @@
     },
     "browser/browser-build.json": {
       "bytes": 2139,
-      "sha256": "011f9ff2e6846ac81b4a97d2bb78ffcfb74d7f5b7baf3b24108aac175e8b6d70"
+      "sha256": "87fb91b605ffbd6367e73e59c1dfe1baca7e245cafa26a915122e6869d7f293f"
     },
     "browser/index.html": {
-      "bytes": 3356,
-      "sha256": "7bd3d72f82371e24136ab5de9bd59555d6af1e88469ef02a4d6a38e4ab7c94b9"
+      "bytes": 4924,
+      "sha256": "778d251e6287cb0b1073ac871b9f92d3ceeb1b1fec23d20d6cb5e4b747959802"
     },
     "browser/patch-data.js": {
       "bytes": 54210,
       "sha256": "bc060d9becec5472f95566975fe13b2e8d1c4a1487bb64f1c1bb79a2821a449b"
     },
     "browser/style.css": {
-      "bytes": 1268,
-      "sha256": "8579cf4484ffdd0262fd43cf6eab631eb003e5d54e23d946afac510eebea0ed8"
+      "bytes": 5008,
+      "sha256": "58685ea44b9c8556138a41f60f7eb352948ff81ccb5cdf0d7e2a9d4e33d17985"
     },
     "browser/vendor/LICENSE": {
       "bytes": 1229,
@@ -140,8 +140,8 @@
       "sha256": "fbe290a812b84ca637b74d5bd4cb79daf08a1cd8c40c8bc5282ce3299c8cc31d"
     },
     "media/SHA256SUMS": {
-      "bytes": 2017,
-      "sha256": "b1a2687b12a65c889ed701e382ed022013f6850c350a4d388f5b9974e2d098be"
+      "bytes": 2416,
+      "sha256": "86e504f407c95f91aec236a42a8d0adeae661eb233cc9ac59aedd5608e83b76e"
     },
     "media/assets/chronology-still-loop-poster.png": {
       "bytes": 31497,
@@ -220,8 +220,8 @@
       "sha256": "a0ec004147b18b13ebb6ac7acab750e882fa4a622fe2871a1afd520bd0c1c877"
     },
     "media/provenance.json": {
-      "bytes": 10318,
-      "sha256": "67756958a613a4e6761e164df3ea003fefe54caeee9ca13654e391029b210d17"
+      "bytes": 15034,
+      "sha256": "b19213f5f9d5ebfacb6ced8281b52ecf8832cb82391ff5af954080b1cb069cc1"
     },
     "media/repo-banner-provenance.json": {
       "bytes": 618,
@@ -358,6 +358,22 @@
     "tools/verify_inputs.py": {
       "bytes": 2979,
       "sha256": "d743a860e675c5a75039e73de0a91d74f53f9ca92bfc4cf936a5fe8289b6bfa2"
+    },
+    "media/assets/alice-dog-comparison-NSFW.png": {
+      "bytes": 54544,
+      "sha256": "4cfeb1aa641ba151156b9c467b8293105dbdea0c2b38b56a868e589cd05b159c"
+    },
+    "media/assets/lisa-android-comparison-NSFW.png": {
+      "bytes": 40230,
+      "sha256": "2bed5bae32784ad4c62cfaa03bfb77c476bcdb11bbb83fe153059e40fb2b4fdb"
+    },
+    "media/assets/shop-name-reference.png": {
+      "bytes": 65535,
+      "sha256": "beef6aeeb711b8f0535df70ac2de0cd1f6ae1a3ed3850344a3bf4e5d2a2c4b6a"
+    },
+    "media/assets/patcher-desktop.png": {
+      "bytes": 587522,
+      "sha256": "db0f5614d57878541834cf82857361e085e2b77509f0bfe42ca82149e27042b2"
     }
   },
   "third_party_engine_commit": "4f17297cd1dc0835a0b0747497fa15f5f63f1623",

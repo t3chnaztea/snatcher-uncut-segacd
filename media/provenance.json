@@ -80,6 +80,42 @@
     "capture-020": {
       "bytes": 65328,
       "sha256": "46e8a223d44db5cfcc8fb34915425332ad23a90f04d34ab663fdff3b69f275c2"
+    },
+    "capture-021": {
+      "bytes": 7294,
+      "sha256": "f12f004309658b3041938fcee5e8dcbe923bb7b168675440c0aa585b2eb03cd1"
+    },
+    "capture-022": {
+      "bytes": 7079,
+      "sha256": "6a0776c82b69edf1af341cba8a1acb8ca7683e717624f3a0d88f835d201bd0eb"
+    },
+    "capture-023": {
+      "bytes": 8366,
+      "sha256": "b07cb98e9e0a5845fdf03e5b026c6228d5220300f6ab91fc192a5a3bc95de287"
+    },
+    "capture-024": {
+      "bytes": 8375,
+      "sha256": "8d61f642dc4c5c13009a455dd2c6bd49b358756b08a2e65743a735ac6bfa8995"
+    },
+    "capture-025": {
+      "bytes": 8375,
+      "sha256": "8d61f642dc4c5c13009a455dd2c6bd49b358756b08a2e65743a735ac6bfa8995"
+    },
+    "capture-026": {
+      "bytes": 8381,
+      "sha256": "4c5489a425ec7aa6617cbd8c54d1cbd899d88ffbca1026021ad0689c7900f3d6"
+    },
+    "capture-027": {
+      "bytes": 8390,
+      "sha256": "f4e8130874153a335d06da25417860ad654ec7bbf42755a89d668b49f6c0dac0"
+    },
+    "capture-028": {
+      "bytes": 13997,
+      "sha256": "ae1f7211ae5ba104a39827102b1071e7cedbd300ccfa54a436fd61c024ee552c"
+    },
+    "capture-029": {
+      "bytes": 13723,
+      "sha256": "450c5e7c82e3a404b7eed2deda06a303bc76cd001272ccf707a3afd4b8e7194b"
     }
   },
   "assets": [
@@ -329,6 +365,175 @@
       "warning": "Graphic animal gore and story spoiler. Optional native animation comparison.",
       "source_provenance": "capture-020",
       "not_in_reel": true
+    },
+    {
+      "file": "assets/lisa-android-comparison-NSFW.png",
+      "bytes": 40230,
+      "sha256": "2bed5bae32784ad4c62cfaa03bfb77c476bcdb11bbb83fe153059e40fb2b4fdb",
+      "kind": "static emulator comparison",
+      "regions": [
+        {
+          "source": "capture-021",
+          "xy": [
+            32,
+            202
+          ],
+          "scale": 3,
+          "crop": [
+            32,
+            8,
+            224,
+            136
+          ]
+        },
+        {
+          "source": "capture-022",
+          "xy": [
+            672,
+            202
+          ],
+          "scale": 3,
+          "crop": [
+            32,
+            8,
+            224,
+            136
+          ]
+        }
+      ],
+      "nsfw": true,
+      "restoration": true
+    },
+    {
+      "file": "assets/alice-dog-comparison-NSFW.png",
+      "bytes": 54544,
+      "sha256": "4cfeb1aa641ba151156b9c467b8293105dbdea0c2b38b56a868e589cd05b159c",
+      "kind": "static emulator comparison",
+      "regions": [
+        {
+          "source": "capture-023",
+          "xy": [
+            64,
+            202
+          ],
+          "scale": 3,
+          "crop": [
+            40,
+            16,
+            216,
+            112
+          ]
+        },
+        {
+          "source": "capture-024",
+          "xy": [
+            704,
+            202
+          ],
+          "scale": 3,
+          "crop": [
+            40,
+            16,
+            216,
+            112
+          ]
+        },
+        {
+          "source": "capture-025",
+          "xy": [
+            64,
+            566
+          ],
+          "scale": 2,
+          "crop": [
+            40,
+            45,
+            184,
+            98
+          ]
+        },
+        {
+          "source": "capture-026",
+          "xy": [
+            454,
+            566
+          ],
+          "scale": 2,
+          "crop": [
+            40,
+            45,
+            184,
+            98
+          ]
+        },
+        {
+          "source": "capture-027",
+          "xy": [
+            844,
+            566
+          ],
+          "scale": 2,
+          "crop": [
+            40,
+            45,
+            184,
+            98
+          ]
+        }
+      ],
+      "nsfw": true,
+      "restoration": true
+    },
+    {
+      "file": "assets/shop-name-reference.png",
+      "bytes": 65535,
+      "sha256": "beef6aeeb711b8f0535df70ac2de0cd1f6ae1a3ed3850344a3bf4e5d2a2c4b6a",
+      "kind": "static emulator comparison",
+      "regions": [
+        {
+          "source": "capture-028",
+          "xy": [
+            32,
+            202
+          ],
+          "scale": 3,
+          "crop": [
+            32,
+            8,
+            224,
+            136
+          ]
+        },
+        {
+          "source": "capture-029",
+          "xy": [
+            672,
+            202
+          ],
+          "scale": 3,
+          "crop": [
+            32,
+            16,
+            224,
+            144
+          ]
+        }
+      ],
+      "nsfw": false,
+      "restoration": false
+    },
+    {
+      "file": "assets/patcher-desktop.png",
+      "bytes": 587522,
+      "sha256": "db0f5614d57878541834cf82857361e085e2b77509f0bfe42ca82149e27042b2",
+      "kind": "actual local browser screenshot",
+      "viewport": [
+        1280,
+        1000
+      ],
+      "device_scale_factor": 2,
+      "ui_revision": 2,
+      "state": "initial; no files selected"
     }
   ],
   "capture_size": [
@@ -344,5 +549,6 @@
     "QA bar captures use differing idle-animation phases.",
     "Optional gore animation is excluded from the reel and lead assets.",
     "Lossy video copies do not promise exact RGB values."
-  ]
+  ],
+  "metadata_stripped": "All published PNG/GIF images processed with exiftool -all= -overwrite_original. Decoded pixel frames verified unchanged."
 }
