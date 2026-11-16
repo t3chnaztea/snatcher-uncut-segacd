@@ -6,7 +6,7 @@
 
 <p align="center">
   A partial restoration of the English Sega CD release.<br>
-  Patch your own copy in your browser.
+  Unofficial fan patch. Includes browser-based patch tool.
 </p>
 
 ## RESTORED
