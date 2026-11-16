@@ -40,8 +40,8 @@
       "sha256": "7bd15764f94c6a980092fe7f8387e038ff7387314dd7dc8c09bdd76b9d19c6bc"
     },
     "README.md": {
-      "bytes": 6929,
-      "sha256": "948871e745ee43e0f45d5a8dfbfee53a56de219a26e3dfba07d337287011cb81"
+      "bytes": 6918,
+      "sha256": "39a15ce44678b7a0002714bca88542255bbbe93ead1e4b46b0803452053b2b04"
     },
     "RELEASE-NOTES.md": {
       "bytes": 1609,
@@ -57,11 +57,11 @@
     },
     "browser/browser-build.json": {
       "bytes": 2139,
-      "sha256": "87fb91b605ffbd6367e73e59c1dfe1baca7e245cafa26a915122e6869d7f293f"
+      "sha256": "ea50ea56e5491d5842af46db7597717703b2ac1f40fbfeae53278ed0b2da2b6c"
     },
     "browser/index.html": {
-      "bytes": 4924,
-      "sha256": "778d251e6287cb0b1073ac871b9f92d3ceeb1b1fec23d20d6cb5e4b747959802"
+      "bytes": 4930,
+      "sha256": "5b631bf1064d9e3049e112797a77b779f1db293a2c5b80e9791c4470c99fd840"
     },
     "browser/patch-data.js": {
       "bytes": 54210,
@@ -141,7 +141,7 @@
     },
     "media/SHA256SUMS": {
       "bytes": 2416,
-      "sha256": "86e504f407c95f91aec236a42a8d0adeae661eb233cc9ac59aedd5608e83b76e"
+      "sha256": "19e5e4cd03230f5e220c976fb4f65d14935542d59a908d6475b4c96b39660c93"
     },
     "media/assets/chronology-still-loop-poster.png": {
       "bytes": 31497,
@@ -220,8 +220,8 @@
       "sha256": "a0ec004147b18b13ebb6ac7acab750e882fa4a622fe2871a1afd520bd0c1c877"
     },
     "media/provenance.json": {
-      "bytes": 15034,
-      "sha256": "b19213f5f9d5ebfacb6ced8281b52ecf8832cb82391ff5af954080b1cb069cc1"
+      "bytes": 15038,
+      "sha256": "b22be05f61d86cac7d5c7c0f58b11033028186e03d703c06217a3fcbe7f15359"
     },
     "media/repo-banner-provenance.json": {
       "bytes": 618,
@@ -372,8 +372,8 @@
       "sha256": "beef6aeeb711b8f0535df70ac2de0cd1f6ae1a3ed3850344a3bf4e5d2a2c4b6a"
     },
     "media/assets/patcher-desktop.png": {
-      "bytes": 587522,
-      "sha256": "db0f5614d57878541834cf82857361e085e2b77509f0bfe42ca82149e27042b2"
+      "bytes": 586548,
+      "sha256": "40f1583333e0b99c5b8850765f5ae4a04576cf360defacfef42c81b8257266e5"
     }
   },
   "third_party_engine_commit": "4f17297cd1dc0835a0b0747497fa15f5f63f1623",

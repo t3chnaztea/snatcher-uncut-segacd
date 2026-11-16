@@ -524,15 +524,15 @@
     },
     {
       "file": "assets/patcher-desktop.png",
-      "bytes": 587522,
-      "sha256": "db0f5614d57878541834cf82857361e085e2b77509f0bfe42ca82149e27042b2",
+      "bytes": 586548,
+      "sha256": "40f1583333e0b99c5b8850765f5ae4a04576cf360defacfef42c81b8257266e5",
       "kind": "actual local browser screenshot",
       "viewport": [
         1280,
         1000
       ],
       "device_scale_factor": 2,
-      "ui_revision": 2,
+      "ui_revision": "2.2",
       "state": "initial; no files selected"
     }
   ],
