@@ -2,7 +2,7 @@
   <img src="media/assets/repo-banner.png" alt="Snatcher Uncut: Sega CD Restoration Patch" width="1200">
 </p>
 
-<h1 align="center">Snatcher for Sega CD, with the original cameos back</h1>
+<h1 align="center">Snatcher for Sega CD, mostly uncensored</h1>
 
 <p align="center">
   A partial restoration of the English Sega CD release.<br>
