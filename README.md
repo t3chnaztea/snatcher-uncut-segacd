@@ -25,7 +25,7 @@
 
 
 <p align="center">
-  <a href="https://github.com/t3chnaztea/snatcher-uncut-segacd/releases/download/v0.9.0-rc1/snatcher-uncut-player-v0.9.0-rc1-ui2.zip"><strong>Download the player patch</strong></a><br>
+  <a href="https://github.com/t3chnaztea/snatcher-uncut-segacd/releases/download/v0.9.0-rc1/snatcher-uncut-player-v0.9.0-rc1-ui2.1.zip"><strong>Download the player patch</strong></a><br>
   Free · v0.9.0-rc1 · UI2 installer · You'll need your own USA disc dump<br>
   Tested on my U.S. Genesis Model 2 with a Mega EverDrive Pro.<br><br>
   <a href="#see-the-changes">See the changes</a> · <a href="https://github.com/t3chnaztea/snatcher-uncut-segacd/releases/download/v0.9.0-rc1/snatcher-uncut-media-v0.9.0-rc1.zip">Download the comparison kit</a>
@@ -97,7 +97,7 @@ Game comparisons use actual emulator captures from graphics QA. Crops remove emp
 
 ![Snatcher Uncut disc patcher with numbered BIN, CUE and Verify and patch steps.](media/assets/patcher-desktop.png)
 
-1. [Download the player ZIP](https://github.com/t3chnaztea/snatcher-uncut-segacd/releases/download/v0.9.0-rc1/snatcher-uncut-player-v0.9.0-rc1-ui2.zip). Extract the entire folder.
+1. [Download the player ZIP](https://github.com/t3chnaztea/snatcher-uncut-segacd/releases/download/v0.9.0-rc1/snatcher-uncut-player-v0.9.0-rc1-ui2.1.zip). Extract the entire folder.
 2. Open `browser/index.html` in your browser.
 3. Under **01 · Original disc BIN**, choose your untouched USA BIN.
 4. Under **02 · Matching CUE**, choose the CUE from the same dump.
