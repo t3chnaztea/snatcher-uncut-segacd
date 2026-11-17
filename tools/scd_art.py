@@ -11,6 +11,7 @@ import json
 from pathlib import Path
 import shutil
 import tempfile
+from patch_profiles import get_profile
 
 ROOT=Path(__file__).resolve().parents[1]
 SOURCE=ROOT/'private/extracted/segacd-usa'
@@ -76,12 +77,16 @@ def changed_spans(old,new):
     return spans
 
 
-def apply(source=SOURCE,output=OUTPUT,evidence=ROOT/'build/evidence/m4/composition'):
+def apply(source=SOURCE,output=OUTPUT,evidence=ROOT/'build/evidence/m4/composition',profile=None):
     import scd_text
+    selected=get_profile(profile)
     source,output,evidence=map(Path,(source,output,evidence))
     if source.resolve()==output.resolve():
         raise ValueError('Output cannot overwrite source')
-    rows=approved_records();names=source_inventory(source)
+    catalogue=approved_records();names=source_inventory(source)
+    rows=[row for row in catalogue if row['id'] in selected.art_rows]
+    if {row['id'] for row in rows} != selected.art_rows:
+        raise ValueError('Profile art rows do not match the validated catalogue')
     evidence.mkdir(parents=True,exist_ok=True)
     # Generate all guarded art outputs before touching the composed tree.
     (ROOT/'build/m4').mkdir(parents=True,exist_ok=True)
@@ -90,7 +95,7 @@ def apply(source=SOURCE,output=OUTPUT,evidence=ROOT/'build/evidence/m4/compositi
         for name in MODULES:
             folder=temp/name;folder.mkdir()
             lane_evidence=evidence/name;lane_evidence.mkdir(parents=True,exist_ok=True)
-            reports[name]=importlib.import_module(name).apply(source=source,output=folder,evidence=lane_evidence)
+            reports[name]=importlib.import_module(name).apply(source=source,output=folder,evidence=lane_evidence,profile=selected)
             files=[p for p in folder.iterdir() if p.is_file() and (p.suffix=='.BIN' or p.name=='_boot.bin')]
             for path in files:
                 if path.name not in names:
@@ -109,7 +114,7 @@ def apply(source=SOURCE,output=OUTPUT,evidence=ROOT/'build/evidence/m4/compositi
             raise ValueError('Composed output contains unexpected files')
         for name in names:
             shutil.copyfile(source/name,output/name)
-        scd_text.apply_patches(ROOT/'patches/text',source=source,output=output)
+        scd_text.apply_patches(ROOT/'patches/text',source=source,output=output,profile=selected)
         changes=[]
         for module,name,original,new,spans in generated:
             current=bytearray((output/name).read_bytes())
@@ -125,17 +130,21 @@ def apply(source=SOURCE,output=OUTPUT,evidence=ROOT/'build/evidence/m4/compositi
         if name.startswith('SP') and len(new)>scd_text.FILE_LIMIT:
             raise ValueError('SP buffer cap exceeded')
         files.append(dict(file=name,size=len(new),source_size=len(old),sector_capacity=((len(old)+2047)//2048)*2048+(2048 if name=='DATA_G0.BIN' else 0),source_sha1=digest(old),sha1=digest(new),changed_bytes=sum(a!=b for a,b in zip(old,new))+max(0,len(new)-len(old))))
-    report=dict(status='pass',approved_rows=sorted(row['id'] for row in rows),source_files=len(names),files=files,art_changes=changes,lane_reports=reports,m3_preserved='Composition rejects intersecting changed byte spans',output=str(output))
+    actual_changed={row['file'] for row in files if row['sha1'] != row['source_sha1']}
+    if actual_changed != selected.changed_files:
+        raise ValueError(f'Profile changed-file inventory mismatch: {actual_changed}')
+    report=dict(status='pass',profile=selected.id,catalogue_rows=len(catalogue),approved_rows=sorted(row['id'] for row in rows),source_files=len(names),files=files,art_changes=changes,lane_reports=reports,m3_preserved='Composition rejects intersecting changed byte spans',output=str(output))
     (evidence/'apply.json').write_text(json.dumps(report,indent=2)+'\n')
     return report
 
 
-def verify(source=SOURCE,output=OUTPUT,evidence=ROOT/'build/evidence/m4/verification'):
+def verify(source=SOURCE,output=OUTPUT,evidence=ROOT/'build/evidence/m4/verification',profile=None):
+    selected=get_profile(profile)
     source,output,evidence=map(Path,(source,output,evidence))
     evidence.mkdir(parents=True,exist_ok=True)
     with tempfile.TemporaryDirectory(prefix='art-verify-',dir=ROOT/'build/m4') as temp:
         expected=Path(temp)/'expected'
-        report=apply(source,expected,evidence/'regenerated')
+        report=apply(source,expected,evidence/'regenerated',profile=selected)
         names=source_inventory(source)
         if {p.name for p in output.iterdir()}!=set(names):
             raise ValueError('Patched output inventory changed')
@@ -150,6 +159,7 @@ def verify(source=SOURCE,output=OUTPUT,evidence=ROOT/'build/evidence/m4/verifica
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('command',choices=['apply','verify'])
+    parser.add_argument('--profile')
     parser.add_argument('--source',type=Path,default=SOURCE)
     parser.add_argument('--output',type=Path,default=OUTPUT)
     parser.add_argument('--evidence',type=Path)

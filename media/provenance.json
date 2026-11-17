@@ -524,16 +524,23 @@
     },
     {
       "file": "assets/patcher-desktop.png",
-      "bytes": 586548,
-      "sha256": "40f1583333e0b99c5b8850765f5ae4a04576cf360defacfef42c81b8257266e5",
+      "bytes": 799774,
+      "sha256": "2163dac5a8912d20361bba5411101fc27c27897919ece67e6555df80f266ba85",
       "kind": "actual local browser screenshot",
       "viewport": [
         1280,
-        1000
+        1200
       ],
       "device_scale_factor": 2,
-      "ui_revision": "2.2",
-      "state": "initial; no files selected"
+      "ui_revision": "v0.10.0-rc1",
+      "state": "Default profile; no files selected",
+      "profile_controls": [
+        "dates",
+        "cameos",
+        "alice",
+        "lisa"
+      ],
+      "browser_app_sha256": "311c579c9c1c05f87352823c5daaf3df131130642a327d0440ced799d1333a52"
     }
   ],
   "capture_size": [

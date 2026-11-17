@@ -1,74 +1,63 @@
-# Install Snatcher Uncut
+# Install with Snatcher Patcher
 
-Supply your own compatible USA Sega CD dump. Keep the original files and back up
-your saves. The release ZIP contains a patch and tools, not a game image or BIOS.
+Use your own compatible USA Sega CD dump. Keep the original files and back up your saves. The download contains restoration patches and tools. It contains no game image or BIOS.
 
-## Browser installer
+## Choose your restorations
 
-Extract the complete release ZIP. Open `browser/index.html` from that folder.
-Choose your original single BIN and its CUE. Select **Verify and patch**.
-Download the patched BIN and CUE into a new folder. Open that CUE in your player.
+Snatcher Patcher has four controls:
 
-The browser installer works locally. It has no upload endpoint, analytics,
-external scripts or network dependency. It checks the data track before
-patching. It checks the patched track before offering downloads. Your audio
-bytes stay unchanged. The CUE keeps its timing and metadata. Only its BIN
-filename changes to `Snatcher Uncut.bin`.
+- Dates: restored Japanese chronology or original Sega CD chronology.
+- Outer Heaven cameos: original costume references with matching dialogue.
+- Alice animation: twitching guts, with graphic gore.
+- Lisa artwork: the original adult android corpse artwork, with nudity.
 
-Use this route for a single BIN containing all 21 tracks. A raw Track 1 BIN is
-also accepted, but that output alone cannot play the game. Keep the original
-audio tracks and assemble a matching CUE separately. The browser route rejects
-split-track CUE sets, virtual PREGAP directives and unsupported CUE layouts.
-Use the offline installer for supported split-track sets.
+The default restores all four groups and reproduces the earlier release. Original Sega CD dates keep the 1996 catastrophe, 2044 newspaper and 2047 setting. Japanese dates use 1991, 2039 and 2042; the English recording still says 1996.
 
-Local-file download checks passed on macOS in Chromium 159, Playwright Firefox
-159 and Playwright WebKit 27.2. Each downloaded full-disc BIN matched the accepted
-emulator image. All 20 audio tracks, including stored pregaps, matched the
-input. WebKit testing does not establish Safari application compatibility.
-Windows, Linux and mobile browser operation have not been tested.
+Cameo artwork and dialogue stay together. Alice's animation includes its required timing. All 16 settings are supported. Fifteen produce a patched disc. Original dates with all three art groups off matches the original disc, so no patch or download is needed.
+
+## Browser tool
+
+1. Extract the entire player ZIP. Open `browser/index.html`.
+2. Choose the date setting and the three content switches.
+3. Choose your untouched BIN and matching CUE.
+4. Select **Verify and patch**. Wait for the verified downloads.
+5. Save the BIN and CUE together in a new folder. Open the CUE to play.
+
+The tool runs locally. No upload, account, analytics or network connection is required. It checks the original data, selected patch and finished data track. Changing a setting or input clears old downloads. The settings lock while a patch is running.
+
+The output filenames include a settings ID. The receipt records the selected options and checksums. Keep each BIN with its matching CUE. The browser changes only the CUE's BIN filename; timing and other metadata stay intact. All original audio bytes are reused.
+
+Use one BIN containing all 21 tracks. A raw Track 1 BIN is also accepted with the CUE field empty. Its output is not a complete playable disc: it still needs the original audio tracks and a matching CUE. Split-track inputs and CUE files with virtual PREGAP directives use the offline installer.
 
 ## Offline installer
 
-The offline route needs Python 3.10 or newer and xdelta3. It accepts a single-BIN
-CUE, a supported 21-BIN CUE, or raw Track 1. It preserves the CUE bytes and BIN
-filenames inside a new output directory. Read [OFFLINE-INSTALL.md](OFFLINE-INSTALL.md)
-for supported layouts, requirements and errors.
+The offline route needs Python 3.10 or newer and xdelta3. It reads the included `profiles.json` and selects the matching patch automatically.
+
+Keep the default settings:
 
 ```sh
 python3 tools/player_install.py '/path/to/Snatcher.cue' \
-  --patch snatcher-uncut-track01.xdelta \
   --output '/path/to/Snatcher Uncut'
 ```
 
-The destination must not exist. Its parent must exist. A completed offline
-installation has `install-receipt.json` with verified file and track hashes.
-Keep every output BIN beside the CUE. Local execution was tested on macOS.
-Windows and Linux execution remain untested.
+Keep the original Sega CD dates with all art restored:
 
-## Input checks
+```sh
+python3 tools/player_install.py '/path/to/Snatcher.cue' \
+  --dates segacd \
+  --output '/path/to/Snatcher Uncut Original Dates'
+```
 
-| Check | Value |
-|---|---|
-| Raw Track 1 format | Mode1/2352 |
-| Raw Track 1 bytes | 131,744,928 |
-| Original Track 1 SHA1 | `1f4164205ed736a0d9a03eb7972868e9aa737d35` |
-| Patched Track 1 SHA256 | `f543ea684608ab9c706be6f7e6ff9ba4408feb25e3a3bc4e1fa7ba4038aa5aba` |
-| Release patch SHA256 | `1485cc915dc0d2629049f7abcb8f724f608a8205c89456ad534acf2d26ac09a4` |
+Add `--no-cameos`, `--no-alice` or `--no-lisa` to keep that group's Sega CD content. Use `--dates japanese` for the restored chronology. Advanced callers can select one ID with `--profile`; it cannot be combined with the individual setting flags.
 
-Do not bypass validation. A wrong hash can indicate a different region,
-revision, extraction, damaged dump or previous patch. Whole-disc hashes can
-differ between dumps because their audio differs. The installer checks Track 1
-and preserves the supplied audio.
+The destination must not exist. Its parent must exist. Offline installation preserves input BIN filenames, CUE bytes, audio and supplied pregaps in a new folder. The completed folder includes `install-receipt.json`. [Offline layout details](OFFLINE-INSTALL.md).
 
-CHD and ISO/2048 files are not direct inputs. Extract CHD to BIN/CUE with a local
-tool first. The extracted files must pass the same checks. Renaming an ISO or
-CHD to `.bin` does not convert it.
+## Supported input and verification
 
-## After installation
+Track 1 must be raw Mode1/2352, 131,744,928 bytes, SHA1 `1f4164205ed736a0d9a03eb7972868e9aa737d35`. Wrong regions, revisions, damaged data and previously patched tracks fail validation. Extract CHD files before installation. ISO/2048 is unsupported.
 
-Open the output CUE. Check the opening, voices and music. Start a new game or
-use a backed-up save. Transfer of existing saves from the original disc has
-not been verified. Normal saving and a fresh load passed with the patched
-emulator image. [KNOWN-ISSUES.md](KNOWN-ISSUES.md) gives the remaining limits.
+Each active selection has its own verified patch and target data-track checksum in [profiles.json](profiles.json). Whole-disc hashes depend on the supplied audio. Compare the data-track hash and receipt instead.
 
-I tested the patch on my U.S. Genesis Model 2 with a Mega EverDrive Pro. It worked. The full playthrough and save/load results here come from the emulator tests.
+All 15 active settings passed actual full-disc browser downloads in Chromium, Playwright Firefox and Playwright WebKit on macOS. Raw-track downloads passed in Chromium. All 15 passed real offline installation in four supported layouts. Audio and CUE checks passed for every tested output. [Verification](VERIFICATION.md).
+
+These engine tests do not establish Safari application, Windows, Linux or mobile installation compatibility. The mobile interface was checked for layout and controls. The default game output matches the earlier console-tested build; other combinations have no console acceptance.

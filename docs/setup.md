@@ -89,6 +89,34 @@ save/reload checks. Diagnostic captures and emulator states remain private.
 Read ../KNOWN-ISSUES.md for the accepted scope and separate hardware limits.
 
 
+## Build all Snatcher Patcher selections
+
+After the default build and input setup above, derive the default private extraction and build the full selection matrix:
+
+```sh
+.venv/bin/python tools/scd_disc.py extract
+.venv/bin/python tools/build_profiles.py
+.venv/bin/python tools/verify_profile_matrix.py --root . \
+  --profiles-root build/m8/profiles --registry build/m8/release/profiles.json \
+  --evidence build/m8/profile-verification
+```
+
+This creates 16 profile manifests and 15 direct original-source deltas. The original-disc state has no delta. The default must reproduce the earlier accepted data-track and BIN hashes. Candidate files stay under build; the accepted default dist output is not replaced. Choose a fresh output directory after changing the build implementation.
+
+The runtime profile registry is build/m8/release/profiles.json. It records the four settings and both patch/target checksums for each active selection. The canonical group catalogue remains validated even when a group is disabled.
+
+To assemble Snatcher Patcher, use the separately pinned patch engine:
+
+```sh
+git clone https://github.com/marcrobledo/RomPatcher.js.git .deps/RomPatcher.js
+git -C .deps/RomPatcher.js checkout 4f17297cd1dc0835a0b0747497fa15f5f63f1623
+.venv/bin/python tools/build_player_browser.py --engine .deps/RomPatcher.js \
+  --registry build/m8/release/profiles.json --output build/browser-candidate
+```
+
+Developer browser verification uses the pinned Playwright package and its Chromium, Firefox and WebKit runtimes. It is separate from the player tool, which needs no installed Python or browser automation package. Keep any downloaded runtimes with the local development dependencies. No patched game image, private capture or BIOS belongs in a public source package.
+
+
 ## Prepare source integration tests
 
 The builder extracts into its build directory. Source integration tests also

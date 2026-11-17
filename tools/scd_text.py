@@ -17,6 +17,7 @@ import json
 from pathlib import Path
 import re
 import source_text_recipe
+from patch_profiles import get_profile
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT/'private/extracted/segacd-usa'
@@ -531,10 +532,14 @@ def patch_records(patches, source=SOURCE, ledger=ROOT/'docs/diff-ledger.csv'):
     return rows
 
 
-def apply_patches(patches, source=SOURCE, output=ROOT/'build/m3/text', ledger=ROOT/'docs/diff-ledger.csv'):
+def apply_patches(patches, source=SOURCE, output=ROOT/'build/m3/text', ledger=ROOT/'docs/diff-ledger.csv', profile=None):
     """Apply bounded edit records through the existing pool and speaker inserters."""
     import tempfile
-    rows=patch_records(patches,source,ledger)
+    selected=get_profile(profile)
+    catalogue=patch_records(patches,source,ledger)
+    rows=[row for row in catalogue if row['id'] in selected.text_rows]
+    if {row['id'] for row in rows} != selected.text_rows:
+        raise ValueError('Profile text rows do not match the validated catalogue')
     output,source=Path(output),Path(source)
     if output.resolve()==source.resolve():
         raise ValueError('Output must differ from source')
@@ -553,12 +558,17 @@ def apply_patches(patches, source=SOURCE, output=ROOT/'build/m3/text', ledger=RO
             (tmp/name).write_text(json.dumps(record)+'\n')
         result=insert(tmp,source,output)
         heading=insert_speakers(tmp,source,output)
-    return dict(rows=len(rows),files=result,speakers=heading,output=str(output))
+    return dict(rows=len(rows),catalogue_rows=len(catalogue),profile=selected.id,files=result,speakers=heading,output=str(output))
 
 
-def verify(patches, source=SOURCE, output=ROOT/'build/m3/text', ledger=ROOT/'docs/diff-ledger.csv'):
+def verify(patches, source=SOURCE, output=ROOT/'build/m3/text', ledger=ROOT/'docs/diff-ledger.csv', profile=None):
     """Compare every byte in all 39 SP files and SUBCODE with approved edits."""
-    rows=patch_records(patches,source,ledger);source,output=Path(source),Path(output)
+    selected=get_profile(profile)
+    catalogue=patch_records(patches,source,ledger)
+    rows=[row for row in catalogue if row['id'] in selected.text_rows]
+    if {row['id'] for row in rows} != selected.text_rows:
+        raise ValueError('Profile text rows do not match the validated catalogue')
+    source,output=Path(source),Path(output)
     by_file={};changed=[]
     for row in rows:
         for edit in row['edits']:
@@ -583,27 +593,34 @@ def verify(patches, source=SOURCE, output=ROOT/'build/m3/text', ledger=ROOT/'doc
         for entry in pool((output/path.name).read_bytes())[0]:
             if b'2047' in bytes.fromhex(entry['raw']):
                 remaining.append(dict(file=path.name,string_id=entry['id']))
-    allowed={('SP05.BIN',i) for i in (162,163,189,190,214,215,217,218)}
+    if selected.dates:
+        allowed={('SP05.BIN',i) for i in (162,163,189,190,214,215,217,218)}
+    else:
+        # Retail chronology is an exact source oracle, including kept articles.
+        allowed={(path.name,entry['id']) for path in inventory
+                 for entry in pool(path.read_bytes())[0]
+                 if b'2047' in bytes.fromhex(entry['raw'])}
     if {(x['file'],x['string_id']) for x in remaining}!=allowed:
         raise ValueError('Unexpected remaining localized year or missing kept memorial')
-    return dict(status='pass',approved_rows=len(rows),edit_records=len(changed),unapproved_byte_changes=0,sp_files_within_cap=39,files=checks,edits=changed,remaining_2047=remaining,remaining_2047_disposition='Kept ADD-001 through ADD-004 memorial articles',adult_ages='Unchanged in date-only profile replacements')
+    return dict(status='pass',profile=selected.id,catalogue_rows=len(catalogue),approved_rows=len(rows),edit_records=len(changed),unapproved_byte_changes=0,sp_files_within_cap=39,files=checks,edits=changed,remaining_2047=remaining,remaining_2047_disposition=('Kept ADD-001 through ADD-004 memorial articles' if selected.dates else 'Original Sega CD chronology preserved'),adult_ages='Unchanged in date-only profile replacements')
 
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     sub=parser.add_subparsers(dest='command',required=True)
     p=sub.add_parser('dump');p.add_argument('--source',type=Path,default=SOURCE);p.add_argument('--output',type=Path,default=DUMPS)
-    p=sub.add_parser('insert');p.add_argument('--patches',type=Path);p.add_argument('--ledger',type=Path,default=ROOT/'docs/diff-ledger.csv');p.add_argument('--dumps',type=Path,default=DUMPS);p.add_argument('--source',type=Path,default=SOURCE);p.add_argument('--output',type=Path,default=ROOT/'build/text-roundtrip')
+    p=sub.add_parser('insert');p.add_argument('--profile');p.add_argument('--patches',type=Path);p.add_argument('--ledger',type=Path,default=ROOT/'docs/diff-ledger.csv');p.add_argument('--dumps',type=Path,default=DUMPS);p.add_argument('--source',type=Path,default=SOURCE);p.add_argument('--output',type=Path,default=ROOT/'build/text-roundtrip')
     p=sub.add_parser('insert-speakers');p.add_argument('--dumps',type=Path,default=DUMPS);p.add_argument('--source',type=Path,default=SOURCE);p.add_argument('--output',type=Path,default=ROOT/'build/speaker-roundtrip')
     p=sub.add_parser('scan-external');p.add_argument('--source',type=Path,default=SOURCE);p.add_argument('--output',type=Path,default=ROOT/'private/work/text/external-candidates.json')
     p=sub.add_parser('reference-pce');p.add_argument('--track',type=Path);p.add_argument('--reference',type=Path);p.add_argument('--output',type=Path);p.add_argument('--cue',type=Path)
     p=sub.add_parser('inspect-pce');p.add_argument('--track',type=Path);p.add_argument('--reference',type=Path);p.add_argument('--output',type=Path);p.add_argument('--cue',type=Path)
-    p=sub.add_parser('verify');p.add_argument('patches',type=Path);p.add_argument('--source',type=Path,default=SOURCE);p.add_argument('--output',type=Path,default=ROOT/'build/m3/text');p.add_argument('--ledger',type=Path,default=ROOT/'docs/diff-ledger.csv')
+    p=sub.add_parser('verify');p.add_argument('--profile');p.add_argument('patches',type=Path);p.add_argument('--source',type=Path,default=SOURCE);p.add_argument('--output',type=Path,default=ROOT/'build/m3/text');p.add_argument('--ledger',type=Path,default=ROOT/'docs/diff-ledger.csv')
     args=vars(parser.parse_args());command=args.pop('command')
     if command=='insert':
-        patches=args.pop('patches');ledger=args.pop('ledger')
+        patches=args.pop('patches');ledger=args.pop('ledger');profile=args.pop('profile')
         if patches:
-            args.pop('dumps');print(json.dumps(apply_patches(patches,ledger=ledger,**args),indent=2));return
+            args.pop('dumps');print(json.dumps(apply_patches(patches,ledger=ledger,profile=profile,**args),indent=2));return
+        if profile is not None:parser.error('--profile requires --patches')
     print(json.dumps({'verify':verify,'dump':dump,'insert':insert,'insert-speakers':insert_speakers,'scan-external':scan_external,'reference-pce':reference_pce,'inspect-pce':inspect_pce}[command](**args),indent=2))
 
 if __name__=='__main__':

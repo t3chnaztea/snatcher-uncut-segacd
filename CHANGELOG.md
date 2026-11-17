@@ -1,5 +1,13 @@
 # Changes
 
+## v0.10.0-rc1
+
+Snatcher Patcher adds four controls: dates, cameo artwork with dialogue, Alice animation with timing, and Lisa artwork. All 16 settings have verified output identities. Fifteen supply patches; the unchanged-disc selection needs no patch.
+
+The default reproduces v0.9.0-rc1 exactly. Original Sega CD dates can now be kept with any selection of the three art groups. Each active setting uses one direct, checked patch. Browser and offline receipts identify the selection. Changing settings clears old downloads. Controls lock while patching.
+
+All 16 disc outputs passed asset, ISO, sector, audio and CUE checks. Browser testing passed 45 full-disc and 15 raw-track cases. Offline testing passed 60 cases across four layouts. Existing release assets remain intact. New combinations are not console-accepted.
+
 ## v0.9.0-rc1
 
 Initial release candidate. Physical-console acceptance has not run.

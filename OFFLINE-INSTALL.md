@@ -1,109 +1,32 @@
-# Offline player installer
+# Offline Snatcher Patcher
 
-This installer applies the existing release patch to your own compatible USA
-Sega CD dump. It needs Python 3.10 or newer and `xdelta3`. It does not need the
-developer build, a PC Engine disc, BIOS files, a compiler, or extracted assets.
-It never uploads game data. It does not overwrite source files.
+Use the included Python installer for supported split-track sets or when the browser route is unsuitable. It needs Python 3.10 or newer and xdelta3. Keep your original dump and back up saves.
 
-## Install
-
-Keep the patch and installer from the same release together. Check the release
-ZIP checksum before extraction. Install Python and xdelta3 if they are absent.
-Run:
+From the extracted player folder:
 
 ```sh
 python3 tools/player_install.py '/path/to/Snatcher.cue' \
-  --patch snatcher-uncut-track01.xdelta \
+  --dates segacd \
   --output '/path/to/Snatcher Uncut'
 ```
 
-The output directory must not exist. Its parent must exist. Use the produced
-CUE in your emulator or device. Keep every BIN beside it. Existing BIN filenames
-and the CUE contents stay unchanged inside the new directory.
+The included `profiles.json` selects the patch and expected output. Default settings restore Japanese dates and all three art groups. `--dates segacd` keeps original English-release dates. `--no-cameos`, `--no-alice` and `--no-lisa` keep the corresponding original content. `--profile ID` selects one complete setting and cannot be mixed with those flags. The unchanged-disc selection produces no output.
 
-Supply `--xdelta '/path/to/xdelta3'` if the program is not on PATH. On Windows,
-use the installed Python command and the path to the xdelta3 executable.
-Windows and Linux execution are not yet verified. Local tests used macOS.
+## Supported layouts
 
-For an extracted raw Track 1, supply the `.bin` instead of the `.cue`. The raw
-output is **not a complete playable disc**. Reassembly is the caller's task.
-Use CUE input for the complete-disc route.
+- Single BIN/CUE with Track 1 data and 20 audio tracks. Pregaps are stored through INDEX 00.
+- Twenty-one BINs with one CUE and one file per track, using supported INDEX 00/01 timing.
+- Twenty-one BINs with supported virtual PREGAP timing. Supplied files and CUE bytes stay exact.
+- Raw Track 1 BIN without a CUE. This output alone cannot play the game.
 
-## Accepted inputs
+Every split BIN must start at its first stored index. CUE paths must be flat filenames in the same folder. Mixed layouts, WAVE audio, unsupported directives and unsafe filenames are rejected. Track 1 must match the supported USA raw data track.
 
-The verified raw Mode1/2352 Track 1 must have:
+The new output directory must not exist. Its parent must exist. The installer preserves original filenames and CUE bytes. It verifies the selected patch, resulting data track and each supplied audio track before completing the installation. Source files are checked again for changes. `install-receipt.json` records settings, checksums and track results.
 
-| Check | Value |
-|---|---|
-| Bytes | 131,744,928 |
-| SHA1 | `1f4164205ed736a0d9a03eb7972868e9aa737d35` |
-| Patched SHA256 | `f543ea684608ab9c706be6f7e6ff9ba4408feb25e3a3bc4e1fa7ba4038aa5aba` |
-| Release xdelta SHA256 | `1485cc915dc0d2629049f7abcb8f724f608a8205c89456ad534acf2d26ac09a4` |
+## Evidence and limits
 
-Supported layouts:
+All 15 active selections passed real installation in all four layouts: 60 cases. The tests independently checked 900 supplied audio-track outputs. Stored split outputs rejoined to their corresponding verified full-disc BIN. Fifteen crossed-profile patches were rejected before output. The unchanged-disc selection read no input and created no files.
 
-* One raw Track 1 `.bin`, with exactly the byte count above.
-* One `.cue` referencing one full-disc BIN. Tracks run 01 through 21. Track 01
-  uses MODE1/2352. Tracks 02 through 21 use AUDIO. Stored audio pregaps use
-  INDEX 00. Track 01 begins at INDEX 01 00:00:00 without a pregap.
-* One `.cue` referencing 21 BINs, one per track in that order. Each BIN starts
-  at its first stored index, at 00:00:00. Audio pregaps may be stored with
-  INDEX 00 or declared with PREGAP. The two forms cannot appear on one track.
+Split test fixtures were derived from the reference single-BIN dump. The virtual-pregap fixtures intentionally omit the original stored pregap samples and express their duration in the CUE. The installer preserves those supplied inputs; it cannot preserve samples absent from them. These tests do not establish compatibility with an independently sourced alternate audio dump.
 
-CUE files must use ASCII or UTF-8. Referenced BINs must have flat relative filenames
-in the same directory. Regular files are required; symlinks are rejected.
-Quoted BINARY FILE entries, TRACK, INDEX 00/01, PREGAP and common metadata
-(REM, TITLE, PERFORMER, SONGWRITER, CATALOG, ISRC, FLAGS) are accepted. Other
-directives, mixed file groupings, subdirectories, unsupported sector modes,
-overlapping indices and incomplete layouts fail with an error. The installer
-does not rewrite or repair a malformed CUE.
-
-CHD and ISO/2048 are not direct inputs. Extract a CHD to BIN/CUE with a local
-tool first. The extracted Track 1 and CUE must pass the checks above. Any CHD
-repack is a separate operation. Do not treat an ISO/2048 file as a raw BIN.
-
-## Preservation and verification
-
-Only the validated data track changes. All supplied audio samples, stored
-pregap bytes, track order, index times, virtual pregap declarations and CUE
-metadata remain intact. Audio hashes may differ between dumps. The installer
-does not require our whole-BIN checksum or normalize your audio.
-
-The installer validates the source Track 1 and release patch before staging.
-It decodes into a temporary directory beside the destination. It verifies the
-patched Track 1, every audio track and input-file stability. It then creates the
-destination exclusively. It checks final output hashes before writing
-`install-receipt.json`. The receipt lists per-file and per-track input/output
-hashes. No absolute source paths appear in the receipt.
-
-Leave free space for two complete copies of the output plus two data tracks
-and a small buffer. Temporary staging is removed after success or failure.
-An I/O failure during final copying can leave an incomplete destination. A
-completed installation has a verified receipt. Do not use a partial directory.
-Choose a fresh output directory for a retry. Source files remain unchanged.
-
-An already-patched track fails explicitly. An unsupported source hash can
-mean a different region, revision, bad dump, or previously changed data. Never
-bypass the hash check. A patch checksum error means the patch does not match
-this installer release.
-
-## Verification scope
-
-Generated-patch tests cover raw, single-BIN, split-BIN stored-pregap and
-split-BIN virtual-pregap layouts. They check exact CUE/audio preservation and
-errors for malformed geometry, unsupported input, changed hashes, overwrite,
-symlinks, missing xdelta3, corrupted patch and wrong decoded target.
-
-Actual-disc acceptance checks raw Track 1, the staged single-BIN/CUE, and a
-split-BIN/CUE derived by losslessly slicing that same staged input. This proves
-layout handling for that dump. It does not establish compatibility with an
-independently sourced alternate audio dump. Emulator or console behavior is a
-separate test. Original-console acceptance remains Not run.
-
-Developer test command, with temporary files kept on the project drive:
-
-```sh
-mkdir -p build
-python3 -m pytest tests/test_player_install.py -q \
-  --basetemp=build/player-install-tests
-```
+Local execution was tested on macOS. Windows and Linux execution remain untested. Read [INSTALL.md](INSTALL.md) for browser instructions and [KNOWN-ISSUES.md](KNOWN-ISSUES.md) for game compatibility.

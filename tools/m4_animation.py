@@ -5,6 +5,7 @@ from pathlib import Path
 from PIL import Image,ImageFilter
 import scd_gfx as s,pce_gfx as p,scd_script
 from m4_captions import optimal_encode
+from patch_profiles import get_profile
 ROOT=Path(__file__).resolve().parents[1]
 
 def sha(b):return hashlib.sha1(b).hexdigest()
@@ -315,7 +316,8 @@ def story_wait(old,source,edit):
  assert data[0x3800:]==old[0x3800:] and len(data)==len(old)
  return bytes(data),dict(file='SP25.BIN',source_sha1=sha(old),output_sha1=sha(data),source_size=len(old),output_size=len(data),call_offset=call,helper_offset=helper,helper_length=7,old_fill_sha1=sha(old[helper:helper+7]),no_existing_tail_targets=True,typed_parse_errors=after['errors'],text_pool_unchanged=True,sequence=['original FM music100','animation completion flag object20','original following voice391'],primary_call_semantics='SCD0C synchronously evaluates one25 binary-sequence expression and restores its caller. No3A cross-file return opcode.',permitted_spans=spans(old,data))
 
-def apply(source,output,evidence):
+def apply(source,output,evidence,profile=None):
+ selected=get_profile(profile)
  source,output,evidence=map(Path,(source,output,evidence))
  if source.resolve()==output.resolve():raise ValueError('Output must not overwrite source')
  recipe=json.loads((ROOT/'patches/gfx/animation.json').read_text());rows=recipe['rows']
@@ -343,11 +345,13 @@ def apply(source,output,evidence):
  control_report.update(pce_script_module_sha1=sha(control_module),pce_script_table_sha1=sha(user[binding_at:binding_at+8]),pce_wait_sha1=sha(control_module[wait_at:wait_at+3]))
  output.mkdir(parents=True,exist_ok=True);evidence.mkdir(parents=True,exist_ok=True);reports=[]
  for row in rows:
+  if row['id'] not in selected.art_rows:continue
   name=row['file'];old=originals[name];converted,report={'GFX-001':dog,'GFX-002':cameo}[row['id']](old,user,evidence)
   assert len(converted)==len(old) or (name=='DATA_G0.BIN' and len(old)<len(converted)<=124928)
   if s.inventory(converted,name)[2] or s.frame_inventory(converted,s.sequences(converted))['errors']:raise ValueError('Converted animation inventory has errors')
   (output/name).write_bytes(converted);report.update(id=row['id'],file=name,source_size=len(old),output_size=len(converted),source_sha1=sha(old),output_sha1=sha(converted),permitted_spans=spans(old,converted));reports.append(report)
- (output/'SP25.BIN').write_bytes(control_new);next(r for r in reports if r['id']=='GFX-001')['control_edit']=control_report
- report=dict(status='pass',rows=reports,changed_files=[r['file'] for r in reports]+['SP25.BIN']);(evidence/'animation-report.json').write_text(json.dumps(report,indent=2)+'\n');return report
+ if selected.alice:
+  (output/'SP25.BIN').write_bytes(control_new);next(r for r in reports if r['id']=='GFX-001')['control_edit']=control_report
+ report=dict(status='pass',profile=selected.id,catalogue_rows=2,rows=reports,changed_files=[r['file'] for r in reports]+(['SP25.BIN'] if selected.alice else []));(evidence/'animation-report.json').write_text(json.dumps(report,indent=2)+'\n');return report
 if __name__=='__main__':
- a=argparse.ArgumentParser(description=__doc__);a.add_argument('--source',type=Path,default=s.SOURCE);a.add_argument('--output',type=Path,required=True);a.add_argument('--evidence',type=Path,required=True);args=a.parse_args();print(json.dumps(apply(**vars(args)),indent=2))
+ a=argparse.ArgumentParser(description=__doc__);a.add_argument('--profile');a.add_argument('--source',type=Path,default=s.SOURCE);a.add_argument('--output',type=Path,required=True);a.add_argument('--evidence',type=Path,required=True);args=a.parse_args();print(json.dumps(apply(**vars(args)),indent=2))

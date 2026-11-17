@@ -46,14 +46,41 @@ def check_artifact(path, record):
         require(actual == record[algorithm], f'Artifact {algorithm} mismatch: {path}')
 
 
+def profile_settings(profile_id):
+    """Decode only the documented four-bit profile ID, independently of the builder."""
+    match = re.fullmatch(r'd([01])-c([01])-a([01])-l([01])', str(profile_id))
+    require(match is not None, 'Unknown profile ID')
+    dates, cameos, alice, lisa = map(int, match.groups())
+    return dict(dates='japanese' if dates else 'segacd', cameos=bool(cameos),
+                alice=bool(alice), lisa=bool(lisa))
+
+
 def validate_manifest(config):
-    require(config.get('version') == 1, 'Build manifest version must be 1')
+    version = config.get('version')
+    require(type(version) is int and version in (1, 2), 'Build manifest version must be 1 or 2')
     for field in ('source_cue','source_manifest','canonical_tree'):
         require(isinstance(config.get(field),str) and bool(config[field]), f'Missing manifest field: {field}')
-    required = {'bin','cue','chd','xdelta','track01','source_track01'}
-    require(set(config.get('artifacts',{})) == required, 'Manifest must name all six mandatory artifacts')
-    require(set(config.get('everdrive',{})) == {'bin','cue'}, 'Manifest must name both EverDrive artifacts')
-    for record in list(config['artifacts'].values())+list(config['everdrive'].values()):
+    if version == 1:
+        required = {'bin','cue','chd','xdelta','track01','source_track01'}
+        require(set(config.get('artifacts',{})) == required, 'Manifest must name all six mandatory artifacts')
+        require(set(config.get('everdrive',{})) == {'bin','cue'}, 'Manifest must name both EverDrive artifacts')
+    else:
+        settings = profile_settings(config.get('profile'))
+        require(config.get('settings') == settings, 'Manifest profile/settings mismatch')
+        require(all(type(config['settings'][key]) is bool for key in ('cameos','alice','lisa')),
+                'Manifest settings must use boolean switches')
+        no_patch = config['profile'] == 'd0-c0-a0-l0'
+        require(type(config.get('no_patch')) is bool and config['no_patch'] == no_patch,
+                'Manifest no_patch flag disagrees with profile')
+        required = {'bin','cue','track01','source_track01'} | (set() if no_patch else {'xdelta'})
+        require(set(config.get('artifacts',{})) == required, 'Profile manifest artifact inventory mismatch')
+        require('everdrive' not in config and 'chd' not in config,
+                'Profile manifest must not imply unbuilt CHD/EverDrive artifacts')
+        require(isinstance(config.get('source'),dict), 'Profile manifest must bind its source BIN')
+    records = list(config['artifacts'].values()) + list(config.get('everdrive',{}).values())
+    if version == 2:
+        records.append(config['source'])
+    for record in records:
         require(isinstance(record,dict) and {'path','bytes','sha1','sha256'} <= set(record),
                 'Incomplete artifact record')
         require(isinstance(record['path'],str) and bool(record['path']) and
@@ -245,7 +272,7 @@ def run(command, log):
     return result.stdout
 
 
-def verify(root, manifest_path=None, evidence=None):
+def verify(root, manifest_path=None, evidence=None, sector_cache=None):
     root = Path(root).resolve()
     def resolve(value):
         p = Path(value)
@@ -279,6 +306,9 @@ def verify(root, manifest_path=None, evidence=None):
     manifest = json.loads(source_manifest.read_text())
     canonical = resolve(config['canonical_tree'])
     source, source_tracks = cue_layout(source_cue)
+    if config['version'] == 2:
+        require(resolve(config['source']['path']).resolve() == source.resolve(), 'Profile source record points elsewhere')
+        check_artifact(source, config['source'])
     target, target_tracks = cue_layout(paths['cue'])
     require(target.resolve() == paths['bin'].resolve(), 'Built cue references an unexpected BIN')
     normalize_cue = lambda text: re.sub(r'FILE\s+"[^"]+"\s+BINARY', 'FILE "BIN" BINARY', text)
@@ -290,8 +320,11 @@ def verify(root, manifest_path=None, evidence=None):
     require(source.stat().st_size == target.stat().st_size, 'Built BIN length changed')
     # Regenerate approved recipes in the lead-owned implementation; its output
     # authenticity check is independent of the packaging builder audited below.
-    run([sys.executable,root/'tools/scd_art.py','verify','--source',source_dir,'--output',canonical,
-         '--evidence',evidence/'canonical-regeneration'], evidence/'canonical-regeneration.txt')
+    regenerate = [sys.executable,root/'tools/scd_art.py','verify','--source',source_dir,'--output',canonical,
+                  '--evidence',evidence/'canonical-regeneration']
+    if config['version'] == 2:
+        regenerate += ['--profile', config['profile']]
+    run(regenerate, evidence/'canonical-regeneration.txt')
     sectors = source_tracks[0]['end']
     require(sectors == manifest['track_sectors'] == 56014, 'Data track length changed')
     print('Checking ISO authorization and all 56,014 raw sectors', flush=True)
@@ -315,9 +348,17 @@ def verify(root, manifest_path=None, evidence=None):
                                           source_sha1=digest(original[oldrow['lba']*2048:oldrow['lba']*2048+oldrow['size']]),
                                           sha1=digest(payload)))
             changed_sectors = 0
+            fresh_sector_checks = cached_sector_checks = 0
             for lba in range(sectors):
                 sector = new[lba*2352:(lba+1)*2352]
-                verify_sector(sector,lba)
+                key = (lba, sector)
+                if sector_cache is not None and key in sector_cache:
+                    cached_sector_checks += 1
+                else:
+                    verify_sector(sector,lba)
+                    fresh_sector_checks += 1
+                    if sector_cache is not None:
+                        sector_cache.add(key)
                 changed_sectors += sector != old[lba*2352:(lba+1)*2352]
             for track in source_tracks[1:]:
                 a,b = track['start']*2352,track['end']*2352
@@ -326,33 +367,40 @@ def verify(root, manifest_path=None, evidence=None):
                                   sha1=digest(new[a:b]),bytes=b-a))
     scratch = evidence/'scratch'
     scratch.mkdir(parents=True,exist_ok=True)
-    print('Checking xdelta decode and CHD verify/extractcd parity', flush=True)
+    print('Checking xdelta decode' + (' and CHD parity' if config['version'] == 1 else ' for selected profile'), flush=True)
+    built_track_hash = None
     with tempfile.TemporaryDirectory(prefix='audit-',dir=scratch) as folder:
         temp = Path(folder)
         base_track,temp_track = temp/'source-track01.bin',temp/'decoded-track01.bin'
         with source.open('rb') as stream:
             base_track.write_bytes(stream.read(sectors*2352))
-        if 'source_track01' in paths:
-            require(file_hash(paths['source_track01']) == file_hash(base_track) and
-                    paths['source_track01'].stat().st_size == sectors*2352, 'Source track01 artifact differs')
-        run(['xdelta3','-d','-s',base_track,paths['xdelta'],temp_track],evidence/'xdelta-decode.txt')
+        require(file_hash(paths['source_track01']) == file_hash(base_track) and
+                paths['source_track01'].stat().st_size == sectors*2352, 'Source track01 artifact differs')
         with target.open('rb') as stream:
             built_track_hash = digest(stream.read(sectors*2352))
-        require(file_hash(temp_track)==built_track_hash and temp_track.stat().st_size==sectors*2352,
-                'xdelta decoded track differs from built track01')
-        if 'track01' in paths:
-            require(file_hash(paths['track01']) == built_track_hash and
-                    paths['track01'].stat().st_size == sectors*2352, 'Built track01 artifact differs')
-        run(['chdman','verify','-i',paths['chd']],evidence/'chd-verify.txt')
-        info = run(['chdman','info','-i',paths['chd']],evidence/'chd-info.txt')
-        run(['chdman','extractcd','-i',paths['chd'],'-o',temp/'extracted.cue','-ob',temp/'extracted.bin'],evidence/'chd-extract.txt')
-        extracted, extracted_tracks = cue_layout(temp/'extracted.cue')
-        require(extracted_tracks == target_tracks, 'CHD extraction changed TOC/pregap timing')
-        require(extracted.stat().st_size == target.stat().st_size and file_hash(extracted)==file_hash(target),
-                'CHD extraction differs in raw data/audio/pregap bytes; normalization is not allowed')
-        (evidence/'chd-extracted.cue').write_text((temp/'extracted.cue').read_text())
+        if 'xdelta' in paths:
+            run(['xdelta3','-d','-s',base_track,paths['xdelta'],temp_track],evidence/'xdelta-decode.txt')
+            require(file_hash(temp_track)==built_track_hash and temp_track.stat().st_size==sectors*2352,
+                    'xdelta decoded track differs from built track01')
+        else:
+            require(config.get('profile') == 'd0-c0-a0-l0' and
+                    file_hash(base_track) == built_track_hash, 'No-patch profile differs from original track')
+        require(file_hash(paths['track01']) == built_track_hash and
+                paths['track01'].stat().st_size == sectors*2352, 'Built track01 artifact differs')
+        if config['version'] == 1:
+            run(['chdman','verify','-i',paths['chd']],evidence/'chd-verify.txt')
+            run(['chdman','info','-i',paths['chd']],evidence/'chd-info.txt')
+            run(['chdman','extractcd','-i',paths['chd'],'-o',temp/'extracted.cue','-ob',temp/'extracted.bin'],evidence/'chd-extract.txt')
+            extracted, extracted_tracks = cue_layout(temp/'extracted.cue')
+            require(extracted_tracks == target_tracks, 'CHD extraction changed TOC/pregap timing')
+            require(extracted.stat().st_size == target.stat().st_size and file_hash(extracted)==file_hash(target),
+                    'CHD extraction differs in raw data/audio/pregap bytes; normalization is not allowed')
+            (evidence/'chd-extracted.cue').write_text((temp/'extracted.cue').read_text())
     versions = {}
-    for name,command in [('chdman',['chdman','help']),('xdelta3',['xdelta3','-V'])]:
+    version_commands = [('xdelta3',['xdelta3','-V'])] if 'xdelta' in paths else []
+    if config['version'] == 1:
+        version_commands.insert(0, ('chdman',['chdman','help']))
+    for name,command in version_commands:
         result = subprocess.run(command,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True)
         versions[name] = result.stdout.splitlines()[0]
     for key,record in artifacts.items():
@@ -368,8 +416,15 @@ def verify(root, manifest_path=None, evidence=None):
                   source_files_verified=100,boot_verified=True,canonical_assets=98,iso_files_verified=100,
                   changed_files=changed,changed_data_sectors=changed_sectors,edc_ecc_sectors_verified=sectors,
                   data_track_sha1=built_track_hash,toc_unchanged=True,audio_tracks=audio,
-                  xdelta_decode_exact=True,chd_verify=True,chd_extracted_raw_bin_exact=True,
-                  chd_policy='Exact raw BIN and INDEX00/INDEX01 timing parity required. CHD internal track padding is container-only; no extracted payload, audio, pregap, duration or byte-order normalization accepted.',
+                  xdelta_decode_exact=True if 'xdelta' in paths else None,
+                  no_patch_exact_source=config.get('profile') == 'd0-c0-a0-l0',
+                  chd_verify=True if config['version'] == 1 else None,
+                  chd_extracted_raw_bin_exact=True if config['version'] == 1 else None,
+                  chd_status='verified' if config['version'] == 1 else 'not built or claimed for profile output',
+                  profile=config.get('profile'),settings=config.get('settings'),
+                  edc_ecc_fresh_sector_checks=fresh_sector_checks,
+                  edc_ecc_cached_identical_sector_checks=cached_sector_checks,
+                  chd_policy=('Exact raw BIN and INDEX00/INDEX01 timing parity required. CHD internal track padding is container-only; no extracted payload, audio, pregap, duration or byte-order normalization accepted.' if config['version'] == 1 else 'No CHD artifact was built or checked for this profile.'),
                   tool_versions=versions,scope='Local packaging integrity and approved asset composition. No console acceptance claim.')
     (evidence/'verification.json').write_text(json.dumps(report,indent=2)+'\n')
     return report

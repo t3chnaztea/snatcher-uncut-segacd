@@ -1,34 +1,24 @@
 # Compatibility and known issues
 
-## Tested scope
+## Configurable release scope
 
-| Check | Result |
-|---|---|
-| Approved restoration records | All 37 passed emulator checks |
-| Act 1 | Cold automated route reached Act 2 |
-| Acts 2 and 3 | Continued accepted route reached the ending and original credits |
-| Normal save and fresh load | Passed through the game's menus after normal shutdown |
-| Reference audio data | All 20 tracks and pregaps remained byte-identical |
-| Captured audio output | Callback accounting and selected source comparisons passed |
-| Developer reproduction | A fresh private source clone reproduced eight accepted artifacts |
-| U.S. Genesis Model 2 + Mega EverDrive Pro | Worked on my console |
-| Batocera cabinet | Not tested |
-| FPGA hardware | Not tested |
-| Existing unpatched saves used with this patch | Not established |
+All 16 selections passed exact asset and disc checks. All 15 active profiles passed full-disc browser downloads in three engines on macOS and actual offline installs in four layouts. Raw-track browser downloads passed in Chromium. Each output kept the supplied audio and CUE timing. Original dates with all art groups disabled offers no downloads.
 
-The emulator evidence uses the pinned Genesis Plus GX test core. It does not establish compatibility with every Genesis Plus GX version or frontend. The emulator playthrough spans several sessions. The Act 2 continuation began from an accepted emulator checkpoint. Later save/load checks used normal in-game saving and fresh boot. Targeted scene checks do not establish that every restored view was reached naturally during that route.
+The default profile reproduces the earlier accepted game exactly. Its automated Genesis Plus GX route reached the ending and credits. Normal save/restart/load and required fights/transitions passed within that earlier evidence. The route spans several sessions; it is not one uninterrupted cold full-game run.
 
-Installer layout and operating-system support must come from the release install instructions. Developer-build reproduction is a separate check. It does not prove that the player installer works on another operating system.
+Fresh profile checks cover opening captions/audio, diagnostic date windows and enabled/disabled art. They do not constitute a new full playthrough or natural database navigation for every setting. Exact retail/restored asset boundaries support the reused evidence. Profile CHDs and new EverDrive packages were not built or verified.
+
+The installer matrix does not establish Windows, Linux, mobile or Safari application compatibility. Mobile layout and controls were reviewed. Read INSTALL.md for supported layouts and VERIFICATION.md for test scope.
 
 ## Console test
 
-I tested the patch on my U.S. Genesis Model 2 with a Mega EverDrive Pro. It worked. The full playthrough and save/load results here come from the emulator tests. Other hardware is untested.
+The default restoration worked on a U.S. Genesis Model 2 with a Mega EverDrive Pro. It remains byte-identical to that earlier build. No full-console-playthrough or console save/load result was reported. New combinations, cabinet use, FPGA hardware and existing unpatched saves have not received acceptance. Back up saves.
 
-## Text and speech
+## Dates and retained content
 
-The opening caption and HQ database display the catastrophe year as 1991. The original English speech retains 1996. The two text contexts describe the same date discrepancy. Voices and music remain unchanged.
+Original Sega CD dates preserve the English release's chronology. Japanese dates restore selected approved values; the opening and HQ database say 1991 while the retained English recording says 1996. Some port-specific additions keep their localized dates.
 
-Some retained Sega CD additions still use their localized chronology. The patch changes selected approved records. It does not rewrite all port-specific material to one timeline.
+Most English localization, voices, music, expanded Act 3 and English ages remain. Optional menus, excluded age changes, shower content and underwear interactions are unchanged. The shop stays Plato's Cavern because the English dialogue uses that name.
 
 ## Source images
 

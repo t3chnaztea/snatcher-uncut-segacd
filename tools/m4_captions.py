@@ -11,6 +11,7 @@ TOOLS=ROOT/'tools'
 if not (TOOLS/'scd_gfx.py').exists():TOOLS=ROOT.parent.parent/'snatcher-uncut/tools'
 sys.path.insert(0,str(TOOLS))
 import scd_gfx
+from patch_profiles import get_profile
 
 def digest(b):return hashlib.sha1(b).hexdigest()
 
@@ -267,14 +268,34 @@ def _row_patch(source,row,root):
             if blob[start:end]!=result[start:end]:raise ValueError('Unapproved palette changed')
     return bytes(result),dict(id=row['id'],file=row['file'],source_sha1=digest(blob),output_sha1=digest(result),program=row['program'],resources=resources,visual=visual,unapproved_resources_unchanged=True,control_programs_unchanged=True,animation_graph_unchanged=True,frame_tables_unchanged=True,palettes_unchanged=True,inventory_errors=0),oldim,newim
 
-def apply(source,output,evidence):
+def _validate_catalogue(source,rows,root):
+    """Validate inactive rows too; selection never waives source/donor guards."""
+    for row in rows:
+        blob,meta=_load_manifest(source,row['file'])
+        if digest(blob)!=row['source_sha1']:raise ValueError('Art source hash mismatch')
+        resources=row['resources']
+        if len({r['offset'] for r in resources})!=len(resources):raise ValueError('Duplicate still-art resource')
+        streams={r['offset']:r for r in meta['streams']}
+        for guard in resources:
+            stream=streams.get(guard['offset'])
+            if stream is None or stream['end']!=guard['end'] or stream['references']!=guard['references']:
+                raise ValueError('Graphics resource consumers changed')
+            if digest(scd_gfx.stream_bytes(blob,stream))!=guard['decoded_sha1'] or digest(blob[guard['offset']:guard['end']])!=guard['encoded_sha1']:
+                raise ValueError('Graphics resource hash mismatch')
+        if not 0<=row['program']<len(meta['sequences']):raise ValueError('Invalid still-art program')
+        if 'pce' in row:_pce_image(root,row['pce'])
+
+def apply(source,output,evidence,profile=None):
+    selected=get_profile(profile)
     source,output,evidence=Path(source),Path(output),Path(evidence)
     if source.resolve()==output.resolve():raise ValueError('Output must not overwrite source')
     root=source.parents[2];patch=json.loads((ROOT/'patches/gfx/captions.json').read_text())
-    if patch.get('version')!=1 or {r['id']for r in patch['rows']}!={'GFX-005','TEXT-034','TEXT-035','TEXT-036'}:raise ValueError('Still-art approval inventory mismatch')
+    if patch.get('version')!=1 or len(patch['rows'])!=4 or {r['id']for r in patch['rows']}!={'GFX-005','TEXT-034','TEXT-035','TEXT-036'}:raise ValueError('Still-art approval inventory mismatch')
+    _validate_catalogue(source,patch['rows'],root)
     # Each row starts from the same original module; compose only disjoint spans.
     outputs={};reports=[];images=[];seen=defaultdict(set)
     for row in patch['rows']:
+        if row['id'] not in selected.art_rows:continue
         result,report,oldim,newim=_row_patch(source,row,root);name=row['file'];old=(source/name).read_bytes();dest=outputs.setdefault(name,bytearray(old))
         for n,(a,b)in enumerate(zip(old,result)):
             if a!=b:
@@ -285,9 +306,9 @@ def apply(source,output,evidence):
     for name,data in outputs.items():(output/name).write_bytes(data)
     for ident,old,new in images:
         old.save(evidence/f'{ident}-source.png');new.save(evidence/f'{ident}-converted.png')
-    report=dict(status='pass',rows=reports,changed_files=sorted(outputs),source_hashes={n:digest((source/n).read_bytes())for n in outputs},output_hashes={n:digest(bytes(v))for n,v in outputs.items()},permitted_spans={n:[dict(start=c['offset']+2,end=c['end'])for r in reports if r['file']==n for c in r['resources']]for n in outputs},limits='Static conversion previews are not native harness proof. All palettes, programs and file sizes unchanged. Shared glyph blanks clone only within the existing tile budget.')
+    report=dict(status='pass',profile=selected.id,catalogue_rows=4,rows=reports,changed_files=sorted(outputs),source_hashes={n:digest((source/n).read_bytes())for n in outputs},output_hashes={n:digest(bytes(v))for n,v in outputs.items()},permitted_spans={n:[dict(start=c['offset']+2,end=c['end'])for r in reports if r['file']==n for c in r['resources']]for n in outputs},limits='Static conversion previews are not native harness proof. All palettes, programs and file sizes unchanged. Shared glyph blanks clone only within the existing tile budget.')
     (evidence/'apply.json').write_text(json.dumps(report,indent=2)+'\n');return report
 
 def main():
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--source',type=Path,default=ROOT/'private/extracted/segacd-usa');p.add_argument('--output',type=Path,default=ROOT/'build/m4/captions');p.add_argument('--evidence',type=Path,default=ROOT/'build/evidence/m4/captions-lane');a=p.parse_args();print(json.dumps(apply(a.source,a.output,a.evidence),indent=2))
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--profile');p.add_argument('--source',type=Path,default=ROOT/'private/extracted/segacd-usa');p.add_argument('--output',type=Path,default=ROOT/'build/m4/captions');p.add_argument('--evidence',type=Path,default=ROOT/'build/evidence/m4/captions-lane');a=p.parse_args();print(json.dumps(apply(a.source,a.output,a.evidence,profile=a.profile),indent=2))
 if __name__=='__main__':main()

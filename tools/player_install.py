@@ -15,6 +15,8 @@ import shutil
 import subprocess
 import tempfile
 
+from patch_profiles import load_registry, get_profile, profile_id as settings_profile_id
+
 SECTOR = 2352
 CHUNK = 1024 * 1024
 
@@ -220,8 +222,37 @@ def copy_bytes(source, target, length: int | None = None) -> None:
             remaining -= len(data)
 
 
-def install(source: Path, patch: Path, output: Path, xdelta: str = 'xdelta3',
-            release: Release = RELEASE) -> dict:
+def install(source: Path, patch: Path | None, output: Path, xdelta: str = 'xdelta3',
+            release: Release = RELEASE, *, registry: Path | dict | None = None,
+            profile_id: str | None = None) -> dict:
+    selected = None
+    profile_version = None
+    if registry is not None:
+        if release != RELEASE:
+            raise InstallError('A registry cannot be combined with a custom release contract.')
+        try:
+            catalogue = load_registry(registry)
+            profile = get_profile(profile_id)
+        except (ValueError, OSError) as exc:
+            raise InstallError(str(exc)) from exc
+        selected = next(row for row in catalogue['profiles'] if row['id'] == profile.id)
+        profile_version = catalogue['version']
+        if selected['no_patch']:
+            return dict(format_version=2, status='no-patch-needed', no_patch=True,
+                        input_verified=False, profile_id=profile.id,
+                        settings=selected['settings'], files=[], tracks=[],
+                        audio_tracks_unchanged=0)
+        release = Release(catalogue['source']['track1_bytes'],
+                          catalogue['source']['track1_sha1'],
+                          selected['target_track1_sha256'], selected['patch']['sha256'])
+        if patch is None:
+            if isinstance(registry, dict):
+                raise InstallError('A registry object requires an explicit patch path.')
+            patch = Path(registry).resolve().parent / selected['patch']['file']
+    elif profile_id is not None:
+        raise InstallError('Selecting a profile requires the verified release registry.')
+    if patch is None:
+        raise InstallError('Supply a release patch or profile registry.')
     source, patch, output = Path(source), Path(patch), Path(output)
     if output.exists() or output.is_symlink():
         raise InstallError('Output directory must not exist. Inputs are never overwritten.')
@@ -290,6 +321,10 @@ def install(source: Path, patch: Path, output: Path, xdelta: str = 'xdelta3',
                        files=[dict(name=f.name, source_sha256=before[f.name],
                                    output_sha256=digest(package / f.name)) for f in layout.files],
                        tracks=tracks)
+        if selected is not None:
+            receipt.update(format_version=2, installer='Snatcher Patcher',
+                           version=profile_version, profile_id=selected['id'],
+                           settings=selected['settings'], no_patch=False)
         # Exclusive creation is the commit point. Never replace an existing directory.
         output.mkdir()
         try:
@@ -311,14 +346,38 @@ def install(source: Path, patch: Path, output: Path, xdelta: str = 'xdelta3',
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('input', type=Path, help='Source CUE or raw Track 1 BIN')
-    parser.add_argument('--patch', type=Path, required=True, help='Release snatcher-uncut-track01.xdelta')
+    parser.add_argument('--patch', type=Path, help='Optional explicit patch; checked against selected profile')
+    parser.add_argument('--registry', type=Path, help='Verified release profiles.json')
+    parser.add_argument('--profile', help='Exact profile ID, exclusive with setting flags')
+    parser.add_argument('--dates', choices=('japanese', 'segacd'))
+    parser.add_argument('--no-cameos', action='store_true')
+    parser.add_argument('--no-alice', action='store_true')
+    parser.add_argument('--no-lisa', action='store_true')
     parser.add_argument('--output', type=Path, required=True, help='New output directory; must not exist')
     parser.add_argument('--xdelta', default='xdelta3', help='xdelta3 executable or path')
     args = parser.parse_args()
+    explicit_settings = args.dates is not None or args.no_cameos or args.no_alice or args.no_lisa
+    if args.profile is not None and explicit_settings:
+        parser.error('--profile cannot be combined with individual setting flags')
+    registry = args.registry
+    if registry is None:
+        package_registry = Path(__file__).resolve().parent.parent / 'profiles.json'
+        if package_registry.is_file():
+            registry = package_registry
+    ident = args.profile
+    if ident is None and (registry is not None or explicit_settings):
+        ident = settings_profile_id(args.dates or 'japanese', not args.no_cameos,
+                                    not args.no_alice, not args.no_lisa)
     try:
-        receipt = install(args.input, args.patch, args.output, args.xdelta)
-    except (InstallError, OSError) as exc:
+        receipt = install(args.input, args.patch, args.output, args.xdelta,
+                          registry=registry, profile_id=ident)
+    except (InstallError, OSError, ValueError) as exc:
         parser.exit(1, f'Error: {exc}\n')
+    if receipt.get('no_patch'):
+        print('These settings match the original disc. No patch or output files are needed.')
+        return 0
+    if 'profile_id' in receipt:
+        print('Snatcher Patcher profile: ' + receipt['profile_id'])
     print(f'Verified {receipt["layout"]}; {receipt["audio_tracks_unchanged"]} audio tracks unchanged.')
     print(f'Output: {args.output}')
     print('Raw Track 1 output is not a complete playable disc.' if receipt['layout'] == 'raw-track1'
