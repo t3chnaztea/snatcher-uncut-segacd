@@ -225,6 +225,13 @@ def copy_bytes(source, target, length: int | None = None) -> None:
 def install(source: Path, patch: Path | None, output: Path, xdelta: str = 'xdelta3',
             release: Release = RELEASE, *, registry: Path | dict | None = None,
             profile_id: str | None = None) -> dict:
+    if registry is not None:
+        raw = registry if isinstance(registry, dict) else json.loads(Path(registry).read_text())
+        if isinstance(raw, dict) and raw.get('format') == 2:
+            if release != RELEASE:
+                raise InstallError('A registry cannot be combined with a custom release contract.')
+            from choice_install import install as install_choices
+            return install_choices(source, patch, output, xdelta, registry=registry, profile_id=profile_id)
     selected = None
     profile_version = None
     if registry is not None:
@@ -353,8 +360,11 @@ def main() -> int:
     parser.add_argument('--no-cameos', action='store_true')
     parser.add_argument('--no-alice', action='store_true')
     parser.add_argument('--no-lisa', action='store_true')
-    parser.add_argument('--output', type=Path, required=True, help='New output directory; must not exist')
+    parser.add_argument('--output', type=Path, help='New output directory; must not exist')
     parser.add_argument('--xdelta', default='xdelta3', help='xdelta3 executable or path')
+    parser.add_argument('--settings', type=Path, help='Settings JSON or previous Snatcher Patcher receipt')
+    parser.add_argument('--code', help='Portable settings code, such as SP2:xfff')
+    parser.add_argument('--identify', action='store_true', help='Identify Track 1 only; do not patch or verify audio')
     args = parser.parse_args()
     explicit_settings = args.dates is not None or args.no_cameos or args.no_alice or args.no_lisa
     if args.profile is not None and explicit_settings:
@@ -364,13 +374,49 @@ def main() -> int:
         package_registry = Path(__file__).resolve().parent.parent / 'profiles.json'
         if package_registry.is_file():
             registry = package_registry
+    if args.output is None and not args.identify:
+        parser.error('--output is required unless --identify is used')
+    if (args.settings is not None or args.code is not None) and (args.profile is not None or explicit_settings):
+        parser.error('--settings/--code cannot be combined with profile or setting flags')
+    if args.settings is not None and args.code is not None:
+        parser.error('Choose --settings or --code')
     ident = args.profile
-    if ident is None and (registry is not None or explicit_settings):
-        ident = settings_profile_id(args.dates or 'japanese', not args.no_cameos,
-                                    not args.no_alice, not args.no_lisa)
     try:
+        if args.settings is not None:
+            from choice_install import parse_settings
+            regular_file(args.settings)
+            if args.settings.stat().st_size > 65536: parser.error('Settings file exceeds 64 KB')
+            ident = parse_settings(args.settings.read_text()).id
+        if args.code is not None:
+            if not re.fullmatch(r'SP2:x[0-9a-f]{3}',args.code): parser.error('Invalid settings code')
+            ident = args.code[4:]
+        if args.identify:
+            if registry is None: parser.error('--identify requires a release registry')
+            raw = json.loads(registry.read_text())
+            if not isinstance(raw, dict):
+                raise InstallError('Invalid release registry document.')
+            if raw.get('format') == 2:
+                from patch_choices import load_registry as load_choices
+                catalogue=load_choices(registry); targets=catalogue['targets']
+            else:
+                catalogue=load_registry(registry); targets={p['id']:p['target_track1_sha256'] for p in catalogue['profiles']}
+            regular_file(args.input)
+            path=parse_cue(args.input).tracks[0].file if args.input.suffix.lower()=='.cue' else args.input
+            regular_file(path)
+            if path.suffix.lower() != '.bin' or path.stat().st_size < catalogue['source']['track1_bytes'] or path.stat().st_size % SECTOR:
+                parser.exit(1,'Identification requires a raw Mode1/2352 BIN or a supported CUE.\n')
+            actual=digest(path,length=catalogue['source']['track1_bytes'])
+            matches=[key for key,value in targets.items() if value==actual]
+            if not matches: parser.exit(1,'Unrecognized Track 1. No files were changed.\n')
+            print('Track 1 matches '+matches[0]+'. Audio was not verified. No files were changed.')
+            return 0
+        if ident is None and (registry is not None or explicit_settings):
+            ident = settings_profile_id(args.dates or 'japanese', not args.no_cameos,
+                                        not args.no_alice, not args.no_lisa)
         receipt = install(args.input, args.patch, args.output, args.xdelta,
                           registry=registry, profile_id=ident)
+    except (KeyError, TypeError):
+        parser.exit(1, 'Error: Invalid settings or receipt document.\n')
     except (InstallError, OSError, ValueError) as exc:
         parser.exit(1, f'Error: {exc}\n')
     if receipt.get('no_patch'):

@@ -116,6 +116,41 @@ git -C .deps/RomPatcher.js checkout 4f17297cd1dc0835a0b0747497fa15f5f63f1623
 
 Developer browser verification uses the pinned Playwright package and its Chromium, Firefox and WebKit runtimes. It is separate from the player tool, which needs no installed Python or browser automation package. Keep any downloaded runtimes with the local development dependencies. No patched game image, private capture or BIOS belongs in a public source package.
 
+## Build the advanced choices
+
+Run the input setup, default build and explicit extraction above first. The default build derives the private PC Engine provenance records used by every catalogue guard. The advanced builder does not accept missing provenance as an excuse to skip validation.
+
+The public source retains the earlier registry as `legacy-profiles.json`. Use it to check all sixteen earlier target hashes while generating the new component release:
+
+```sh
+.venv/bin/python tools/build_choices.py \
+  --source private/extracted/segacd-usa \
+  --legacy legacy-profiles.json --output build/m9/choices
+.venv/bin/python tools/verify_choices.py \
+  --source private/extracted/segacd-usa \
+  --registry build/m9/choices/release/profiles.json \
+  --build-manifest build/m9/choices/build-manifest.json \
+  --accepted build/m5/assets --legacy legacy-profiles.json \
+  --evidence build/m9/verification
+```
+
+The builder derives 76 local family states and 70 compact source-relative VCDIFF components. It hashes all 4,096 final data tracks by composition. It does not retain thousands of complete discs. Family sector ownership is disjoint, including Alice's guarded directory-size and extra-sector changes. Original source and accepted default hashes are mandatory.
+
+Use the pinned RomPatcher.js checkout from the preceding section to assemble the browser tool. The reviewed media directory supplies local previews:
+
+```sh
+.venv/bin/python tools/build_player_browser.py --engine .deps/RomPatcher.js \
+  --registry build/m9/choices/release/profiles.json \
+  --media media/assets --output build/m9/browser
+.venv/bin/python tools/package_player_release.py --root . \
+  --browser build/m9/browser --registry build/m9/choices/release/profiles.json \
+  --media media --output build/m9/player
+```
+
+These output folders must be new. The exported source layout uses the same browser templates and package contents as the development layout. `profiles.json` is the format-2 registry. `legacy-profiles.json` is the preserved format-1 oracle. Both contain metadata; component and direct patch files remain under their respective directories.
+
+The browser verifier exhausts all choices in Chromium. Pairwise Firefox/WebKit transforms and real full-disc downloads check the shared output wrapper separately. Large downloads and temporary game files must remain on the development volume. The verifier sets its download directory there and deletes native download files after validation. Console or natural-playthrough acceptance is separate from these checks.
+
 
 ## Prepare source integration tests
 

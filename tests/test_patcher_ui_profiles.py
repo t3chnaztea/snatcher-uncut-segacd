@@ -63,7 +63,7 @@ def test_busy_freeze_and_setting_changes_revoke_stale_outputs(ui,tmp_path):
       SnatcherInstaller.patch=async (bin,cue,progress,options)=> {
         window.submittedProfile=options.profileId;
         const row=SnatcherInstaller.getProfile(options.profileId);
-        await new Promise(resolve=>{window.finishPatch=resolve;});
+        await new Promise(resolve=>{window.finishPatch=resolve;document.documentElement.dataset.testPatchReady='true';});
         return {receipt:{layout:'single-bin-cue',settings:row.settings,no_patch:false},downloads:[
           {name:'test.bin',blob:new Blob(['bin'])},{name:'test.cue',blob:new Blob(['cue'])}]};
       };
@@ -71,11 +71,11 @@ def test_busy_freeze_and_setting_changes_revoke_stale_outputs(ui,tmp_path):
     data=tmp_path/'source.bin';data.write_bytes(b'fixture input')
     page.locator('#bin').set_input_files(str(data))
     page.locator('#apply').click()
-    page.wait_for_function('typeof window.finishPatch === "function"')
+    page.locator('html[data-test-patch-ready="true"]').wait_for(state='attached')
     assert page.evaluate('window.submittedProfile')=='d1-c1-a1-l1'
     for selector in ('#dates','#cameos','#alice','#lisa','#bin','#cue','#apply'):
         assert page.locator(selector).is_disabled(),selector
-    page.evaluate('window.finishPatch()')
+    page.evaluate('() => window.finishPatch()')
     page.wait_for_selector('#results:not([hidden])')
     assert page.locator('#downloads a').count()==2
     for selector in ('#dates','#cameos','#alice','#lisa','#bin','#cue','#apply'):

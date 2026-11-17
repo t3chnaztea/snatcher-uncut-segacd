@@ -1,0 +1,249 @@
+{
+  "format": 1,
+  "version": "v0.10.0-rc1",
+  "default_profile": "d1-c1-a1-l1",
+  "source": {
+    "track1_bytes": 131744928,
+    "track1_sha1": "1f4164205ed736a0d9a03eb7972868e9aa737d35",
+    "track1_sha256": "9592d44b3241b31f36d235acc651bfa9cd2ab9562eadf9aecd86735913f0495d"
+  },
+  "profiles": [
+    {
+      "id": "d0-c0-a0-l0",
+      "settings": {
+        "dates": "segacd",
+        "cameos": false,
+        "alice": false,
+        "lisa": false
+      },
+      "no_patch": true,
+      "target_track1_sha256": "9592d44b3241b31f36d235acc651bfa9cd2ab9562eadf9aecd86735913f0495d",
+      "patch": null
+    },
+    {
+      "id": "d0-c0-a0-l1",
+      "settings": {
+        "dates": "segacd",
+        "cameos": false,
+        "alice": false,
+        "lisa": true
+      },
+      "no_patch": false,
+      "target_track1_sha256": "bdf1c11f948c43249e36e4cead71075684faa5f7ffac461f91b1ae2cb1c518ee",
+      "patch": {
+        "file": "patches/profiles/d0-c0-a0-l1.xdelta",
+        "sha256": "c7d8101ee9328a93052134fd6d097784f8f6c354b995e932f9940e804a0bb8e1"
+      }
+    },
+    {
+      "id": "d0-c0-a1-l0",
+      "settings": {
+        "dates": "segacd",
+        "cameos": false,
+        "alice": true,
+        "lisa": false
+      },
+      "no_patch": false,
+      "target_track1_sha256": "861165e6ca815fc7f93fd4d6e11c44a226e3dd344cc29514d03b4a1fdf039efc",
+      "patch": {
+        "file": "patches/profiles/d0-c0-a1-l0.xdelta",
+        "sha256": "ec67f67e708c4efbae211b4127950041507e4cbeb8a537ab29ccd7770a7ea401"
+      }
+    },
+    {
+      "id": "d0-c0-a1-l1",
+      "settings": {
+        "dates": "segacd",
+        "cameos": false,
+        "alice": true,
+        "lisa": true
+      },
+      "no_patch": false,
+      "target_track1_sha256": "2ba308f9afadd5d05a58d97794806a0686692cc394caec02d7a50eb0d681bb1f",
+      "patch": {
+        "file": "patches/profiles/d0-c0-a1-l1.xdelta",
+        "sha256": "69a6c9578ca46066093229648068e1673bf9b088688332c90caa63ef2eb0adf4"
+      }
+    },
+    {
+      "id": "d0-c1-a0-l0",
+      "settings": {
+        "dates": "segacd",
+        "cameos": true,
+        "alice": false,
+        "lisa": false
+      },
+      "no_patch": false,
+      "target_track1_sha256": "c1e8350a504d85b95e13650f292904dc6d5aa064f6df929b8e59541c8f284808",
+      "patch": {
+        "file": "patches/profiles/d0-c1-a0-l0.xdelta",
+        "sha256": "ab1c110407c49dba9a9391702c50d7e6d107e1e2fedfdaf333940a32959b06e6"
+      }
+    },
+    {
+      "id": "d0-c1-a0-l1",
+      "settings": {
+        "dates": "segacd",
+        "cameos": true,
+        "alice": false,
+        "lisa": true
+      },
+      "no_patch": false,
+      "target_track1_sha256": "0c7719c2519f13819b7f4d50b4c94dce9f53173b60a1d2ccd964bf9eb24feff5",
+      "patch": {
+        "file": "patches/profiles/d0-c1-a0-l1.xdelta",
+        "sha256": "b5ba08a48799546596613b6f761f74a1962933a2e0d6768e5b833d160ed061d7"
+      }
+    },
+    {
+      "id": "d0-c1-a1-l0",
+      "settings": {
+        "dates": "segacd",
+        "cameos": true,
+        "alice": true,
+        "lisa": false
+      },
+      "no_patch": false,
+      "target_track1_sha256": "082956bad1970313ee968c03ef4e7e51e052b4ef9b25778f08aeb6fe79f1d108",
+      "patch": {
+        "file": "patches/profiles/d0-c1-a1-l0.xdelta",
+        "sha256": "ca8b47c6be810b904a4cd94b79787cad0677d2c05c3199445e52b89fc7800967"
+      }
+    },
+    {
+      "id": "d0-c1-a1-l1",
+      "settings": {
+        "dates": "segacd",
+        "cameos": true,
+        "alice": true,
+        "lisa": true
+      },
+      "no_patch": false,
+      "target_track1_sha256": "c5533917f06402b8994db0f5d95b0645e283568bb908848b2df12c59cd5ffad4",
+      "patch": {
+        "file": "patches/profiles/d0-c1-a1-l1.xdelta",
+        "sha256": "20c090ccf4225757410ddd23ae38d44fad24267ba05a7aeee668ba112e838dc0"
+      }
+    },
+    {
+      "id": "d1-c0-a0-l0",
+      "settings": {
+        "dates": "japanese",
+        "cameos": false,
+        "alice": false,
+        "lisa": false
+      },
+      "no_patch": false,
+      "target_track1_sha256": "eee4e24f2cfdd8b383393ab5e11818dae59b671984043b830872d88d7a51faad",
+      "patch": {
+        "file": "patches/profiles/d1-c0-a0-l0.xdelta",
+        "sha256": "a2b36aa89d70ab872ef70b4197a655126aab45700f0ee2006cc6655d201b759a"
+      }
+    },
+    {
+      "id": "d1-c0-a0-l1",
+      "settings": {
+        "dates": "japanese",
+        "cameos": false,
+        "alice": false,
+        "lisa": true
+      },
+      "no_patch": false,
+      "target_track1_sha256": "eded3c525b64f0010bab6a411d4b5c5a9f7a69e92afdfc92ee84fe7558b89a25",
+      "patch": {
+        "file": "patches/profiles/d1-c0-a0-l1.xdelta",
+        "sha256": "166e68be8e0b7ae3436d159ea6b7f3349f68f98ca867669749b9a4a3625be81c"
+      }
+    },
+    {
+      "id": "d1-c0-a1-l0",
+      "settings": {
+        "dates": "japanese",
+        "cameos": false,
+        "alice": true,
+        "lisa": false
+      },
+      "no_patch": false,
+      "target_track1_sha256": "10c988e6757681b5a663e4301c237f83bf6bd7c5f6df002904cae786629a3d2e",
+      "patch": {
+        "file": "patches/profiles/d1-c0-a1-l0.xdelta",
+        "sha256": "84ca22965f7e136ec3ba235b5bbdf4e622f3851de1a48b3f814ca74967df0e02"
+      }
+    },
+    {
+      "id": "d1-c0-a1-l1",
+      "settings": {
+        "dates": "japanese",
+        "cameos": false,
+        "alice": true,
+        "lisa": true
+      },
+      "no_patch": false,
+      "target_track1_sha256": "e5f958a98971794ac00e972e4ee69cab0ce18d591da851fde92c9f57c4254ea6",
+      "patch": {
+        "file": "patches/profiles/d1-c0-a1-l1.xdelta",
+        "sha256": "284036a88d1e655413e05c67448a7b3ecb6fd52b804197b2d8e255fe078c31c5"
+      }
+    },
+    {
+      "id": "d1-c1-a0-l0",
+      "settings": {
+        "dates": "japanese",
+        "cameos": true,
+        "alice": false,
+        "lisa": false
+      },
+      "no_patch": false,
+      "target_track1_sha256": "b0b1d4b54139cb935f0611a1594cf8ddef78ede9bda956208f2bc550c8cf41c5",
+      "patch": {
+        "file": "patches/profiles/d1-c1-a0-l0.xdelta",
+        "sha256": "ae25d12ce3364274cf87dd3d109dc2e125c40ff0ac1fb89ce388466ba46ea6ba"
+      }
+    },
+    {
+      "id": "d1-c1-a0-l1",
+      "settings": {
+        "dates": "japanese",
+        "cameos": true,
+        "alice": false,
+        "lisa": true
+      },
+      "no_patch": false,
+      "target_track1_sha256": "a05f46be15c69b37382b64d29e4bee94abdfabde6c0c7c89ceb94b7b8559c0ee",
+      "patch": {
+        "file": "patches/profiles/d1-c1-a0-l1.xdelta",
+        "sha256": "78e67555ff5de94d0660fa47b5b4c6f57c63ee3c24a6f4be6e2debaf4d617a03"
+      }
+    },
+    {
+      "id": "d1-c1-a1-l0",
+      "settings": {
+        "dates": "japanese",
+        "cameos": true,
+        "alice": true,
+        "lisa": false
+      },
+      "no_patch": false,
+      "target_track1_sha256": "e53230393ca05f5fc344a869c9f5865f9e192517838645c2aa94c57f50b42f88",
+      "patch": {
+        "file": "patches/profiles/d1-c1-a1-l0.xdelta",
+        "sha256": "3a850fad0f9f1c3970fe9c875606c29847fc73d20403f9e6612dc481442182da"
+      }
+    },
+    {
+      "id": "d1-c1-a1-l1",
+      "settings": {
+        "dates": "japanese",
+        "cameos": true,
+        "alice": true,
+        "lisa": true
+      },
+      "no_patch": false,
+      "target_track1_sha256": "f543ea684608ab9c706be6f7e6ff9ba4408feb25e3a3bc4e1fa7ba4038aa5aba",
+      "patch": {
+        "file": "patches/profiles/d1-c1-a1-l1.xdelta",
+        "sha256": "1485cc915dc0d2629049f7abcb8f724f608a8205c89456ad534acf2d26ac09a4"
+      }
+    }
+  ]
+}

@@ -1,15 +1,15 @@
-# Snatcher Uncut v0.10.0-rc1
+# Snatcher Uncut v0.11.0-rc1
 
-Snatcher Patcher now lets you choose what to restore: dates, Outer Heaven cameos, Alice's animation and Lisa's artwork.
+Snatcher Patcher now has twelve individual choices, with presets for common combinations.
 
-Keep the original Sega CD dates if you want the on-screen chronology to match the retained English narration. The default keeps the earlier release's Japanese dates and all art restorations. Cameo dialogue stays paired with its artwork. Alice's timing stays paired with its animation.
+Pick database dates and each opening caption separately. Choose each of the five Outer Heaven guest groups. Control the wide-scene crowd independently. Alice and Lisa keep their own switches. Guest views keep matching dialogue and headings; paired views stay together.
 
-All 16 selections are supported. Fifteen produce a verified patch. Original dates with all art switches off needs no patch or downloads.
+You can export or import settings, reuse a supported receipt, share a short settings code, compare reference screenshots locally, identify a known patched BIN, and copy a command for the offline installer. NSFW previews start closed. Imported settings never supply trusted patches or file paths.
 
-Extract the player ZIP and open `browser/index.html`. Choose settings, then your original USA BIN and CUE. The tool works locally. A Python/xdelta3 installer supports additional layouts. No game image or BIOS is included.
+All 4,096 data-track targets were generated and independently checked. All sixteen earlier configurations retain identical game bytes. The default game remains identical to the earlier accepted restoration. Seventy source-relative component patches provide the new combinations without distributing full game images.
 
-Verification covers all 16 disc outputs, 45 full-disc browser downloads, 15 raw-track downloads and 60 offline installs. Audio and CUE checks passed. Fresh opening, date-window and art checks bind the changed settings to the expected assets.
+Extract the player ZIP and open `browser/index.html`. Use your own untouched USA BIN and CUE. The tool runs locally. The included Python/xdelta3 installer also supports split-track layouts.
 
-The default game is byte-identical to the earlier release. Its ending and normal save/load evidence remain applicable. New combinations have no console acceptance. Most English localization, music, voices, expanded Act 3 and ages remain unchanged. The Japanese-date choice still has 1991 text beside speech that says 1996.
+English voices, music, expanded Act 3, adult ages and prior exclusions remain unchanged. Japanese 1991 text still differs from speech saying 1996. Original Sega CD dates keep the English chronology; mixing individual date choices can produce inconsistent dates.
 
-Read INSTALL.md, VERIFICATION.md and KNOWN-ISSUES.md in the player ZIP. Existing releases and archives remain unchanged.
+New combinations have no console acceptance. Read INSTALL.md, VERIFICATION.md and KNOWN-ISSUES.md in the player ZIP. Earlier releases and assets remain available.

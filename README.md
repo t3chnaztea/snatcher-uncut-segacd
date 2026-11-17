@@ -9,14 +9,14 @@
   Unofficial fan patch. Includes browser-based patch tool.
 </p>
 
-Choose what to restore with **Snatcher Patcher**. Keep the original Sega CD dates to match the English voices, or use the Japanese chronology. Cameos, Alice and Lisa each have their own switch. The default keeps every restoration from the earlier release.
+Choose your restorations with **Snatcher Patcher**. Start with a preset or pick individual dates, guest views and wide-scene costumes. Keep the original Sega CD dates to match the English voices. Save your choices, reuse a receipt or share a short settings code.
 
 ## RESTORED
 
 - Dog guts: Alice's twitching intestines return, restoring the PC Engine animation.
 - Lisa's dress: Her android corpse's exposed breast returns, reversing the Sega CD cover-up.
-- Outer Heaven cameos: The six original film/TV costume views return, with matching dialogue and headings.
-- Dates: Selected text and opening captions can use the Japanese chronology: 1991, 2039 and 2042. Choose **Original Sega CD dates** to keep 1996, 2044 and 2047.
+- Outer Heaven cameos: Choose each of five guest groups, with matching dialogue and headings. The wide-scene crowd has its own switch.
+- Dates: Choose database chronology, Moscow, newspaper and Neo Kobe captions separately. Japanese dates use 1991, 2039 and 2042. **Original Sega CD dates** keep 1996, 2044 and 2047.
 
 ## UNCHANGED
 
@@ -27,10 +27,10 @@ Choose what to restore with **Snatcher Patcher**. Keep the original Sega CD date
 
 
 <p align="center">
-  <a href="https://github.com/t3chnaztea/snatcher-uncut-segacd/releases/download/v0.10.0-rc1/snatcher-uncut-player-v0.10.0-rc1.zip"><strong>Download the player patch</strong></a><br>
-  Free · v0.10.0-rc1 · Four restoration controls · You'll need your own USA disc dump<br>
+  <a href="https://github.com/t3chnaztea/snatcher-uncut-segacd/releases/download/v0.11.0-rc1/snatcher-uncut-player-v0.11.0-rc1.zip"><strong>Download Snatcher Patcher</strong></a><br>
+  Free · v0.11.0-rc1 · 12 choices · You'll need your own USA disc dump<br>
   The default restoration worked on my U.S. Genesis Model 2 with a Mega EverDrive Pro.<br>Other combinations have not been tested on the console.<br><br>
-  <a href="#see-the-changes">See the changes</a> · <a href="https://github.com/t3chnaztea/snatcher-uncut-segacd/releases/download/v0.9.0-rc1/snatcher-uncut-media-v0.9.0-rc1.zip">Download the comparison kit</a>
+  <a href="#see-the-changes">See the changes</a>
 </p>
 
 ## See the changes
@@ -39,14 +39,14 @@ Choose what to restore with **Snatcher Patcher**. Keep the original Sega CD date
 
 ![Original Sega CD patrons beside restored costume cameos](media/assets/outer-heaven-hero.png)
 
-The PC Engine costume cameos replace the Konami characters in the Sega CD bar. Their descriptions change too. The dancer and lighting stay as they were.
+The complete restoration brings back the PC Engine costume cameos. You can now choose each guest group and the wide-scene crowd independently. Guest views keep their matching descriptions and headings. The dancer and lighting stay as they were.
 
 
 ### Six restored costume views
 
 ![Six original and restored costume views from Outer Heaven](media/assets/costume-gallery.png)
 
-The characters were captured at different points in their idle animations.
+These images show the complete restoration. The characters were captured at different points in their idle animations.
 
 ### Choose which dates appear on screen
 
@@ -97,18 +97,20 @@ Game comparisons use actual emulator captures from graphics QA. Crops remove emp
 
 ## Snatcher Patcher
 
-![Snatcher Patcher with four restoration controls and numbered settings, BIN, CUE and patch steps.](media/assets/patcher-desktop.png)
+![Snatcher Patcher with presets, twelve individual choices and numbered BIN/CUE steps.](media/assets/patcher-desktop.png)
 
-1. [Download the player ZIP](https://github.com/t3chnaztea/snatcher-uncut-segacd/releases/download/v0.10.0-rc1/snatcher-uncut-player-v0.10.0-rc1.zip). Extract the entire folder.
+1. [Download the player ZIP](https://github.com/t3chnaztea/snatcher-uncut-segacd/releases/download/v0.11.0-rc1/snatcher-uncut-player-v0.11.0-rc1.zip). Extract the entire folder.
 2. Open `browser/index.html` in your browser.
-3. Under **01 · Restoration settings**, select the dates, cameos, Alice animation and Lisa artwork you want.
+3. Under **01 · Restoration settings**, choose a preset. Open **Fine-tune dates and cameo groups** for individual choices.
 4. Under **02 · Original disc BIN**, choose your untouched USA BIN. Under **03 · Matching CUE**, choose the CUE from the same dump.
 5. Under **04 · Verify, then restore**, select **Verify and patch**. Wait for **Your patched files are ready**.
 6. Download the patched BIN, CUE and verification receipt. Save them in a new folder. Open the CUE in your emulator or compatible player.
 
-Related changes stay together. Cameo artwork and dialogue use one switch. Alice's animation includes its required timing changes. There are 16 selections: 15 patched outputs and one original-disc selection. If you choose original dates and turn off all three art switches, no patch or download is needed.
+Twelve choices give 4,096 combinations: four date controls, five guest groups, the wide-scene crowd, Alice and Lisa. Guest views keep matching dialogue. Miss Money's front and rear stay together. H2O and Gulliver share one choice. Alice includes its required timing. Turning everything off needs no patch, file read or download.
 
-Your files stay on your computer. Snatcher Patcher verifies the original and selected data-track checksums. Your audio and disc timing stay intact. Output filenames and the receipt identify your settings. Changing a setting clears the old downloads. No game or BIOS is included.
+Save your settings as JSON, import a supported receipt or share a code such as `SP2:xfff`. Local comparison previews include a separate, closed NSFW section. **Identify a patched BIN** checks its data track and shows a known configuration; it does not check audio or change the file. The tool also shows the offline command for your choices.
+
+Your files stay on your computer. Snatcher Patcher verifies the original data, selected components and final data track. Audio and disc timing stay intact. Output filenames and the receipt identify your settings. Changing a setting clears old downloads. No game or BIOS is included.
 
 [Full instructions](INSTALL.md) · [Offline installer for split-track sets](OFFLINE-INSTALL.md). Keep your originals and back up your saves. Windows, Linux and mobile installation have not been tested.
 
@@ -116,7 +118,7 @@ Your files stay on your computer. Snatcher Patcher verifies the original and sel
 
 The default build is byte-identical to the earlier accepted release. Automated Genesis Plus GX tests reached the ending and credits. They covered required fights, transitions and a normal save followed by shutdown, fresh boot and loading from the game menu. Act 1 started from cold boot; the later tests continued from an Act 2 checkpoint. All 20 audio tracks and pregaps stayed byte-identical to the original dump.
 
-All 16 selections passed disc and content checks. The browser matrix passed 45 full-disc downloads across Chromium, Firefox and WebKit, plus 15 raw-track downloads. The offline matrix passed 60 installs across four layouts. Fresh scene checks cover the affected dates and artwork. A fresh source export reproduced all 16 outputs and passed 152 tests. These checks do not mean every combination received a new full-game playthrough.
+All 4,096 data-track targets passed independent checks and Chromium composition. Firefox and WebKit each passed 256 pairwise compositions. The browser matrix passed 192 complete disc downloads. The offline matrix passed 256 installs across four layouts. All 64 guest/crowd combinations passed 448 fresh native captures. A fresh source build reproduced every patch and target hash. These checks do not mean every combination received a new full-game playthrough.
 
 [Verification and installer checks](VERIFICATION.md) · [Compatibility and known issues](KNOWN-ISSUES.md).
 
@@ -124,7 +126,7 @@ All 16 selections passed disc and content checks. The browser matrix passed 45 f
 
 **How much is "Uncut"?** It restores selected artwork, cameos and dates. Some localized content stays. Adult ages remain 18. Optional menus and excluded age or sexualized-minor content are unchanged. The [changelog](CHANGELOG.md) lists the scope.
 
-**Did you change the English script or voices?** Most of the English stays. Selected dates and cameo wording change when enabled. Japanese dates make the opening and database say 1991 while the original speech says 1996. Choose original Sega CD dates to avoid that mismatch. I kept the recordings unchanged.
+**Did you change the English script or voices?** Most of the English stays. Selected dates and cameo wording change when enabled. Japanese dates can make the opening and database say 1991 while the original speech says 1996. Choose original Sega CD dates to avoid that mismatch. Fine-tuning individual dates can mix chronologies; the tool marks that state. I kept the recordings unchanged.
 
 **Did you use AI?** Yes. I used AI coding agents for research, code, automated testing and documentation. The restored art comes from the game data, not an image generator. The screenshots are emulator captures. [How it was made](AI-DISCLOSURE.md).
 

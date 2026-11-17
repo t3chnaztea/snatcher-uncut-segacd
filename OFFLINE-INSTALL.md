@@ -1,32 +1,24 @@
 # Offline Snatcher Patcher
 
-Use the included Python installer for supported split-track sets or when the browser route is unsuitable. It needs Python 3.10 or newer and xdelta3. Keep your original dump and back up saves.
+Extract the entire player ZIP. Keep `profiles.json`, `patches/components/` and `tools/` together. Supply your own matching USA dump. Python 3.10 or newer and xdelta3 are required. No game or BIOS is included.
 
-From the extracted player folder:
+The browser is the easiest way to choose settings. Open **Use these choices offline** for the corresponding command. Export a settings file or copy its `SP2:x###` code to reuse all twelve choices offline.
 
 ```sh
 python3 tools/player_install.py '/path/to/Snatcher.cue' \
-  --dates segacd \
-  --output '/path/to/Snatcher Uncut'
+  --settings '/path/to/settings.json' --output '/path/to/New Copy'
 ```
 
-The included `profiles.json` selects the patch and expected output. Default settings restore Japanese dates and all three art groups. `--dates segacd` keeps original English-release dates. `--no-cameos`, `--no-alice` and `--no-lisa` keep the corresponding original content. `--profile ID` selects one complete setting and cannot be mixed with those flags. The unchanged-disc selection produces no output.
+`--code 'SP2:x800'` selects only the wide-scene costumes. `--profile x800` selects the same choices. Legacy configurable-release IDs map to their identical outputs. The broad `--dates segacd`, `--no-cameos`, `--no-alice` and `--no-lisa` flags remain available. Use one selection method per command.
 
-## Supported layouts
+Supported layouts are raw Mode1/2352 Track 1, a single BIN/CUE, split BINs with stored INDEX 00 samples, and split BINs with virtual PREGAP timing. Keep every referenced BIN beside the CUE. Output goes into a new folder. Original files are never overwritten. Supplied filenames and CUE bytes stay unchanged.
 
-- Single BIN/CUE with Track 1 data and 20 audio tracks. Pregaps are stored through INDEX 00.
-- Twenty-one BINs with one CUE and one file per track, using supported INDEX 00/01 timing.
-- Twenty-one BINs with supported virtual PREGAP timing. Supplied files and CUE bytes stay exact.
-- Raw Track 1 BIN without a CUE. This output alone cannot play the game.
+The installer verifies source Track 1, selected component patches, decoded sector data, the final target, all supplied audio, and completed output files. It reads every component against the original source. A component is not applied over an earlier component's output. Wrong source, damaged patches, changed inputs, overlapping sectors and wrong final hashes stop installation.
 
-Every split BIN must start at its first stored index. CUE paths must be flat filenames in the same folder. Mixed layouts, WAVE audio, unsupported directives and unsafe filenames are rejected. Track 1 must match the supported USA raw data track.
+Virtual PREGAP represents time without stored samples. Checks preserve the audio supplied in that layout. They cannot prove equality for samples omitted from the input.
 
-The new output directory must not exist. Its parent must exist. The installer preserves original filenames and CUE bytes. It verifies the selected patch, resulting data track and each supplied audio track before completing the installation. Source files are checked again for changes. `install-receipt.json` records settings, checksums and track results.
+The all-off selection creates no output and does not read the supplied source path. An exported settings file or supported installation receipt supplies preferences only. Its old hashes and file paths do not authorize an installation.
 
-## Evidence and limits
+Use `--identify` with a raw BIN or supported CUE to identify a known data track. Identification does not check audio or modify files. It reports no whole-disc or hardware acceptance.
 
-All 15 active selections passed real installation in all four layouts: 60 cases. The tests independently checked 900 supplied audio-track outputs. Stored split outputs rejoined to their corresponding verified full-disc BIN. Fifteen crossed-profile patches were rejected before output. The unchanged-disc selection read no input and created no files.
-
-Split test fixtures were derived from the reference single-BIN dump. The virtual-pregap fixtures intentionally omit the original stored pregap samples and express their duration in the CUE. The installer preserves those supplied inputs; it cannot preserve samples absent from them. These tests do not establish compatibility with an independently sourced alternate audio dump.
-
-Local execution was tested on macOS. Windows and Linux execution remain untested. Read [INSTALL.md](INSTALL.md) for browser instructions and [KNOWN-ISSUES.md](KNOWN-ISSUES.md) for game compatibility.
+[Installation guide](INSTALL.md) · [Verification](VERIFICATION.md) · [Known issues](KNOWN-ISSUES.md)

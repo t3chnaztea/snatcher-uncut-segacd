@@ -1,63 +1,69 @@
 # Verification
 
-## Configurable release
+## Advanced choices
 
-The release supports 16 selections across dates, cameos, Alice animation and Lisa artwork. Fifteen are active patches. The original-disc selection has no patch or downloads. [profiles.json](profiles.json) lists the reviewed settings, patch hashes and expected data-track hashes.
+Twelve controls provide 4,096 selections. The original-disc selection needs no patch, input read or download. The other selections use combinations of 70 source-relative VCDIFF components. [profiles.json](profiles.json) records component hashes, owned sectors and every expected data-track hash.
 
-The default selection reproduces the earlier accepted Track 1 SHA256:
-`f543ea684608ab9c706be6f7e6ff9ba4408feb25e3a3bc4e1fa7ba4038aa5aba`.
-Its xdelta remains byte-identical, SHA256:
-`1485cc915dc0d2629049f7abcb8f724f608a8205c89456ad534acf2d26ac09a4`.
+All sixteen configurations from v0.10.0-rc1 retain their exact game output. The default remains the earlier accepted game:
 
-With the reference input audio, its whole BIN remains SHA256:
-`5b502e0a5b52175ebc16d66b88078ce22d652e9fb38e1250bde9b2774561e7bd`.
-Whole-disc hashes can differ with other audio dumps. Data-track hashes identify the selected restoration.
+- Track 1 SHA256: `f543ea684608ab9c706be6f7e6ff9ba4408feb25e3a3bc4e1fa7ba4038aa5aba`.
+- Whole BIN with the reference audio: `5b502e0a5b52175ebc16d66b88078ce22d652e9fb38e1250bde9b2774561e7bd`.
 
-## Disc and content matrix
+Different audio dumps can produce different whole-disc hashes. The selected data-track checksum identifies the restoration.
 
-All 16 outputs passed independent comparison of 98 canonical game assets. Enabled groups equal the accepted restored assets. Disabled groups equal the original source. Original dates leave SP04, SP05, DATA_D0 and DATA_D1 retail-exact. The all-off selection is the exact original disc.
+## Independent disc and component checks
 
-Every output passed checks for 100 ISO files, fixed layout, 56,014 data sectors, EDC/ECC, all 20 audio tracks with stored pregaps, and CUE timing. All 15 active deltas decoded to the expected target. The audit scanned each sector in each output; it reused a successful parity proof only when the LBA and complete sector bytes were identical. There were 56,067 distinct sector proofs across the matrix.
+The build derives six families: database dates, Moscow/newspaper captions, Neo Kobe caption, guest views/wide crowd, Alice, and Lisa. Their 76 local states include six shared original states and 70 active components. Each component decodes against the original Track 1 into a compact concatenation of owned sectors.
 
-Profile builds use BIN/CUE and raw-track artifacts. They do not claim new CHD or EverDrive-package verification. Earlier CHD checks remain evidence for the earlier fixed release only.
+An independent verifier checked all 56,014 source sectors, 70 decoded components, 6,860 active-family asset comparisons, 535 distinct component-sector parity proofs, and all 4,096 final hashes. It independently placed file bytes and directory-size fields rather than calling the build's overlay function. All sixteen legacy target hashes match.
 
-## Installer matrix
+The families own 54 disjoint sectors. Alice alone includes its approved extra sector and ISO directory-size change. Duplicate or overlapping ownership, out-of-range sectors, incorrect lengths, changed patches, wrong source and wrong final hashes are rejected. Unchanged portions remain source-exact.
+
+## Browser matrix
 
 | Check | Result |
 |---|---|
-| Full-disc browser downloads | 15 active profiles in each of Chromium, Playwright Firefox and Playwright WebKit: 45 cases |
-| Browser raw Track 1 | All 15 profiles passed in Chromium |
-| Original-disc selection | No downloads in all three engines |
-| Offline installs | 15 profiles across raw, single-BIN, stored-pregap split and virtual-pregap split layouts: 60 cases |
-| Offline supplied audio | 900 independent track checks passed |
-| Wrong-profile patches | Rejected without output in browser and offline checks |
-| Input and setting changes | Old downloads revoked; settings disabled during work |
-| Browser requests and errors | No app network requests or page errors in the completed matrix |
+| Chromium raw composition | All 4,096 selections |
+| Firefox raw composition | 256 pairwise family selections |
+| WebKit raw composition | 256 pairwise family selections |
+| Full-disc downloads | 64 selections per engine, 192 total |
+| Full-disc supplied audio | 3,840 track comparisons |
+| Error guards | 27 checks across three engines |
+| Original-disc selection | Three zero-input, zero-download checks |
+| Application requests and page errors | None |
 
-Each downloaded data track matched its selected checksum. Full-disc browser checks independently compared all 20 audio tracks and stored pregaps. CUE changes were limited to the BIN FILE operand. Offline checks preserved the supplied CUE bytes and filenames. Parser tests retained all 25 existing CUE cases.
+The full-disc set covers every component. The pairwise sets cover family interactions in transformed data. These are separate from the complete-disc output checks; the matrix does not claim 4,096 full-disc downloads in every engine.
 
-Tests used the reference dump on macOS. The derived virtual-pregap inputs intentionally omit stored pregap samples and preserve their duration through CUE PREGAP. Their output checks cover the supplied files, not the omitted samples. These results do not establish Safari application, Windows, Linux or mobile installation compatibility.
+Every downloaded data track matched the selected hash. All 20 audio tracks and stored pregaps matched the supplied source. CUE edits were limited to the BIN filename. Default whole-BIN hashes matched the accepted game. Controls stayed disabled during work; changed preferences and inputs cleared old downloads. Corrupt or swapped components, bad source, overlapping sectors, invalid lengths and wrong target hashes failed verification.
 
-## Runtime checks
+Testing used pinned Playwright Chromium 159.0.8154.6, Firefox 159 and WebKit 27.2 on macOS. WebKit testing does not establish Safari application compatibility. Windows, Linux and mobile installation are not accepted.
 
-Freshly bound source, original-date/restored-art and Japanese-date/original-art profiles supplied nine opening captures. Original-date captions were pixel-identical to the fresh source captures. All matched intro audio outputs were PCM-identical with nonzero signal.
+## Offline matrix and CLI
 
-Six SP04/SP05 diagnostic date windows checked the actual loaded module and selected string. Original-date windows matched the source. Japanese-date windows differed in the expected digit regions. These are diagnostic render checks, not natural database navigation.
+The offline matrix passed 256 installs: 64 selections across raw Track 1, single-BIN CUE, stored-pregap split tracks and virtual-pregap split tracks. It covered all 70 components, checked 3,840 supplied audio tracks, preserved CUE bytes/timing and input files, and rejected 140 crossed or corrupt component attempts without output.
 
-Fresh art QA checked enabled and disabled cameos, Alice and Lisa. QA disc overlays are separate from untouched profile media. Their baseline BINs matched the selected profile before the documented QA changes. Alice produced ten distinct restored frames versus one original frame in the sampled 180-frame holds.
+Virtual PREGAP fixtures omit stored pregap samples and preserve their duration as timing. Checks cover the audio supplied to those fixtures, not omitted samples.
 
-Fresh natural continuation reached the original reception dialogue wait. It does not claim a new menu-selection or full-game run for each combination.
+Real CLI checks covered settings files, portable codes, legacy configurable-release receipts and Track 1 identification. After the matrix, a CLI error-boundary fix removed tracebacks for malformed input. Every function and class outside the CLI entry point stayed unchanged. Twelve negative CLI tests, affected interface tests and a fresh nondefault installation/identification passed afterward.
+
+## Guest-view runtime checks
+
+All 64 combinations of the five guest groups and wide crowd passed resource limits, source guards and independent pose raster comparisons. Selected rear/front poses equal the accepted restoration. Disabled poses equal the original. Dancer/light animation, protected architecture, palette indices, opacity and priority checks passed.
+
+Fresh native QA captured seven views per combination: 448 captures, including Miss Money's rear view. Each capture checked the complete loaded DATA_O0 module, SP13 text pool, visible object/frame-table/sprite pointers and media binding. All 20 audio tracks stayed original. Independent composition matched all 64 baseline Track 1 and whole-BIN hashes.
+
+These use documented graphics QA prefixes. They do not establish a natural story route or visibly displayed dialogue for every setting. The wide crowd is its own source-bound restoration; it is not assigned to the five interactive identities by proximity.
+
+## Dates, Alice, Lisa and earlier acceptance
+
+The date controls select existing approved database and caption records. All 26 database chronology records stay together. Both printed newspaper dates stay together. Alice's animation and required timing remain paired. Lisa's artwork is independent.
+
+Earlier source-bound opening, date-window, Alice and Lisa checks remain evidence for those exact assets. The default game is byte-identical to the earlier build that reached the ending, all nine credit programs, required fights, transitions, normal saving, shutdown and a fresh game-menu load. Act 1 began from cold boot; later testing continued from an accepted Act 2 checkpoint.
+
+The default restoration worked on a U.S. Genesis Model 2 with a Mega EverDrive Pro. That report does not establish a full console playthrough or console save/load acceptance. Other selections have no console acceptance. There is no claim of thousands of new full-game playthroughs, new variant CHD checks or new Mega EverDrive package checks.
 
 ## Source reproduction
 
-A fresh curated source tree, with user-supplied inputs and pinned dependencies, reproduced all 16 data tracks and whole BINs, all 15 deltas, the registry and 1,568 canonical asset comparisons. The default build also reproduced all six accepted artifacts, including CHD. Its complete test suite passed 152 tests with zero failures or skips. All 32 supplied inputs remained unchanged.
+A fresh curated source tree, without an external asset cache, reproduced all 70 deltas, the complete 4,096-target registry, all 76 family states across 7,448 asset hashes, and all six default artifacts including CHD. All 32 staged inputs stayed unchanged. The only private-to-public source adaptation was the sanitized approval-column label in the ledger readers.
 
-The final flat source layout rebuilt the browser bundle byte-for-byte and produced the same player ZIP as the private assembly layout. These assembly checks cover the final public path fallbacks.
-
-## Earlier game acceptance and hardware
-
-The default output remains the exact earlier game. Genesis Plus GX testing reached the ending and all nine original credit programs. Required fights, transitions, normal saving, shutdown and a fresh game-menu load passed. Act 1 began from cold boot; the later route continued from an accepted Act 2 checkpoint. Selected scene checks were separate from natural progression.
-
-The default restoration worked on a U.S. Genesis Model 2 with a Mega EverDrive Pro. That report is not full-console-playthrough or console save/load acceptance. New combinations have not received console acceptance.
-
-Other combinations reuse the established retail or restored assets and controls, with exact group boundaries checked across all selections. This bounds the reused evidence. It is not a claim of 15 new full-game playthroughs, human Japanese review or a full-route listening review.
+The initial exported test suite exposed a CSP-sensitive polling method in a test. Locator assertions and explicit DOM readiness replaced string evaluation in tests. The app's security policy remained intact. Affected tests passed after that test-only change. The final source and package include those fixes and the CLI error-boundary fix.

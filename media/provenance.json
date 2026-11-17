@@ -524,23 +524,31 @@
     },
     {
       "file": "assets/patcher-desktop.png",
-      "bytes": 799774,
-      "sha256": "2163dac5a8912d20361bba5411101fc27c27897919ece67e6555df80f266ba85",
+      "bytes": 1370835,
+      "sha256": "1d5e4e7255b2423a5d00d1024da86fa48e51456d0959ab856b5b5a038b86e985",
       "kind": "actual local browser screenshot",
       "viewport": [
-        1280,
+        1440,
         1200
       ],
       "device_scale_factor": 2,
-      "ui_revision": "v0.10.0-rc1",
-      "state": "Default profile; no files selected",
+      "ui_revision": "v0.11.0-rc1",
+      "state": "All restorations; Fine-tune expanded; no files selected",
       "profile_controls": [
-        "dates",
-        "cameos",
+        "database_dates",
+        "moscow_date",
+        "newspaper_date",
+        "neokobe_date",
+        "mask_rider",
+        "cornelius",
+        "alyen",
+        "miss_money",
+        "h2o_gulliver",
         "alice",
-        "lisa"
+        "lisa",
+        "bar_background"
       ],
-      "browser_app_sha256": "311c579c9c1c05f87352823c5daaf3df131130642a327d0440ced799d1333a52"
+      "browser_app_sha256": "22c78baf6e2430d43f2014fc149dd56d66bf9650187b82db4be9947c905d95db"
     }
   ],
   "capture_size": [

@@ -182,7 +182,18 @@ def dog(old,user,evidence):
  end=max(len(old),tail.pos);data=data[:end]
  return bytes(data),dict(row='GFX-001',pce_block_sha1=sha(b),pce_record=row['rec'],retained_base_geometry_pixels=184*120,color_class_geometry_mismatches=0,palette_changes=palette_changes,palette_source_pointer_hits=[8896],palette_modified_background_pixels=[[120,40],[84,48],[81,64],[80,65],[80,66]],bg_encoded_old_sha1=sha(old[49842:54293]),bg_encoded_new_sha1=sha(data[tileat:tileat+4260]),bg_decoded_sha1=sha(bgraw),bg_tiles=len(bgraw)//32,all_tiles=(len(bgraw)+len(tiles.raw))//32,frame_count=14,visible_objects=5,sprite_color_rgb_error=0,display_duration_adjustment=1,preserved_control_objects=[21,58,59,60,61],allocations=arena.allocations+tail.allocations,program=dict(old_offset=mdseq['offset'],new_offset=reloc_start,length=len(program),signed_relative=relative),relocations=[dict(old_offset=reloc_start,new_offset=copy,length=len(encoded),encoded_sha1=sha(encoded),decoded_sha1=sha(s.decode(old,reloc_start+2,s.u16(old,reloc_start))[0]),consumers=consumers)],scripts=scripts)
 
-def cameo(old,user,evidence):
+CAMEO_GROUPS={'mask_rider':18,'cornelius':21,'alyen':19,'miss_money':20,'h2o_gulliver':17}
+CAMEO_FRAMES={18:(31,),21:(32,),19:(35,),20:(33,36),17:(34,)}
+
+def cameo(old,user,evidence,groups=None,background=True):
+ # The wide scene contains additional non-interactive patrons. Its approved
+ # union mask is separate from the five explicitly bound portrait callbacks.
+ chosen=frozenset(CAMEO_GROUPS) if groups is None else frozenset(groups)
+ if not chosen<=CAMEO_GROUPS.keys() or type(background) is not bool:raise ValueError('Invalid cameo choices')
+ native_groups={CAMEO_GROUPS[key] for key in chosen}
+ complete=background and len(chosen)==5
+ if not chosen and not background:
+  return old,dict(row='GFX-002',selected_groups=[],bar_background=False,unchanged=True)
  b,row,seq,vram,colors,streams=pce_scene(user,41,0);mdseq=s.sequences(old)[2];mdcolors=native_palette(old,mdseq)
  oldv=bytearray(65536)
  for stream in s.resources(old,[mdseq])[0]:
@@ -201,6 +212,7 @@ def cameo(old,user,evidence):
  for y in range(224):
   for x in range(256):
    if not(32<=x<224 and 24<=y<128) or (88<=x<104 and 40<=y<56) or (176<=x<192 and 40<=y<56):mask.putpixel((x,y),0)
+ if not background:mask=Image.new('L',base.size)
  base.paste(pcebase,(0,0),mask)
  bg=Tiles(mdcolors,1088);mapping=bytearray(2048);pce_cells=p.pixels(vram)
  # Preserve native palette indices and opacity outside the fixed costume
@@ -235,7 +247,10 @@ def cameo(old,user,evidence):
  people={o['object']:o for o in p.object_initializers(b,59,row['bank'])}
  tiles=Tiles(mdcolors,256);frames=[];groups=[]
  plans=[('Mask Rider',18,[(19,11)]),('Cornelius',21,[(18,9)]),('Miss Money',20,[(22,17)]),('H2O / Gulliver',17,[(20,13),(23,19)]),('Alyen',19,[(21,15)]),('Miss Money rear',20,[(22,16)])]
- for label,group,pairs in plans:
+ frame_mapping={}
+ for oldframe,(label,group,pairs) in zip((31,32,33,34,35,36),plans):
+  if group not in native_groups:continue
+  frame_mapping[oldframe]=len(frames)
   parts=[]
   for obj,frame in pairs:
    o=people[obj];encoded=tiles.frame(b,o['table'],frame,vram,colors,o['x'],o['y']-32)
@@ -243,7 +258,25 @@ def cameo(old,user,evidence):
   frames.append(be(len(parts)-1)+b''.join(parts));groups.append(dict(identity=label,native_group=group,pce_objects_frames=pairs,new_frame=len(frames)-1))
  assert tiles.start+len(tiles.raw)//32<=512
  prefix=s.decode(old,34662,s.u16(old,34660))[0][:5120]
- blobs={'front_tiles':resource(tiles.raw),'background_tiles':resource(bg.raw),'retained_dancer_light_prefix':resource(prefix),'new_frame_table':frame_table(frames),'new_map':resource(mapping)}
+ retained_tiles=set();stock_tail=b''
+ if not complete:
+  # Keep exact native tile indices for every disabled portrait. The unchanged
+  # original frame table remains valid. Selected portraits use free tiles256+.
+  original_frames=next(t for t in s.frame_inventory(old,s.sequences(old))['tables'] if t['table']==28956)['frames']
+  for group,indices in CAMEO_FRAMES.items():
+   if group in native_groups:continue
+   for index in indices:
+    for entry in original_frames[index]['sprites']:
+     count=(((entry['size']>>10)&3)+1)*(((entry['size']>>8)&3)+1)
+     retained_tiles.update(range(entry['tile']&2047,(entry['tile']&2047)+count))
+  assert all(928<=tile<1088 for tile in retained_tiles)
+  original_tail=s.decode(old,34662,s.u16(old,34660))[0][5120:]+s.decode(old,39976,s.u16(old,39974))[0]
+  tail=bytearray(160*32)
+  for tile in retained_tiles:
+   start=(tile-928)*32;tail[start:start+32]=original_tail[start:start+32]
+  prefix+=tail[:96*32];stock_tail=bytes(tail[96*32:])
+ blobs={'front_tiles':resource(tiles.raw or b'\0'*32),'background_tiles':resource(stock_tail+bg.raw),'retained_dancer_light_prefix':resource(prefix),'new_map':resource(mapping)}
+ if frames:blobs['new_frame_table']=frame_table(frames)
  print('CAMEO bgtiles',len(bg.raw)//32,'fronttiles',len(tiles.raw)//32,'blobs', {k:len(v) for k,v in blobs.items()},flush=True)
  data=bytearray(old);regions=[Region(data,23242,28955),Region(data,34660,41238)]
  # Exhaustive small two-bin packing keeps all unchanged frame definitions and
@@ -262,16 +295,16 @@ def cameo(old,user,evidence):
    if c['op']==1:
     for off in range(c['body'],c['body']+c['length']-7,8):
      oldoff=s.u32(old,off)&0xffffff
-     replace={s.BASE+23900:('front_tiles',0x2000),s.BASE+34660:('retained_dancer_light_prefix',0x6000),s.BASE+39974:('background_tiles',0x8800),s.BASE+23242:('new_map',0xc000)}
+     replace={s.BASE+23900:('front_tiles',0x2000),s.BASE+34660:('retained_dancer_light_prefix',0x6000),s.BASE+39974:('background_tiles',0x8800 if complete else 0x8000),s.BASE+23242:('new_map',0xc000)}
      if oldoff in replace:
       label,vr=replace[oldoff];data[off:off+4]=ptr(at[label]);data[off+6:off+8]=be(vr);consumers.append(dict(program=sq['index'],record=off,old_source=oldoff-s.BASE,new_source=at[label],vram=vr,label=label))
  # Existing action groups and wait/resume controls remain the native script.
- mapping_frames={31:0,32:1,33:2,34:3,35:4,36:5}
+ mapping_frames=frame_mapping
  for c in mdseq['commands']:
   if c['op']!=2:continue
   for off in range(c['body'],c['body']+c['length'],12):
    group=old[off]
-   if group not in (17,18,19,20,21):continue
+   if group not in native_groups:continue
    data[off+2:off+6]=b'\0'*4;data[off+6:off+10]=ptr(at['new_frame_table'])
    script=off+12+struct.unpack_from('>h',old,off+10)[0]
    for n in range(5):
@@ -279,6 +312,22 @@ def cameo(old,user,evidence):
     if op<128:data[pos]=mapping_frames[op]
     elif op==0x81:break
  assert bytes(data[28956:34660])==old[28956:34660]
+ disabled_callbacks=[]
+ for command in mdseq['commands']:
+  if command['op']!=2:continue
+  for off in range(command['body'],command['body']+command['length'],12):
+   group=old[off]
+   if group not in set(CAMEO_GROUPS.values())-native_groups:continue
+   script=off+12+struct.unpack_from('>h',old,off+10)[0]
+   assert data[off:off+12]==old[off:off+12]
+   for n in range(5):
+    pos=script+n*4;assert data[pos:pos+4]==old[pos:pos+4]
+    if old[pos]==0x81:break
+   disabled_callbacks.append(dict(group=group,record=off,script=script,initializer_unchanged=True,script_unchanged=True))
+ # Reconstruct all preserved stock pixels by their original VRAM tile indices.
+ if not complete:
+  retained_vram=bytearray(65536);retained_vram[0x6000:0x6000+len(prefix)]=prefix;retained_vram[0x8000:0x8000+len(stock_tail)]=stock_tail
+  for tile in retained_tiles:assert retained_vram[tile*32:tile*32+32]==oldv[tile*32:tile*32+32]
  # Every original native pointer consumer is enumerated, including potential
  # animation draw records outside graphics-program transfer lists.
  for oldoff in (23900,34660,39974,23242):
@@ -299,7 +348,7 @@ def cameo(old,user,evidence):
     w=vram[(y//8*64+x//8)*2]|vram[(y//8*64+x//8)*2+1]<<8;value=pce_cells[w&4095][(y%8)*8+x%8]
     assert pixel(testv,x,y)[1]==bool(value)
  base.save(evidence/'cameo-converted-base.png');mask.save(evidence/'cameo-costume-mask.png')
- return bytes(data),dict(row='GFX-002',pce_block_sha1=sha(b),pce_record=row['rec'],background_tiles=len(bg.raw)//32,front_tiles=len(tiles.raw)//32,groups=groups,preserved_dancer_light_tile_range=[512,928],preserved_prefix_decoded_sha1=sha(prefix),preserved_dancer_light_frames=list(range(31))+list(range(37,41)),consumers=consumers,allocations=[a for r in regions for a in r.allocations],mask_sha1=sha(mask.tobytes()),mask_pixels=sum(bool(v) for v in mask.tobytes()),background_quantization_squared_rgb_error=sum(bg.errors),front_quantization_squared_rgb_error=sum(tiles.errors),architecture_outside_mask_unchanged=True,outside_mask_global_palette_indices_unchanged=True,outside_mask_opacity_priority_unchanged=True,inside_mask_donor_opacity_preserved=True)
+ return bytes(data),dict(row='GFX-002',selected_groups=sorted(chosen),bar_background=background,disabled_callbacks=disabled_callbacks,retained_stock_portrait_tiles=sorted(retained_tiles),pce_block_sha1=sha(b),pce_record=row['rec'],background_tiles=len(bg.raw)//32,front_tiles=len(tiles.raw)//32,groups=groups,preserved_dancer_light_tile_range=[512,928],preserved_prefix_decoded_sha1=sha(prefix),preserved_dancer_light_frames=list(range(31))+list(range(37,41)),consumers=consumers,allocations=[a for r in regions for a in r.allocations],mask_sha1=sha(mask.tobytes()),mask_pixels=sum(bool(v) for v in mask.tobytes()),background_quantization_squared_rgb_error=sum(bg.errors),front_quantization_squared_rgb_error=sum(tiles.errors),architecture_outside_mask_unchanged=True,outside_mask_global_palette_indices_unchanged=True,outside_mask_opacity_priority_unchanged=True,inside_mask_donor_opacity_preserved=True)
 
 def story_wait(old,source,edit):
  if sha(old)!=edit['source_sha1']:raise ValueError('SP25.BIN: source hash changed')
@@ -346,7 +395,10 @@ def apply(source,output,evidence,profile=None):
  output.mkdir(parents=True,exist_ok=True);evidence.mkdir(parents=True,exist_ok=True);reports=[]
  for row in rows:
   if row['id'] not in selected.art_rows:continue
-  name=row['file'];old=originals[name];converted,report={'GFX-001':dog,'GFX-002':cameo}[row['id']](old,user,evidence)
+  name=row['file'];old=originals[name]
+  if row['id']=='GFX-002':
+   converted,report=cameo(old,user,evidence,groups=getattr(selected,'cameo_groups',None),background=getattr(selected,'bar_background',True))
+  else:converted,report=dog(old,user,evidence)
   assert len(converted)==len(old) or (name=='DATA_G0.BIN' and len(old)<len(converted)<=124928)
   if s.inventory(converted,name)[2] or s.frame_inventory(converted,s.sequences(converted))['errors']:raise ValueError('Converted animation inventory has errors')
   (output/name).write_bytes(converted);report.update(id=row['id'],file=name,source_size=len(old),output_size=len(converted),source_sha1=sha(old),output_sha1=sha(converted),permitted_spans=spans(old,converted));reports.append(report)

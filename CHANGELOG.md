@@ -1,5 +1,18 @@
 # Changes
 
+## v0.11.0-rc1
+
+Snatcher Patcher adds twelve individual controls: database chronology, Moscow, newspaper, Neo Kobe, five paired guest groups, wide-scene costumes, Alice and Lisa. All 4,096 target hashes are recorded. Every one of the sixteen earlier configurations retains its exact game bytes.
+
+- Start with a named preset or fine-tune each choice.
+- Save preferences as JSON or a portable code. Import settings and supported configurable-release receipts.
+- Compare local reference captures, with NSFW previews closed by default.
+- Identify a known patched BIN by its data-track hash. Audio is not checked during identification.
+- Copy the offline command for the selected settings.
+- Compose checked source-relative components into one verified target. No full game image is included.
+
+The wide crowd is independent of the five interactive guest groups. Rear/front views keep their corresponding dialogue and headings. Miss Money's views stay paired. H2O/Gulliver stay together. Individual dates can intentionally mix chronologies; the interface marks that state. Existing content exclusions and audio/story/age limits remain.
+
 ## v0.10.0-rc1
 
 Snatcher Patcher adds four controls: dates, cameo artwork with dialogue, Alice animation with timing, and Lisa artwork. All 16 settings have verified output identities. Fifteen supply patches; the unchanged-disc selection needs no patch.

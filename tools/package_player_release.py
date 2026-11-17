@@ -109,8 +109,14 @@ def main():
     choice.add_argument('--patch',type=Path)
     choice.add_argument('--registry',type=Path)
     a=parser.parse_args()
-    result=(package_profiles(a.root,a.browser,a.registry,a.media,a.output) if a.registry
-            else package(a.root,a.browser,a.media,a.patch,a.output))
+    if a.registry:
+        metadata=json.loads(a.registry.read_text())
+        if not isinstance(metadata,dict):raise ValueError('Invalid profile registry object')
+        kind=metadata.get('format')
+        method=package_choices if kind==2 else package_profiles
+        result=method(a.root,a.browser,a.registry,a.media,a.output)
+    else:
+        result=package(a.root,a.browser,a.media,a.patch,a.output)
     print(json.dumps(result,indent=2))
 
 
@@ -185,6 +191,78 @@ def package_profiles(root: Path, browser: Path, registry: Path, media: Path, out
         archive=dict(file=archive.name,bytes=archive.stat().st_size,sha256=sha(archive)),
         checksums=dict(file=sidecar.name,sha256=sha(sidecar)),browser_receipt_sha256=sha(browser/'browser-build.json'),
         profile_registry_sha256=sha(registry))
+    (output/'package.json').write_text(json.dumps(report,indent=2)+'\n')
+    return report
+
+
+def package_choices(root: Path, browser: Path, registry: Path, media: Path, output: Path):
+    """Package source-relative components and the exact reviewed advanced runtime."""
+    from patch_choices import load_registry, CHOICE_IDS
+    root,browser,registry,media,output=map(Path,(root,browser,registry,media,output))
+    if output.exists() or output.is_symlink() or not output.parent.is_dir():
+        raise ValueError('Choose a new advanced package folder under an existing parent')
+    specification=load_registry(registry)
+    receipt=json.loads((browser/'browser-build.json').read_text())
+    if receipt.get('registry_format')!=2 or receipt.get('profile_registry_sha256')!=sha(registry) or receipt.get('profiles')!=specification:
+        raise ValueError('Browser receipt does not bind the advanced registry')
+    if receipt.get('engine_commit')!='4f17297cd1dc0835a0b0747497fa15f5f63f1623':
+        raise ValueError('Unexpected patch engine revision')
+    variants=[v for family in specification['families'] for v in family['variants']]
+    expected={v['id']:v['patch']['sha256'] for v in variants}
+    if receipt.get('component_patch_sha256')!=expected:
+        raise ValueError('Browser component inventory differs from the registry')
+    required={'index.html','style.css','app.js','choices.js','patch-data.js',
+              'vendor/LICENSE','vendor/RomPatcher.js','vendor/modules/BinFile.js',
+              'vendor/modules/HashCalculator.js','vendor/modules/RomPatcher.format.vcdiff.js'}
+    if not isinstance(receipt.get('files'),dict) or not required.issubset(receipt['files']):
+        raise ValueError('Advanced browser runtime inventory is incomplete')
+    files=[]
+    for relative,digest in receipt['files'].items():
+        name=Path(relative)
+        if name.is_absolute() or '..' in name.parts or (browser/name).is_symlink() or not (browser/name).is_file() or sha(browser/name)!=digest:
+            raise ValueError('Browser file differs from its receipt')
+        files.append((browser/name,'browser/'+relative))
+    files.append((browser/'browser-build.json','browser/browser-build.json'))
+    for variant in variants:
+        source=registry.parent/variant['patch']['file']
+        if source.is_symlink() or not source.is_file() or sha(source)!=variant['patch']['sha256']:
+            raise ValueError('Release component differs from its registry')
+        files.append((source,variant['patch']['file']))
+    for name in PLAYER_DOCUMENTS:
+        source=(root/'release/REPO-README.md' if name=='README.md' else root/'release'/name)
+        if not source.is_file():source=root/name
+        files.append((source,name))
+    source=root/'docs/player-install.md'
+    if not source.is_file():source=root/'OFFLINE-INSTALL.md'
+    files.append((source,'OFFLINE-INSTALL.md'))
+    files.append((registry,'profiles.json'))
+    for name in ('player_install.py','patch_profiles.py','patch_choices.py','choice_install.py'):
+        files.append((root/'tools'/name,'tools/'+name))
+    for name in PROFILE_MEDIA:files.append((media/'assets'/name,'media/assets/'+name))
+    if len({destination for _,destination in files})!=len(files):
+        raise ValueError('Duplicate advanced package destination')
+    for source,_ in files:
+        if source.is_symlink() or not source.is_file():raise ValueError('Missing or unsafe advanced package input')
+    output.mkdir();player=output/'player';player.mkdir()
+    for source,destination in files:copy(source,player/destination)
+    readme=player/'README.md'
+    readme.write_text(readme.read_text().replace('[Rebuild from source](docs/setup.md)',
+        '[Rebuild from source](https://github.com/t3chnaztea/snatcher-uncut-segacd/blob/main/docs/setup.md)'))
+    (player/'SHA256SUMS').write_text(''.join(sha(p)+'  '+p.relative_to(player).as_posix()+'\n'
+        for p in sorted(player.rglob('*')) if p.is_file()))
+    archive=output/('snatcher-uncut-player-'+specification['version']+'.zip')
+    zip_tree(player,archive)
+    with zipfile.ZipFile(archive) as check:
+        if check.testzip() is not None:raise ValueError('Advanced package ZIP CRC failed')
+        for line in check.read('SHA256SUMS').decode().splitlines():
+            digest,name=line.split('  ',1)
+            if hashlib.sha256(check.read(name)).hexdigest()!=digest:raise ValueError('Advanced ZIP internal checksum failed')
+    sidecar=output/'SHA256SUMS';sidecar.write_text(sha(archive)+'  '+archive.name+'\n')
+    report=dict(version=specification['version'],registry_format=2,choices=len(CHOICE_IDS),
+        active_selections=len(CHOICE_IDS)-1,component_patches=len(variants),files=len(files)+1,
+        archive=dict(file=archive.name,bytes=archive.stat().st_size,sha256=sha(archive)),
+        checksums=dict(file=sidecar.name,sha256=sha(sidecar)),
+        browser_receipt_sha256=sha(browser/'browser-build.json'),profile_registry_sha256=sha(registry))
     (output/'package.json').write_text(json.dumps(report,indent=2)+'\n')
     return report
 

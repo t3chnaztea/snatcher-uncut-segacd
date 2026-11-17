@@ -65,6 +65,10 @@ PROFILE_IDS = tuple(PROFILES)
 
 
 def get_profile(value=None):
+    # Keep the immutable format-1 catalogue while accepting validated new choices.
+    from patch_choices import Selection, get_selection
+    if isinstance(value, Selection) or (isinstance(value, str) and value.startswith('x')):
+        return get_selection(value)
     if value is None:
         value = DEFAULT_PROFILE_ID
     if isinstance(value, Profile):
